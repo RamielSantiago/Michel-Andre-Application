@@ -6,7 +6,7 @@ public class Employee
 {
     public int ID { get; set; }
     public string Name { get; set; }
-    public string JobPosition { get; set; }
+    public string Department { get; set; }
     public string ContractType { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
@@ -47,7 +47,7 @@ public class EmployeeContractRecord
                 employee.ContractType = values[2];
                 employee.StartDate = DateTime.Parse(values[3]);
                 employee.EndDate = DateTime.Parse(values[4]);
-                employee.JobPosition = values[5];
+                employee.Department = values[5];
 
                 // Add the new Employee object to the list of employees
                 employees.Add(employee);
@@ -56,21 +56,32 @@ public class EmployeeContractRecord
 
         employees = employees.OrderBy(e => e.DaysRemaining).ToList();
 
-        Console.WriteLine("  ID   |    Name     |  Contract Type |\t\tStart\t       |\t  End\t  |   Position   |   Remaining Days");
-        Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+        Console.WriteLine("  ID   |    Name     |  Contract Type |\t\tStart\t       |\t  End\t  |  Department  |   Remaining Days    |");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
 
         // Do something with the list of employees, such as displaying them on the console
         foreach (Employee employee in employees)
         {
-            Console.WriteLine("{0}\t{1}\t{2}\t\t{3}\t\t{4}\t{5}\t\t{6} days",
+            var warning = "";
+            if (employee.DaysRemaining <= 60 && employee.DaysRemaining > 0)
+            {
+                warning = "!!! Exp Date near !!!";
+            }
+            
+            if (employee.DaysRemaining > 0)
+            {
+                Console.WriteLine("{0}\t{1}\t{2}\t\t{3}\t\t{4}\t{5}\t\t{6} days \t{7}",
                 employee.ID,
                 employee.Name,
                 employee.ContractType,
                 employee.StartDate.ToShortDateString(),
                 employee.EndDate.ToShortDateString(),
-                employee.JobPosition,
-                employee.DaysRemaining);
-            Console.WriteLine();
+                employee.Department,
+                employee.DaysRemaining,
+                warning);
+                Console.WriteLine();
+            }
+            
         }
 
         // Wait for the user to press a key before exiting
