@@ -1,0 +1,13 @@
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\HRMS.exe.config
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\HRMS.exe
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\HRMS.pdb
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.csproj.AssemblyReference.cache
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.csproj.SuggestedBindingRedirects.cache
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.Properties.Resources.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.csproj.GenerateResource.cache
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.exe
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.pdb
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.HRMSLogin.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.HRMSRegister.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Dashboard.resources
