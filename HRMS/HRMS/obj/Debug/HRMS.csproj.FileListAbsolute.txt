@@ -11,3 +11,10 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.pdb
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.HRMSLogin.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.HRMSRegister.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Dashboard.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\Interop.AcroPDFLib.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\Interop.AcroPDFLib.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.csproj.ResolveComReference.cache
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Forms.CompanyRandR.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.IncidentReport.resources

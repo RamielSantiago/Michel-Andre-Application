@@ -4,9 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Windows.Forms;
-using HRMS.Presenter;
-using HRMS.Resources;
-using HRMS.View;
+using HRMS.Tools;
 
 namespace HRMS
 {
@@ -20,7 +18,7 @@ namespace HRMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HRMSLogin());
+            Application.Run(new HRMSLogin()) ;
         }
     }
 }

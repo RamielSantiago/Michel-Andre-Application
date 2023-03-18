@@ -13,7 +13,8 @@ namespace HRMS.Presenter
     {
         private readonly IUser repo;
         private readonly IRegister view;
-
+        private BindingSource bs;
+        public IEnumerable<UserModel> EmployeeList;
 
         public RegPresenter(IRegister view, IUser repo)
         {
@@ -21,10 +22,17 @@ namespace HRMS.Presenter
             this.repo = repo;
             this.view.Show();
         }
+        private void LoadAllUsers()
+        {
+            EmployeeList = repo.GetAll();
+            bs.DataSource = EmployeeList;
+
+        }
         public void AddUser() {
             var validUser = new UserModel();
             validUser.FirstName = view.FirstName;
             validUser.LastName = view.LastName;
+            validUser.MiddleName = view.MiddleName;
             validUser.MiddleName = view.MiddleName;
             validUser.UserName = view.UserName;
             validUser.Password = view.Password;
@@ -32,6 +40,11 @@ namespace HRMS.Presenter
             validUser.EmployeeID = view.EmployeeID;
             validUser.AccessRights = view.AccessRights;
             repo.Add(validUser);
+        }
+
+        public void SearchUser(string criteria)
+        {
+
         }
     }
 }
