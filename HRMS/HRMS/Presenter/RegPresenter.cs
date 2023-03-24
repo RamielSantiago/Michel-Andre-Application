@@ -20,6 +20,9 @@ namespace HRMS.Presenter
         {
             this.view = view;
             this.repo = repo;
+            this.bs = new BindingSource();
+            this.view.setEmployeeBS(bs);
+            LoadAllUsers();
             this.view.Show();
         }
         private void LoadAllUsers()
@@ -40,11 +43,31 @@ namespace HRMS.Presenter
             validUser.EmployeeID = view.EmployeeID;
             validUser.AccessRights = view.AccessRights;
             repo.Add(validUser);
+            LoadAllUsers();
         }
 
-        public void SearchUser(string criteria)
+        public int SearchUser(string criteria, string query)
         {
-
+            EmployeeList = repo.SearchUsersByValue(criteria, query);
+            if (!EmployeeList.Any())
+            {
+                LoadAllUsers();
+                return -1;
+            } else
+            {
+                bs.DataSource = EmployeeList;
+                return 1;
+            }
+        }
+        public void UpdateUser(UserModel update)
+        {
+            repo.Update(update);
+            LoadAllUsers();
+        }
+        public void DeleteUser(string criteria, string query)
+        {
+            repo.Delete(criteria, query);
+            LoadAllUsers();
         }
     }
 }
