@@ -10,8 +10,8 @@ namespace HRMS.Model
     {
         void Add(IncidentReportModel user);
         void Update(IncidentReportModel user);
-        void Delete(int id);
-        bool SearchIncident(int IncidentID);
-        IEnumerable<UserModel> GetAll();
+        void Delete(string criteria, string query);
+        IEnumerable<IncidentReportModel> SearchIncident(string criteria, string query);
+        IEnumerable<IncidentReportModel> GetAll();
     }
 }
