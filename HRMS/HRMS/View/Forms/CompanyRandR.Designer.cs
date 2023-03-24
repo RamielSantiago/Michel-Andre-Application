@@ -1,13 +1,13 @@
-﻿namespace HRMS.View.Forms
+﻿namespace HRMS
 {
     partial class CompanyRandR
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -36,22 +36,19 @@
             // axAcroPDF1
             // 
             this.axAcroPDF1.Enabled = true;
-            this.axAcroPDF1.Location = new System.Drawing.Point(31, 12);
+            this.axAcroPDF1.Location = new System.Drawing.Point(58, 21);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(1238, 822);
-            this.axAcroPDF1.TabIndex = 0;
+            this.axAcroPDF1.Size = new System.Drawing.Size(710, 744);
+            this.axAcroPDF1.TabIndex = 1;
             // 
             // CompanyRandR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 840);
             this.Controls.Add(this.axAcroPDF1);
             this.Name = "CompanyRandR";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CompanyRandR";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Size = new System.Drawing.Size(1232, 808);
             this.Load += new System.EventHandler(this.CompanyRandR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);

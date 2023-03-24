@@ -1,5 +1,4 @@
-﻿using HRMS.View.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HRMS.View;
+using HRMS.Tools;
 
 namespace HRMS.View
 {
     public partial class Dashboard : Form
     {
-        private IncidentReport IR;
-        private CompanyRandR crr;
         private Panel activityPanel;
         private HRMSLogin loginform;
-        private HRMSRegister employee;
         public Dashboard(string Username, int AccessLevel, HRMSLogin loginform)
         {
             this.loginform = loginform;
@@ -26,45 +24,8 @@ namespace HRMS.View
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            activityPanel = ActivityPanel;  //Stores local reference to Dashboard Panel
+            activityPanel = mainpanel; ;  //Stores local reference to Dashboard Panel
 
-            IR = new IncidentReport(); // Stores local reference to Incident Report
-            employee = new HRMSRegister(this);
-            crr = new CompanyRandR(); // Stores local reference to CompanyRandR 
-            crr.FormBorderStyle = FormBorderStyle.Fixed3D;
-        }
-
-        private void Logout_Click(object sender, EventArgs e)
-        {
-            loginform.Show();
-            this.Close();
-        }
-
-        private void Incidents_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RuleButton_Click(object sender, EventArgs e)
-        {
-            IR.Hide(); //Hides Incident Reports
-            employee.Hide();
-            crr.TopLevel = false;
-            activityPanel.Controls.Add(crr);
-            crr.Dock = DockStyle.Fill;
-            crr.Show();
-            
-        }
-
-        private void Incidents_Click_1(object sender, EventArgs e)
-        {
-            crr.Hide();
-            employee.Hide();
-            IR.FormBorderStyle = FormBorderStyle.None; //Form Border; Cosmetic Only
-            IR.TopLevel = false;
-            crr.Dock = DockStyle.Fill;
-            activityPanel.Controls.Add(IR);
-            IR.Show();
         }
 
         private void Company_Click(object sender, EventArgs e)
@@ -72,14 +33,52 @@ namespace HRMS.View
 
         }
 
-        private void employeeButton_Click(object sender, EventArgs e)
+        private void employeeButton_Click_1(object sender, EventArgs e)
         {
-            crr.Hide();
-            IR.Hide();
-            employee.FormBorderStyle = FormBorderStyle.None; //Form Border; Cosmetic Only
-            employee.TopLevel = false;
-            activityPanel.Controls.Add(employee);
-            employee.Show();
+            if (!activityPanel.Controls.Contains(Directory.Register))
+            {
+                activityPanel.Controls.Add(Directory.Register);
+                Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.Register.BringToFront();
+            }
+        }
+
+        private void RuleButton_Click(object sender, EventArgs e)
+        {
+            if (!activityPanel.Controls.Contains(Directory.company))
+            {
+                activityPanel.Controls.Add(Directory.company);
+                Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.company.BringToFront();
+            }
+        }
+
+        private void Incidents_Click(object sender, EventArgs e)
+        {
+            if (!activityPanel.Controls.Contains(Directory.report))
+            {
+                activityPanel.Controls.Add(Directory.report);
+                Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.report.BringToFront();
+            }
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            loginform.Show();
+            this.Close();
         }
     }
 }

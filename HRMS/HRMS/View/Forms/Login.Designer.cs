@@ -42,10 +42,10 @@
             // 
             this.LoginTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoginTitle.AutoSize = true;
-            this.LoginTitle.Font = new System.Drawing.Font("Arial", 65F);
-            this.LoginTitle.Location = new System.Drawing.Point(503, 45);
+            this.LoginTitle.Font = new System.Drawing.Font("Arial", 50F);
+            this.LoginTitle.Location = new System.Drawing.Point(552, 57);
             this.LoginTitle.Name = "LoginTitle";
-            this.LoginTitle.Size = new System.Drawing.Size(320, 122);
+            this.LoginTitle.Size = new System.Drawing.Size(247, 94);
             this.LoginTitle.TabIndex = 0;
             this.LoginTitle.Text = "Login";
             this.LoginTitle.Click += new System.EventHandler(this.LoginTitle_Click);
@@ -55,7 +55,7 @@
             this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.username.Font = new System.Drawing.Font("Arial", 14F);
-            this.username.Location = new System.Drawing.Point(383, 239);
+            this.username.Location = new System.Drawing.Point(427, 240);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(500, 34);
             this.username.TabIndex = 5;
@@ -65,7 +65,7 @@
             this.logpass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.logpass.Font = new System.Drawing.Font("Arial", 14F);
-            this.logpass.Location = new System.Drawing.Point(383, 403);
+            this.logpass.Location = new System.Drawing.Point(427, 404);
             this.logpass.Name = "logpass";
             this.logpass.PasswordChar = '*';
             this.logpass.Size = new System.Drawing.Size(500, 34);
@@ -87,7 +87,7 @@
             this.usernamelabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernamelabel.AutoSize = true;
             this.usernamelabel.Font = new System.Drawing.Font("Arial", 18F);
-            this.usernamelabel.Location = new System.Drawing.Point(387, 192);
+            this.usernamelabel.Location = new System.Drawing.Point(431, 193);
             this.usernamelabel.Name = "usernamelabel";
             this.usernamelabel.Size = new System.Drawing.Size(152, 35);
             this.usernamelabel.TabIndex = 8;
@@ -98,7 +98,7 @@
             this.passwordlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordlabel.AutoSize = true;
             this.passwordlabel.Font = new System.Drawing.Font("Arial", 18F);
-            this.passwordlabel.Location = new System.Drawing.Point(387, 352);
+            this.passwordlabel.Location = new System.Drawing.Point(431, 353);
             this.passwordlabel.Name = "passwordlabel";
             this.passwordlabel.Size = new System.Drawing.Size(145, 35);
             this.passwordlabel.TabIndex = 9;
@@ -110,7 +110,7 @@
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.loginButton.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(539, 491);
+            this.loginButton.Location = new System.Drawing.Point(568, 491);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(249, 67);
             this.loginButton.TabIndex = 10;
@@ -124,7 +124,7 @@
             this.logErrorMsg.BackColor = System.Drawing.SystemColors.ControlLight;
             this.logErrorMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.logErrorMsg.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.logErrorMsg.Location = new System.Drawing.Point(369, 576);
+            this.logErrorMsg.Location = new System.Drawing.Point(413, 577);
             this.logErrorMsg.Multiline = true;
             this.logErrorMsg.Name = "logErrorMsg";
             this.logErrorMsg.Size = new System.Drawing.Size(562, 109);
@@ -149,7 +149,6 @@
             this.Name = "HRMSLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Human Resource Management System";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

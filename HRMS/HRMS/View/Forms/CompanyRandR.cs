@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HRMS.View.Forms
+namespace HRMS
 {
-    public partial class CompanyRandR : Form
+    public partial class CompanyRandR : UserControl
     {
         public CompanyRandR()
         {

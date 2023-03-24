@@ -48,6 +48,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Forms\DeleteReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\DeleteReport.Designer.cs">
+      <DependentUpon>DeleteReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\UpdateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\UpdateReport.Designer.cs">
+      <DependentUpon>UpdateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\IncidentReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\IncidentReport.Designer.cs">
+      <DependentUpon>IncidentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\CompanyRandR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\CompanyRandR.Designer.cs">
+      <DependentUpon>CompanyRandR.cs</DependentUpon>
+    </Compile>
     <Compile Include="HRMSDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,6 +93,15 @@
     <Compile Include="Model\DB Models\IncidentReportModel.cs" />
     <Compile Include="Model\DB Models\UserModel.cs" />
     <Compile Include="Model\Model Interfaces\IUser.cs" />
+    <Compile Include="Tools\Directory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\IncidentPresenter.cs" />
     <Compile Include="Presenter\LogPresenter.cs" />
     <Compile Include="Presenter\RegPresenter.cs" />
@@ -65,12 +110,6 @@
     <Compile Include="Resources\UserDBCRUD.cs" />
     <Compile Include="Tools\Encrypt.cs" />
     <Compile Include="View\Adapters\DashboardAdapter.cs" />
-    <Compile Include="View\Forms\CompanyRandR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\CompanyRandR.Designer.cs">
-      <DependentUpon>CompanyRandR.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,20 +118,8 @@
     </Compile>
     <Compile Include="View\Interfaces\iIncident.cs" />
     <Compile Include="View\Interfaces\ILogin.cs" />
-    <Compile Include="View\Forms\IncidentReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\IncidentReport.Designer.cs">
-      <DependentUpon>IncidentReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Interfaces\IRegister.cs" />
     <Compile Include="View\Adapters\Log-RegAdapter.cs" />
-    <Compile Include="View\Forms\Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,17 +128,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\Forms\CompanyRandR.resx">
-      <DependentUpon>CompanyRandR.cs</DependentUpon>
+    <EmbeddedResource Include="Tools\Directory.resx">
+      <DependentUpon>Directory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\DeleteReport.resx">
+      <DependentUpon>DeleteReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\UpdateReport.resx">
+      <DependentUpon>UpdateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\IncidentReport.resx">
       <DependentUpon>IncidentReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\CompanyRandR.resx">
+      <DependentUpon>CompanyRandR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

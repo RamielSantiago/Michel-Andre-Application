@@ -2,56 +2,66 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 using HRMS.View;
+
 namespace HRMS.Tools
 {
-    public class Directory
+    public partial class Directory : UserControl
     {
-        private static HRMSLogin logForm;
-        private static HRMSRegister regForm;
-        public static HRMSLogin login
+        private static HRMSRegister regInstance;
+        private static CompanyRandR rules;
+        private static IncidentReport IR;
+        public static HRMSRegister Register
         {
             get
             {
-                if (logForm == null)
+                if (regInstance == null)
                 {
-                    logForm = new HRMSLogin();
+                    regInstance = new HRMSRegister();
                 }
-                return logForm;
+                return regInstance;
             }
         }
-        public static HRMSRegister register
+        public static CompanyRandR company
         {
             get
             {
-                if (regForm == null)
+                if (rules == null)
                 {
-                    regForm = new HRMSRegister(logForm);
+                    rules = new CompanyRandR();
                 }
-                return regForm;
+                return rules ;
+            }
+        }
+        public static IncidentReport report
+        {
+            get
+            {
+                if(IR == null)
+                {
+                    IR = new IncidentReport();
+                }
+                return IR;
             }
         }
 
-        public static void ShowLoginForm()
+        private void InitializeComponent()
         {
-            logForm.Show();
+            this.SuspendLayout();
+            // 
+            // Directory
+            // 
+            this.Name = "Directory";
+            this.Load += new System.EventHandler(this.Directory_Load);
+            this.ResumeLayout(false);
+
         }
 
-        public  void HideLoginForm()
+        private void Directory_Load(object sender, EventArgs e)
         {
-            logForm.Hide();
-        }
 
-        public void ShowRegisterForm()
-        {
-            regForm.Show();
-        }
-
-        public void HideRegisterForm()
-        {
-            regForm.Hide();
         }
     }
 }

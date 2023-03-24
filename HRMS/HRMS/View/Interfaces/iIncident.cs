@@ -14,6 +14,8 @@ namespace HRMS.View
         DateTime DatePosted { get; set; }
         string EmployeesInvolved { get; set; }
         string TypeOfIncident { get; set; }
+        string ReportedBy { get; set; }
+        int ReportersID { get; set; }
         string Specifics { get; set; }
         string Instigator { get; set; }
         string Solution { get; set; }

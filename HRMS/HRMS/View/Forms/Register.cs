@@ -1,19 +1,35 @@
-﻿using System;
+﻿using HRMS.View;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
+using HRMS.View.Forms;
 
-namespace HRMS.View
+namespace HRMS
 {
-    public partial class HRMSRegister : Form, IRegister
+    public partial class HRMSRegister : UserControl, IRegister
     {
         private Log_RegAdapter lRA;
-        private Dashboard dash;
-        public HRMSRegister(Dashboard dash)
+        public HRMSRegister()
         {
             InitializeComponent();
-            this.dash= dash;
+            lRA = new Log_RegAdapter(this);
+            regErrorMsg.ReadOnly = true;
+            queryErrorMsg.ReadOnly = true;
+            filter.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
         public int EmployeeID { get { return Convert.ToInt32(eID.Text); } set { eID.Text = value.ToString(); } }// ->
         public int AccessRights { get { return Convert.ToInt32(ALINPUT.Text); } set { ALINPUT.Text = value.ToString(); } }// *
         public string FirstName { get { return fName.Text; } set { fName.Text = value; } }// *
@@ -22,20 +38,13 @@ namespace HRMS.View
         public string Email { get { return email.Text; } set { email.Text = value; } }// *
         public string Password { get { return regpass.Text; } set { regpass.Text = value; } } // *
         public string UserName { get { return username.Text; } set { username.Text = value; } }// * 
-        public string SearchValue { get; set;}// *
+        public string SearchValue { get; set; }// *
         public void setEmployeeBS(BindingSource bs)
         {
-            //employeelist.DataSource = bs;
+            employeelist.DataSource = bs;
         }
-        private void HRMSRegister_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'hRMSDBDataSet.Employees' table. You can move, or remove it, as needed.
-            this.employeesTableAdapter.Fill(this.hRMSDBDataSet.Employees);
-            regErrorMsg.ReadOnly = true;
-            lRA = new Log_RegAdapter(this);//Initializes Presenter and CRUD Operations
-        }//On Form Load
 
-        private void addUserButton_Click_1(object sender, EventArgs e)
+        private void addUserButton_Click(object sender, EventArgs e)
         {
             var passwordRegex = new Regex("^(?=.{8,20})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!_]).*$"); //Min. 1 Special Char., 1 Uppercase, 1 Lowercase, 1 Number, & min. 8 Chars, Max 20
 
@@ -45,12 +54,12 @@ namespace HRMS.View
 
             regErrorMsg.Text = "";//Resets Error Message
 
-            if (string.IsNullOrWhiteSpace(fName.Text) || string.IsNullOrWhiteSpace(mName.Text) || string.IsNullOrWhiteSpace(lName.Text) || string.IsNullOrWhiteSpace(eID.Text) ||
+            if (string.IsNullOrWhiteSpace(fName.Text) || string.IsNullOrWhiteSpace(lName.Text) || string.IsNullOrWhiteSpace(eID.Text) ||
                 string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(regpass.Text) || string.IsNullOrWhiteSpace(regconpass.Text) ||
                 string.IsNullOrWhiteSpace(ALINPUT.Text))
             {
                 valid = false;
-                regErrorMsg.Text = regErrorMsg.Text + "Please fill all fields" + Environment.NewLine;
+                regErrorMsg.Text = regErrorMsg.Text + "Please fill all required fields" + Environment.NewLine;
             }//Check for empty fields
             else
             {
@@ -67,6 +76,11 @@ namespace HRMS.View
                 try
                 {
                     var temp = Convert.ToInt32(ALINPUT.Text);
+                    if (temp > 5 || temp < 1)
+                    {
+                        regErrorMsg.Text = regErrorMsg.Text + "Please choose from the options in the dropdown" + Environment.NewLine;
+                        valid = false;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -80,6 +94,7 @@ namespace HRMS.View
                 }
                 catch (FormatException)
                 {
+                    regErrorMsg.Text = regErrorMsg.Text + "Invalid Email." + Environment.NewLine;
                     valid = false;
                 }
                 if (regpass.Text.Equals(regconpass.Text) == false)
@@ -96,7 +111,7 @@ namespace HRMS.View
             if (valid == true)//Add Employee if true
             {
                 lRA.RP.AddUser();
-                MessageBox.Show("User Registered Successfully", "Human Resource Management System", MessageBoxButtons.OK ,MessageBoxIcon.Information);
+                MessageBox.Show("User Registered Successfully", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             eID.Text = "";
             ALINPUT.Text = "";
@@ -109,5 +124,51 @@ namespace HRMS.View
             regconpass.Text = "";
 
         } //Submit Button w/ Email, Employee ID, Access Level, and Password Validation
+
+        private void query_Click(object sender, EventArgs e)
+        {
+            string specifics = querydetail.Text;
+            bool valid = true;
+            queryErrorMsg.Text = "";
+            if(filter.SelectedIndex == -1|| string.IsNullOrEmpty(specifics))
+            {
+                queryErrorMsg.Text = queryErrorMsg.Text + "Please fill all fields" + Environment.NewLine;
+            }
+            else
+            {
+                if (filter.SelectedItem.ToString().Equals("Employee ID"))
+                {
+                    try
+                    {
+                        Convert.ToInt32(specifics);
+                    }
+                    catch (FormatException)
+                    {
+                        queryErrorMsg.Text = queryErrorMsg.Text + "Employee IDs are numerical." + Environment.NewLine;
+                        valid = false;
+                    }
+                }
+                if(valid == true)
+                {
+                    int searchResult = lRA.RP.SearchUser(filter.SelectedItem.ToString(), specifics);
+                    if(searchResult == -1)
+                    {
+                        queryErrorMsg.Text = queryErrorMsg.Text + "No Results found." + Environment.NewLine;
+                    }
+                }
+            }
+        }
+
+        private void updateregbutton_Click(object sender, EventArgs e)
+        {
+            UpdateUser update = new UpdateUser(lRA);
+            update.ShowDialog();
+        }
+
+        private void deleteregbutton_Click(object sender, EventArgs e)
+        {
+            DeleteUser delete = new DeleteUser(lRA);
+            delete.ShowDialog();
+        }
     }
 }
