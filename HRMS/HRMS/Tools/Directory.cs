@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using HRMS.View;
+using HRMS.View.Forms;
 
 namespace HRMS.Tools
 {
@@ -14,6 +15,8 @@ namespace HRMS.Tools
         private static CompanyRandR rules;
         private static CompanyOrgChart orgchart;
         private static IncidentReport IR;
+        private static MemorandumCircular memoc;
+
         public static HRMSRegister Register
         {
             get
@@ -58,6 +61,18 @@ namespace HRMS.Tools
                     IR = new IncidentReport();
                 }
                 return IR;
+            }
+        }
+
+        public static MemorandumCircular memo
+        {
+            get
+            {
+                if (memoc == null)
+                {
+                    memoc = new MemorandumCircular();
+                }
+                return memoc;
             }
         }
 
