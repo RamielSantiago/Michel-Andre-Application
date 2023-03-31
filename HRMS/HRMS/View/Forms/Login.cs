@@ -57,7 +57,7 @@ namespace HRMS
 
                 if (verify > 1)
                 {
-                    Dashboard dash = new Dashboard(storedUsername, verify, this);// 1 Is a placeholder. Will try to see if I can retrieve access level and username\
+                    Dashboard dash = new Dashboard(/*storedUsername, verify, this*/);// 1 Is a placeholder. Will try to see if I can retrieve access level and username\
                     this.Hide();
                     dash.Show();
                 } else

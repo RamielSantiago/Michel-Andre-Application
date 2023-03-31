@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace HRMS
 {
-    public partial class CompanyRandR : UserControl
+    public partial class CompanyOrgChart : UserControl
     {
-        public CompanyRandR()
-        {      
+        public CompanyOrgChart()
+        {     
             InitializeComponent();
         }
 
-        private void CompanyRandR_Load(object sender, EventArgs e)
+        private void CompanyOrgChart_Load(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true, Filter = "PDF|*.pdf" })
             {
-                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\Rules";
+                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\OrgChart";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     axAcroPDF1.Dock = DockStyle.Fill;
@@ -33,7 +33,7 @@ namespace HRMS
             }
         }
 
-        private void CompanyRandR_Closing(object sender, CancelEventArgs e)
+        private void CompanyOrgChart_Closing(object sender, CancelEventArgs e)
         {
             this.axAcroPDF1.Dispose();
             this.axAcroPDF1 = null;

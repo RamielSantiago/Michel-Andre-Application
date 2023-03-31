@@ -14,6 +14,8 @@ namespace HRMS.View
     {
         public Dashboard(string Username, int AccessLevel)
         {
+            
+            
             InitializeComponent();
         }
 
@@ -31,5 +33,7 @@ namespace HRMS.View
             this.tableAdapterManager.UpdateAll(this.hRMSDBDataSet);
 
         }
+
+
     }
 }

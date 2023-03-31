@@ -16,5 +16,21 @@ namespace HRMS.View
         {
             InitializeComponent();
         }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewWdw_Click(object sender, EventArgs e)
+        {
+            OrgChartNewWindow oc = new OrgChartNewWindow();
+            oc.Show();
+        }
     }
 }

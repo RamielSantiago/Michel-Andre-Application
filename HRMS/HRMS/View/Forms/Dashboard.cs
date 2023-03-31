@@ -16,9 +16,9 @@ namespace HRMS.View
     {
         private Panel activityPanel;
         private HRMSLogin loginform;
-        public Dashboard(string Username, int AccessLevel, HRMSLogin loginform)
+        public Dashboard(/*string Username, int AccessLevel, HRMSLogin loginform*/)
         {
-            this.loginform = loginform;
+            //this.loginform = loginform;
             InitializeComponent();
         }
 
@@ -58,6 +58,20 @@ namespace HRMS.View
             else
             {
                 Directory.company.BringToFront();
+            }
+        }
+
+        private void Orgchart_Click(object sender, EventArgs e)
+        {
+            if (!activityPanel.Controls.Contains(Directory.orgChart))
+            {
+                activityPanel.Controls.Add(Directory.orgChart);
+                Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.Register.BringToFront();
             }
         }
 

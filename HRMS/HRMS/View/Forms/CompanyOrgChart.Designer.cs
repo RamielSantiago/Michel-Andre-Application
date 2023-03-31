@@ -1,6 +1,6 @@
 ﻿namespace HRMS
 {
-    partial class CompanyRandR
+    partial class CompanyOrgChart
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyRandR));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyOrgChart));
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
@@ -44,16 +44,16 @@
             this.axAcroPDF1.Size = new System.Drawing.Size(800, 590);
             this.axAcroPDF1.TabIndex = 1;
             // 
-            // CompanyRandR
+            // CompanyOrgChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.axAcroPDF1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CompanyRandR";
+            this.Name = "CompanyOrgChart";
             this.Size = new System.Drawing.Size(1164, 683);
-            this.Load += new System.EventHandler(this.CompanyRandR_Load);
+            this.Load += new System.EventHandler(this.CompanyOrgChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 

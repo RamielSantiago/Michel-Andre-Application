@@ -44,10 +44,10 @@ namespace HRMS.View
             // 
             // orgChartView1
             // 
-            this.orgChartView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.orgChartView1.Location = new System.Drawing.Point(302, -3);
+            this.orgChartView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.orgChartView1.Location = new System.Drawing.Point(308, -3);
             this.orgChartView1.Name = "orgChartView1";
-            this.orgChartView1.Size = new System.Drawing.Size(967, 711);
+            this.orgChartView1.Size = new System.Drawing.Size(958, 711);
             this.orgChartView1.TabIndex = 1;
             // 
             // Test

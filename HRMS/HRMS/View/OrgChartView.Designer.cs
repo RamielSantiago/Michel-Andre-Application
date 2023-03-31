@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrgChartView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ZoomVal = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,10 +40,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.NewWindiw = new System.Windows.Forms.ToolStripTextBox();
+            this.NewWdw = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,32 +56,29 @@
             this.toolStripComboBox1,
             this.toolStripSeparator3,
             this.toolStripSeparator4,
-            this.NewWindiw});
+            this.NewWdw});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(908, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripComboBox1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 25);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 25);
+            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
-            // toolStripButton2
+            // toolStripSeparator3
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 25);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // ZoomVal
             // 
@@ -125,6 +122,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // toolStripButton3
             // 
@@ -133,7 +131,7 @@
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Text = "Zoom Out";
             // 
             // toolStripButton4
             // 
@@ -142,33 +140,39 @@
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Text = "Zoom In";
             // 
-            // toolStripComboBox1
+            // NewWdw
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 25);
+            this.NewWdw.BackColor = System.Drawing.Color.Transparent;
+            this.NewWdw.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NewWdw.BackgroundImage")));
+            this.NewWdw.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NewWdw.Image = ((System.Drawing.Image)(resources.GetObject("NewWdw.Image")));
+            this.NewWdw.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NewWdw.Name = "NewWdw";
+            this.NewWdw.Size = new System.Drawing.Size(23, 22);
+            this.NewWdw.Text = "Open in New Window";
+            this.NewWdw.Click += new System.EventHandler(this.NewWdw_Click);
             // 
-            // toolStripSeparator3
+            // toolStripButton1
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 25);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // toolStripSeparator4
+            // toolStripButton2
             // 
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // NewWindiw
-            // 
-            this.NewWindiw.BackColor = System.Drawing.Color.LightGray;
-            this.NewWindiw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NewWindiw.Font = new System.Drawing.Font("Segoe UI", 6.5F);
-            this.NewWindiw.Name = "NewWindiw";
-            this.NewWindiw.Size = new System.Drawing.Size(100, 25);
-            this.NewWindiw.Text = "Open in New Window";
-            this.NewWindiw.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 25);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // OrgChartView
             // 
@@ -202,6 +206,6 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripTextBox NewWindiw;
+        private System.Windows.Forms.ToolStripButton NewWdw;
     }
 }
