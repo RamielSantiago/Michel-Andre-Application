@@ -12,8 +12,6 @@ namespace HRMS
 {
     public partial class CompanyRandR : UserControl
     {
-        public string fileName = "\\HRMS\\HRMS\\CompanyRules.pdf";
-        
         public CompanyRandR()
         {      
             InitializeComponent();
@@ -21,11 +19,18 @@ namespace HRMS
 
         private void CompanyRandR_Load(object sender, EventArgs e)
         {
-            axAcroPDF1.Dock = DockStyle.Fill;
-            axAcroPDF1.setView("FitH");
-            axAcroPDF1.src = fileName;
-            axAcroPDF1.setShowToolbar(true);
-            axAcroPDF1.setShowScrollbars(true);
+            using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true, Filter = "PDF|*.pdf" })
+            {
+                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\Rules";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    axAcroPDF1.Dock = DockStyle.Fill;
+                    axAcroPDF1.setView("FitH");
+                    axAcroPDF1.src = ofd.FileName;
+                    axAcroPDF1.setShowToolbar(true);
+                    axAcroPDF1.setShowScrollbars(true);
+                }
+            }
         }
 
         private void CompanyRandR_Closing(object sender, CancelEventArgs e)

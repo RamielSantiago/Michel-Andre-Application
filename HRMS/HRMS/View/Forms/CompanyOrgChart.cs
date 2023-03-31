@@ -12,8 +12,6 @@ namespace HRMS
 {
     public partial class CompanyOrgChart : UserControl
     {
-        public string fileName = "\\HRMS\\HRMS\\CASTILLO_flowchart.pdf";
-        
         public CompanyOrgChart()
         {     
             InitializeComponent();
@@ -21,10 +19,18 @@ namespace HRMS
 
         private void CompanyOrgChart_Load(object sender, EventArgs e)
         {
-            axAcroPDF1.Dock = DockStyle.Fill;
-            axAcroPDF1.src = fileName;
-            axAcroPDF1.setShowToolbar(true);
-            axAcroPDF1.setShowScrollbars(true);
+            using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true, Filter = "PDF|*.pdf" })
+            {
+                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\OrgChart";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    axAcroPDF1.Dock = DockStyle.Fill;
+                    axAcroPDF1.setView("FitH");
+                    axAcroPDF1.src = ofd.FileName;
+                    axAcroPDF1.setShowToolbar(true);
+                    axAcroPDF1.setShowScrollbars(true);
+                }
+            }
         }
 
         private void CompanyOrgChart_Closing(object sender, CancelEventArgs e)
