@@ -52,7 +52,7 @@
             this.Controls.Add(this.axAcroPDF1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CompanyRandR";
-            this.Size = new System.Drawing.Size(1200, 683);
+            this.Size = new System.Drawing.Size(1164, 683);
             this.Load += new System.EventHandler(this.CompanyRandR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);

@@ -68,7 +68,7 @@
             this.SideBar.Location = new System.Drawing.Point(2, 3);
             this.SideBar.Margin = new System.Windows.Forms.Padding(2);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(219, 645);
+            this.SideBar.Size = new System.Drawing.Size(219, 635);
             this.SideBar.TabIndex = 3;
             // 
             // logopanel
@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1028, 600);
+            this.ClientSize = new System.Drawing.Size(1028, 590);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.SideBar);
             this.Margin = new System.Windows.Forms.Padding(2);

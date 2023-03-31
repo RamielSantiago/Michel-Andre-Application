@@ -57,7 +57,7 @@ namespace HRMS.View
             }
             else
             {
-                Directory.Register.BringToFront();
+                Directory.company.BringToFront();
             }
         }
 
