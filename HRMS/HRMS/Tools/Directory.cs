@@ -12,6 +12,7 @@ namespace HRMS.Tools
     {
         private static HRMSRegister regInstance;
         private static CompanyRandR rules;
+        private static CompanyOrgChart orgchart;
         private static IncidentReport IR;
         public static HRMSRegister Register
         {
@@ -35,6 +36,19 @@ namespace HRMS.Tools
                 return rules ;
             }
         }
+
+        public static CompanyOrgChart orgChart
+        {
+            get
+            {
+                if (orgchart == null)
+                {
+                    orgchart = new CompanyOrgChart();
+                }
+                return orgchart ;
+            }
+        }
+
         public static IncidentReport report
         {
             get
