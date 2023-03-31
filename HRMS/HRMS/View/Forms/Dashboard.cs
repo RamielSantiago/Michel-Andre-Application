@@ -94,5 +94,19 @@ namespace HRMS.View
             loginform.Show();
             this.Close();
         }
+
+        private void memorandum_Click(object sender, EventArgs e)
+        {
+            if (!activityPanel.Controls.Contains(Directory.memo))
+            {
+                activityPanel.Controls.Add(Directory.memo);
+                Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.Register.BringToFront();
+            }
+        }
     }
 }
