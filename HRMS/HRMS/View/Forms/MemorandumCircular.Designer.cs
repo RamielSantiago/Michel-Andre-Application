@@ -37,20 +37,22 @@
             // 
             this.axAcroPDF1.Enabled = true;
             this.axAcroPDF1.Location = new System.Drawing.Point(5, 2);
-            this.axAcroPDF1.Margin = new System.Windows.Forms.Padding(2);
-            this.axAcroPDF1.MaximumSize = new System.Drawing.Size(1200, 750);
+            this.axAcroPDF1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.axAcroPDF1.MaximumSize = new System.Drawing.Size(1600, 923);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
             this.axAcroPDF1.Size = new System.Drawing.Size(800, 590);
             this.axAcroPDF1.TabIndex = 2;
             // 
-            // UserControl1
+            // MemorandumCircular
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.axAcroPDF1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1164, 683);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MemorandumCircular";
+            this.Size = new System.Drawing.Size(1552, 841);
+            this.Load += new System.EventHandler(this.MemorandumCircular_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 
