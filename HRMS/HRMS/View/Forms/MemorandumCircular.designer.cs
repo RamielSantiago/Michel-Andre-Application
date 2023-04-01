@@ -1,6 +1,6 @@
 ﻿namespace HRMS
 {
-    partial class CompanyRandR
+    partial class MemorandumCircular
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyRandR));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemorandumCircular));
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
@@ -36,20 +36,23 @@
             // axAcroPDF1
             // 
             this.axAcroPDF1.Enabled = true;
-            this.axAcroPDF1.Location = new System.Drawing.Point(58, 21);
+            this.axAcroPDF1.Location = new System.Drawing.Point(5, 2);
+            this.axAcroPDF1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.axAcroPDF1.MaximumSize = new System.Drawing.Size(1600, 923);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(710, 744);
-            this.axAcroPDF1.TabIndex = 1;
+            this.axAcroPDF1.Size = new System.Drawing.Size(800, 590);
+            this.axAcroPDF1.TabIndex = 2;
             // 
-            // CompanyRandR
+            // MemorandumCircular
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.axAcroPDF1);
-            this.Name = "CompanyRandR";
-            this.Size = new System.Drawing.Size(1232, 808);
-            this.Load += new System.EventHandler(this.CompanyRandR_Load);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MemorandumCircular";
+            this.Size = new System.Drawing.Size(1552, 841);
+            this.Load += new System.EventHandler(this.MemorandumCircular_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 

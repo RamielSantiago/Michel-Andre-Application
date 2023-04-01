@@ -16,9 +16,9 @@ namespace HRMS.View
     {
         private Panel activityPanel;
         private HRMSLogin loginform;
-        public Dashboard(/*string Username, int AccessLevel, HRMSLogin loginform*/)
+        public Dashboard(string Username, int AccessLevel, HRMSLogin loginform)
         {
-            //this.loginform = loginform;
+            this.loginform = loginform;
             InitializeComponent();
         }
 
@@ -39,6 +39,7 @@ namespace HRMS.View
             {
                 activityPanel.Controls.Add(Directory.Register);
                 Directory.Register.Dock = DockStyle.Fill;
+                Directory.Register.BringToFront();
                 Directory.Register.BringToFront();
             }
             else
@@ -61,20 +62,6 @@ namespace HRMS.View
             }
         }
 
-        private void Orgchart_Click(object sender, EventArgs e)
-        {
-            if (!activityPanel.Controls.Contains(Directory.orgChart))
-            {
-                activityPanel.Controls.Add(Directory.orgChart);
-                Directory.Register.Dock = DockStyle.Fill;
-                Directory.Register.BringToFront();
-            }
-            else
-            {
-                Directory.Register.BringToFront();
-            }
-        }
-
         private void Incidents_Click(object sender, EventArgs e)
         {
             if (!activityPanel.Controls.Contains(Directory.report))
@@ -92,20 +79,37 @@ namespace HRMS.View
         private void Logout_Click(object sender, EventArgs e)
         {
             loginform.Show();
+            Directory.coc = null;
+            Directory.company= null;
+            Directory.mc= null;
             this.Close();
         }
 
-        private void memorandum_Click(object sender, EventArgs e)
+        private void orgchart_Click(object sender, EventArgs e)
         {
-            if (!activityPanel.Controls.Contains(Directory.memo))
+            if (!activityPanel.Controls.Contains(Directory.coc))
             {
-                activityPanel.Controls.Add(Directory.memo);
+                activityPanel.Controls.Add(Directory.coc);
                 Directory.Register.Dock = DockStyle.Fill;
                 Directory.Register.BringToFront();
             }
             else
             {
+                Directory.coc.BringToFront();
+            }
+        }
+
+        private void memorandum_Click(object sender, EventArgs e)
+        {
+            if (!activityPanel.Controls.Contains(Directory.mc))
+            {
+                activityPanel.Controls.Add(Directory.mc);
+                Directory.Register.Dock = DockStyle.Fill;
                 Directory.Register.BringToFront();
+            }
+            else
+            {
+                Directory.mc.BringToFront();
             }
         }
     }

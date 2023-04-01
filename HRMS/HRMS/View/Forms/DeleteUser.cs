@@ -46,7 +46,16 @@ namespace HRMS.View.Forms
                     try
                     {
                         int test = Convert.ToInt32(deletequery.Text);
-                        lRA.RP.DeleteUser(deletecriteria.SelectedItem.ToString(), deletequery.Text);
+                        if(test > 0)
+                        {
+                            lRA.RP.DeleteUser(deletecriteria.SelectedItem.ToString(), deletequery.Text);
+                        } else if (test == 0)
+                        {
+                            delErrorMsg.Text = delErrorMsg.Text + "Default User (ID 0) Cannot be deleted" + Environment.NewLine;
+                        } else
+                        {
+                            delErrorMsg.Text = delErrorMsg.Text + "Employee IDs start at 1" + Environment.NewLine;
+                        }
                     }
                     catch (FormatException)
                     {

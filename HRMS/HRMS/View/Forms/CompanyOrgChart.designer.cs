@@ -1,6 +1,6 @@
 ﻿namespace HRMS
 {
-    partial class CompanyRandR
+    partial class CompanyOrgChart
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyRandR));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyOrgChart));
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
@@ -36,20 +36,24 @@
             // axAcroPDF1
             // 
             this.axAcroPDF1.Enabled = true;
-            this.axAcroPDF1.Location = new System.Drawing.Point(58, 21);
+            this.axAcroPDF1.Location = new System.Drawing.Point(5, 2);
+            this.axAcroPDF1.Margin = new System.Windows.Forms.Padding(2);
+            this.axAcroPDF1.MaximumSize = new System.Drawing.Size(1200, 750);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(710, 744);
+            this.axAcroPDF1.Size = new System.Drawing.Size(800, 590);
             this.axAcroPDF1.TabIndex = 1;
             // 
-            // CompanyRandR
+            // CompanyOrgChart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.axAcroPDF1);
-            this.Name = "CompanyRandR";
-            this.Size = new System.Drawing.Size(1232, 808);
-            this.Load += new System.EventHandler(this.CompanyRandR_Load);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "CompanyOrgChart";
+            this.Size = new System.Drawing.Size(1164, 683);
+            this.Load += new System.EventHandler(this.CompanyOrgChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 

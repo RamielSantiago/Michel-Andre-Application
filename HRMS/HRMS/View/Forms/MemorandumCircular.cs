@@ -21,7 +21,7 @@ namespace HRMS
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true, Filter = "PDF|*.pdf" })
             {
-                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\Memo Circulars";
+                ofd.InitialDirectory = "\\Resources\\Docus\\Memo Circulars\\";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     axAcroPDF1.Dock = DockStyle.Fill;
@@ -31,12 +31,6 @@ namespace HRMS
                     axAcroPDF1.setShowScrollbars(true);
                 }
             }
-        }
-
-        private void MemorandumCircular_Closing(object sender, CancelEventArgs e)
-        {
-            this.axAcroPDF1.Dispose();
-            this.axAcroPDF1 = null;
         }
     }
 }

@@ -39,7 +39,9 @@
             this.feedback = new System.Windows.Forms.Button();
             this.Incidents = new System.Windows.Forms.Button();
             this.orgchart = new System.Windows.Forms.Button();
+            this.recruit = new System.Windows.Forms.Button();
             this.memorandum = new System.Windows.Forms.Button();
+            this.employeeButton = new System.Windows.Forms.Button();
             this.Logout = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.SideBar.SuspendLayout();
@@ -60,33 +62,32 @@
             this.SideBar.Controls.Add(this.feedback);
             this.SideBar.Controls.Add(this.Incidents);
             this.SideBar.Controls.Add(this.orgchart);
+            this.SideBar.Controls.Add(this.recruit);
             this.SideBar.Controls.Add(this.memorandum);
+            this.SideBar.Controls.Add(this.employeeButton);
             this.SideBar.Controls.Add(this.Logout);
             this.SideBar.Font = new System.Drawing.Font("Arial", 12F);
-            this.SideBar.Location = new System.Drawing.Point(2, 3);
-            this.SideBar.Margin = new System.Windows.Forms.Padding(2);
+            this.SideBar.Location = new System.Drawing.Point(2, 4);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(219, 600);
+            this.SideBar.Size = new System.Drawing.Size(292, 805);
             this.SideBar.TabIndex = 3;
             // 
             // logopanel
             // 
             this.logopanel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.logopanel.Controls.Add(this.Company);
-            this.logopanel.Location = new System.Drawing.Point(2, 2);
-            this.logopanel.Margin = new System.Windows.Forms.Padding(2);
+            this.logopanel.Location = new System.Drawing.Point(3, 3);
             this.logopanel.Name = "logopanel";
-            this.logopanel.Size = new System.Drawing.Size(217, 85);
+            this.logopanel.Size = new System.Drawing.Size(289, 105);
             this.logopanel.TabIndex = 4;
             // 
             // Company
             // 
             this.Company.AutoSize = true;
             this.Company.Font = new System.Drawing.Font("Bernard MT Condensed", 30F, System.Drawing.FontStyle.Italic);
-            this.Company.Location = new System.Drawing.Point(2, 20);
-            this.Company.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Company.Location = new System.Drawing.Point(3, 24);
             this.Company.Name = "Company";
-            this.Company.Size = new System.Drawing.Size(217, 47);
+            this.Company.Size = new System.Drawing.Size(269, 58);
             this.Company.TabIndex = 3;
             this.Company.Text = "Michel Andre";
             this.Company.Click += new System.EventHandler(this.Company_Click);
@@ -97,10 +98,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.appraisal.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.appraisal.Font = new System.Drawing.Font("Arial", 12F);
-            this.appraisal.Location = new System.Drawing.Point(2, 91);
-            this.appraisal.Margin = new System.Windows.Forms.Padding(2);
+            this.appraisal.Location = new System.Drawing.Point(3, 114);
             this.appraisal.Name = "appraisal";
-            this.appraisal.Size = new System.Drawing.Size(211, 41);
+            this.appraisal.Size = new System.Drawing.Size(281, 50);
             this.appraisal.TabIndex = 10;
             this.appraisal.Text = "Performance Appraisal";
             this.appraisal.UseVisualStyleBackColor = false;
@@ -111,10 +111,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.personnel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.personnel.Font = new System.Drawing.Font("Arial", 12F);
-            this.personnel.Location = new System.Drawing.Point(2, 136);
-            this.personnel.Margin = new System.Windows.Forms.Padding(2);
+            this.personnel.Location = new System.Drawing.Point(3, 170);
             this.personnel.Name = "personnel";
-            this.personnel.Size = new System.Drawing.Size(211, 41);
+            this.personnel.Size = new System.Drawing.Size(281, 50);
             this.personnel.TabIndex = 15;
             this.personnel.Text = "Personnel Action";
             this.personnel.UseVisualStyleBackColor = false;
@@ -125,10 +124,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.repmanagement.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.repmanagement.Font = new System.Drawing.Font("Arial", 12F);
-            this.repmanagement.Location = new System.Drawing.Point(2, 181);
-            this.repmanagement.Margin = new System.Windows.Forms.Padding(2);
+            this.repmanagement.Location = new System.Drawing.Point(3, 226);
             this.repmanagement.Name = "repmanagement";
-            this.repmanagement.Size = new System.Drawing.Size(211, 41);
+            this.repmanagement.Size = new System.Drawing.Size(281, 50);
             this.repmanagement.TabIndex = 14;
             this.repmanagement.Text = "Report Management";
             this.repmanagement.UseVisualStyleBackColor = false;
@@ -139,10 +137,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.jobdesc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.jobdesc.Font = new System.Drawing.Font("Arial", 12F);
-            this.jobdesc.Location = new System.Drawing.Point(2, 226);
-            this.jobdesc.Margin = new System.Windows.Forms.Padding(2);
+            this.jobdesc.Location = new System.Drawing.Point(3, 282);
             this.jobdesc.Name = "jobdesc";
-            this.jobdesc.Size = new System.Drawing.Size(211, 41);
+            this.jobdesc.Size = new System.Drawing.Size(281, 50);
             this.jobdesc.TabIndex = 16;
             this.jobdesc.Text = "Job Description";
             this.jobdesc.UseVisualStyleBackColor = false;
@@ -153,10 +150,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RuleButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.RuleButton.Font = new System.Drawing.Font("Arial", 10F);
-            this.RuleButton.Location = new System.Drawing.Point(2, 271);
-            this.RuleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RuleButton.Location = new System.Drawing.Point(3, 338);
             this.RuleButton.Name = "RuleButton";
-            this.RuleButton.Size = new System.Drawing.Size(211, 41);
+            this.RuleButton.Size = new System.Drawing.Size(281, 50);
             this.RuleButton.TabIndex = 8;
             this.RuleButton.Text = "Company Rules and Regulations";
             this.RuleButton.UseVisualStyleBackColor = false;
@@ -168,10 +164,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.feedback.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.feedback.Font = new System.Drawing.Font("Arial", 12F);
-            this.feedback.Location = new System.Drawing.Point(2, 316);
-            this.feedback.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback.Location = new System.Drawing.Point(3, 394);
             this.feedback.Name = "feedback";
-            this.feedback.Size = new System.Drawing.Size(211, 41);
+            this.feedback.Size = new System.Drawing.Size(281, 50);
             this.feedback.TabIndex = 17;
             this.feedback.Text = "Information Feedback Form";
             this.feedback.UseVisualStyleBackColor = false;
@@ -182,10 +177,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Incidents.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Incidents.Font = new System.Drawing.Font("Arial", 12F);
-            this.Incidents.Location = new System.Drawing.Point(2, 361);
-            this.Incidents.Margin = new System.Windows.Forms.Padding(2);
+            this.Incidents.Location = new System.Drawing.Point(3, 450);
             this.Incidents.Name = "Incidents";
-            this.Incidents.Size = new System.Drawing.Size(211, 41);
+            this.Incidents.Size = new System.Drawing.Size(281, 50);
             this.Incidents.TabIndex = 11;
             this.Incidents.Text = "Incident Reports";
             this.Incidents.UseVisualStyleBackColor = false;
@@ -197,14 +191,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.orgchart.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.orgchart.Font = new System.Drawing.Font("Arial", 12F);
-            this.orgchart.Location = new System.Drawing.Point(2, 406);
-            this.orgchart.Margin = new System.Windows.Forms.Padding(2);
+            this.orgchart.Location = new System.Drawing.Point(3, 506);
             this.orgchart.Name = "orgchart";
-            this.orgchart.Size = new System.Drawing.Size(211, 41);
+            this.orgchart.Size = new System.Drawing.Size(281, 50);
             this.orgchart.TabIndex = 12;
             this.orgchart.Text = "Organizational Chart";
             this.orgchart.UseVisualStyleBackColor = false;
-            this.orgchart.Click += new System.EventHandler(this.Orgchart_Click);
+            this.orgchart.Click += new System.EventHandler(this.orgchart_Click);
+            // 
+            // recruit
+            // 
+            this.recruit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.recruit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.recruit.Font = new System.Drawing.Font("Arial", 12F);
+            this.recruit.Location = new System.Drawing.Point(3, 562);
+            this.recruit.Name = "recruit";
+            this.recruit.Size = new System.Drawing.Size(281, 50);
+            this.recruit.TabIndex = 18;
+            this.recruit.Text = "Recruitment";
+            this.recruit.UseVisualStyleBackColor = false;
             // 
             // memorandum
             // 
@@ -212,24 +218,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.memorandum.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memorandum.Font = new System.Drawing.Font("Arial", 12F);
-            this.memorandum.Location = new System.Drawing.Point(2, 451);
-            this.memorandum.Margin = new System.Windows.Forms.Padding(2);
+            this.memorandum.Location = new System.Drawing.Point(3, 618);
             this.memorandum.Name = "memorandum";
-            this.memorandum.Size = new System.Drawing.Size(211, 41);
+            this.memorandum.Size = new System.Drawing.Size(281, 50);
             this.memorandum.TabIndex = 13;
             this.memorandum.Text = "Memorandum Circulars";
             this.memorandum.UseVisualStyleBackColor = false;
             this.memorandum.Click += new System.EventHandler(this.memorandum_Click);
+            // 
+            // employeeButton
+            // 
+            this.employeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.employeeButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.employeeButton.Font = new System.Drawing.Font("Arial", 12F);
+            this.employeeButton.Location = new System.Drawing.Point(3, 674);
+            this.employeeButton.Name = "employeeButton";
+            this.employeeButton.Size = new System.Drawing.Size(281, 50);
+            this.employeeButton.TabIndex = 9;
+            this.employeeButton.Text = "Employee List";
+            this.employeeButton.UseVisualStyleBackColor = false;
+            this.employeeButton.Click += new System.EventHandler(this.employeeButton_Click_1);
             // 
             // Logout
             // 
             this.Logout.BackColor = System.Drawing.Color.Red;
             this.Logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Logout.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.Logout.Location = new System.Drawing.Point(2, 496);
-            this.Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.Logout.Location = new System.Drawing.Point(3, 730);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(211, 57);
+            this.Logout.Size = new System.Drawing.Size(281, 70);
             this.Logout.TabIndex = 19;
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = false;
@@ -237,23 +255,19 @@
             // 
             // mainpanel
             // 
-            this.mainpanel.AutoSize = true;
-            this.mainpanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mainpanel.Location = new System.Drawing.Point(219, 3);
-            this.mainpanel.Margin = new System.Windows.Forms.Padding(2);
+            this.mainpanel.Location = new System.Drawing.Point(292, 4);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(0, 0);
+            this.mainpanel.Size = new System.Drawing.Size(1236, 805);
             this.mainpanel.TabIndex = 4;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1028, 555);
+            this.ClientSize = new System.Drawing.Size(1525, 809);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.SideBar);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Human Resource Management System - Dashboard";
@@ -262,7 +276,6 @@
             this.logopanel.ResumeLayout(false);
             this.logopanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -278,7 +291,9 @@
         private System.Windows.Forms.Button feedback;
         private System.Windows.Forms.Button Incidents;
         private System.Windows.Forms.Button orgchart;
+        private System.Windows.Forms.Button recruit;
         private System.Windows.Forms.Button memorandum;
+        private System.Windows.Forms.Button employeeButton;
         private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.Panel mainpanel;
     }

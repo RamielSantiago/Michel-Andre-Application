@@ -21,7 +21,7 @@ namespace HRMS
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true, Filter = "PDF|*.pdf" })
             {
-                ofd.InitialDirectory = "\\HRMS\\HRMS\\Docus\\OrgChart";
+                ofd.InitialDirectory = "\\Resources\\Docus\\OrgChart";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     axAcroPDF1.Dock = DockStyle.Fill;

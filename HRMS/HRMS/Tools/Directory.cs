@@ -5,7 +5,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using HRMS.View;
-using HRMS.View.Forms;
 
 namespace HRMS.Tools
 {
@@ -13,11 +12,11 @@ namespace HRMS.Tools
     {
         private static HRMSRegister regInstance;
         private static CompanyRandR rules;
-        private static CompanyOrgChart orgchart;
         private static IncidentReport IR;
-        private static MemorandumCircular memoc;
+        private static MemorandumCircular MC;
+        private static CompanyOrgChart COC;
 
-        public static HRMSRegister Register
+       public static HRMSRegister Register
         {
             get
             {
@@ -38,20 +37,8 @@ namespace HRMS.Tools
                 }
                 return rules ;
             }
+            set { rules = value ; }
         }
-
-        public static CompanyOrgChart orgChart
-        {
-            get
-            {
-                if (orgchart == null)
-                {
-                    orgchart = new CompanyOrgChart();
-                }
-                return orgchart ;
-            }
-        }
-
         public static IncidentReport report
         {
             get
@@ -64,16 +51,29 @@ namespace HRMS.Tools
             }
         }
 
-        public static MemorandumCircular memo
+        public static CompanyOrgChart coc
         {
             get
             {
-                if (memoc == null)
+                if (COC == null)
                 {
-                    memoc = new MemorandumCircular();
+                    COC = new CompanyOrgChart();
                 }
-                return memoc;
+                return COC;
             }
+            set { COC = value; }
+        }
+        public static MemorandumCircular mc
+        {
+            get
+            {
+                if (MC == null)
+                {
+                    MC = new MemorandumCircular();
+                }
+                return MC;
+            }
+            set { MC = value; }
         }
 
         private void InitializeComponent()
