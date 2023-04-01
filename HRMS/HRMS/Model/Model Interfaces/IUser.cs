@@ -10,7 +10,7 @@ namespace HRMS.Model
     {
         void Add(UserModel user);
         void Update(UserModel user);
-        void Delete(string criteria, string query);
+        int Delete(string criteria, string query);
         int SearchLogin(string Userrname, string Password);
         IEnumerable<UserModel> SearchUsersByValue(string criteria, string query);
         IEnumerable<UserModel> GetAll();

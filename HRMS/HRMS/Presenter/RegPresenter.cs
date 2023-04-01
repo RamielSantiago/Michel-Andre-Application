@@ -64,10 +64,12 @@ namespace HRMS.Presenter
             repo.Update(update);
             LoadAllUsers();
         }
-        public void DeleteUser(string criteria, string query)
+        public int DeleteUser(string criteria, string query)
         {
-            repo.Delete(criteria, query);
+            int affected = repo.Delete(criteria, query);
             LoadAllUsers();
+
+            return affected;
         }
     }
 }

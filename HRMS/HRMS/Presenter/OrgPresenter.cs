@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HRMS.View;
 namespace HRMS.Presenter
 {
     public class OrgPresenter
     {
-        private readonly View.OrgChartView view;
+        private readonly CompanyOrgChart coc;
 
-        public OrgPresenter(View.OrgChartView view)
+        public OrgPresenter(CompanyOrgChart view)
         {
-            this.view = view;
+            this.coc = view;
         }
     }
 }

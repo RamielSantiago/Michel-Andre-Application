@@ -23,3 +23,9 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Forms.UpdateUser.resourc
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Forms.DeleteUser.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Forms.UpdateReport.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.Forms.DeleteReport.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.CompanyOrgChart.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.MemorandumCircular.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\HRMS.exe.manifest
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\HRMS.application
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.exe.manifest
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.application

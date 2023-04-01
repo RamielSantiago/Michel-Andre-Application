@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +49,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>057E2EB33BD41F2C52F1F9487C4759F06D4ED2E8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HRMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -48,6 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenter\OrgPresenter.cs" />
+    <Compile Include="View\Forms\CompanyOrgChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\CompanyOrgChart.designer.cs">
+      <DependentUpon>CompanyOrgChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\DeleteReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +95,12 @@
     </Compile>
     <Compile Include="View\Forms\DeleteUser.Designer.cs">
       <DependentUpon>DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\MemorandumCircular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Forms\MemorandumCircular.designer.cs">
+      <DependentUpon>MemorandumCircular.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\UpdateReport.cs">
       <SubType>Form</SubType>
@@ -105,9 +147,9 @@
     <Compile Include="Presenter\IncidentPresenter.cs" />
     <Compile Include="Presenter\LogPresenter.cs" />
     <Compile Include="Presenter\RegPresenter.cs" />
-    <Compile Include="Resources\BaseRepository.cs" />
-    <Compile Include="Resources\IncidentDBCRUD.cs" />
-    <Compile Include="Resources\UserDBCRUD.cs" />
+    <Compile Include="Resources\Database_Ops\BaseRepository.cs" />
+    <Compile Include="Resources\Database_Ops\IncidentDBCRUD.cs" />
+    <Compile Include="Resources\Database_Ops\UserDBCRUD.cs" />
     <Compile Include="Tools\Encrypt.cs" />
     <Compile Include="View\Adapters\DashboardAdapter.cs" />
     <Compile Include="View\Forms\Dashboard.cs">
@@ -131,11 +173,17 @@
     <EmbeddedResource Include="Tools\Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\CompanyOrgChart.resx">
+      <DependentUpon>CompanyOrgChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\DeleteReport.resx">
       <DependentUpon>DeleteReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\DeleteUser.resx">
       <DependentUpon>DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\MemorandumCircular.resx">
+      <DependentUpon>MemorandumCircular.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\UpdateReport.resx">
       <DependentUpon>UpdateReport.cs</DependentUpon>
@@ -179,6 +227,7 @@
     <None Include="HRMSDBDataSet.xss">
       <DependentUpon>HRMSDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HRMS_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,6 +237,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Docus\Memo Circulars\CASTILLO_EAF.pdf" />
+    <None Include="Resources\Docus\Memo Circulars\K-Map_Q2.pdf" />
+    <None Include="Resources\Docus\OrgChart\CASTILLO_flowchart.pdf" />
+    <None Include="Resources\Docus\Rules\CompanyRules.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -210,6 +263,18 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
