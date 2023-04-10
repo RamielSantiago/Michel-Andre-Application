@@ -1,10 +1,11 @@
-﻿using System;
+﻿using HRMS.View.UI;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Sql;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Configuration;
 using System.Windows.Forms;
-using HRMS.Tools;
 
 namespace HRMS
 {
@@ -18,7 +19,8 @@ namespace HRMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HRMSLogin()) ;
+            //Application.Run(new HRMSLogin());
+            Application.Run(new Dashboard("Hello, ", new HRMSLogin()));
         }
     }
 }

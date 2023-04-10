@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B134738-B28F-40AF-8EBB-EDC732782515}</ProjectGuid>
+    <ProjectGuid>{5655587A-0A36-4DD4-8D7D-C7A27FE3F2A5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HRMS</RootNamespace>
     <AssemblyName>HRMS</AssemblyName>
@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Desktop\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -21,12 +21,15 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ProductName>HRMS</ProductName>
+    <PublisherName>DLSU</PublisherName>
+    <MinimumRequiredVersion>1.0.0.6</MinimumRequiredVersion>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -50,10 +53,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>057E2EB33BD41F2C52F1F9487C4759F06D4ED2E8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4EB32CCD69D1436D93F1504FD6DF5E283EE94950</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>HRMS_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>HRMS_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -63,8 +66,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,134 +82,231 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenter\OrgPresenter.cs" />
-    <Compile Include="View\Forms\CompanyOrgChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\CompanyOrgChart.designer.cs">
-      <DependentUpon>CompanyOrgChart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\DeleteReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\DeleteReport.Designer.cs">
-      <DependentUpon>DeleteReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\DeleteUser.Designer.cs">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\MemorandumCircular.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\MemorandumCircular.designer.cs">
-      <DependentUpon>MemorandumCircular.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\UpdateReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\UpdateReport.Designer.cs">
-      <DependentUpon>UpdateReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\UpdateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\UpdateUser.Designer.cs">
-      <DependentUpon>UpdateUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\IncidentReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\IncidentReport.Designer.cs">
-      <DependentUpon>IncidentReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Forms\CompanyRandR.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\CompanyRandR.Designer.cs">
-      <DependentUpon>CompanyRandR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HRMSDBDataSet.Designer.cs">
+    <Compile Include="HRMSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HRMSDBDataSet.xsd</DependentUpon>
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model Interfaces\iIncidentReport.cs" />
-    <Compile Include="Model\DB Models\IncidentReportModel.cs" />
-    <Compile Include="Model\DB Models\UserModel.cs" />
-    <Compile Include="Model\Model Interfaces\IUser.cs" />
-    <Compile Include="Tools\Directory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\Register.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Forms\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presenter\IncidentPresenter.cs" />
+    <Compile Include="Model\DBInterfaces\iInfo.cs" />
+    <Compile Include="Model\DBInterfaces\iNewbies.cs" />
+    <Compile Include="Model\DBInterfaces\iReport.cs" />
+    <Compile Include="Model\DBInterfaces\iUser.cs" />
+    <Compile Include="Model\DBModels\AppraisalModel.cs" />
+    <Compile Include="Model\DBModels\FeedbackModel.cs" />
+    <Compile Include="Model\DBModels\IRModel.cs" />
+    <Compile Include="Model\DBModels\RecruitModel.cs" />
+    <Compile Include="Model\DBModels\UserModel.cs" />
+    <Compile Include="Presenter\AppraisalPresenter.cs" />
+    <Compile Include="Presenter\FeedbackPresenter.cs" />
+    <Compile Include="Presenter\IRPresenter.cs" />
     <Compile Include="Presenter\LogPresenter.cs" />
+    <Compile Include="Presenter\RecruitPresenter.cs" />
     <Compile Include="Presenter\RegPresenter.cs" />
-    <Compile Include="Resources\Database_Ops\BaseRepository.cs" />
-    <Compile Include="Resources\Database_Ops\IncidentDBCRUD.cs" />
-    <Compile Include="Resources\Database_Ops\UserDBCRUD.cs" />
-    <Compile Include="Tools\Encrypt.cs" />
-    <Compile Include="View\Adapters\DashboardAdapter.cs" />
-    <Compile Include="View\Forms\Dashboard.cs">
+    <Compile Include="Resources\DBOPs\AppraisalDBCRUD.cs" />
+    <Compile Include="Resources\DBOPs\BaseRepository.cs" />
+    <Compile Include="Resources\DBOPs\FeedbackDBCRUD.cs" />
+    <Compile Include="Resources\DBOPs\IncidentDBCRUD.cs" />
+    <Compile Include="Resources\DBOPs\RecruitDBCRUD.cs" />
+    <Compile Include="Resources\DBOPs\UserDBCRUD.cs" />
+    <Compile Include="Resources\Tools\Directory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Tools\Directory.Designer.cs">
+      <DependentUpon>Directory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Tools\Encrypt.cs" />
+    <Compile Include="View\Adapters\DashAdapter.cs" />
+    <Compile Include="View\Adapters\Log_RegAdapter.cs" />
+    <Compile Include="View\Interfaces\iAppraisal.cs" />
+    <Compile Include="View\Interfaces\iFeedback.cs" />
+    <Compile Include="View\Interfaces\iIncident.cs" />
+    <Compile Include="View\Interfaces\iLogin.cs" />
+    <Compile Include="View\Interfaces\iRecruit.cs" />
+    <Compile Include="View\Interfaces\iRegister.cs" />
+    <Compile Include="View\UI\CompanyRandR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\CompanyRandR.Designer.cs">
+      <DependentUpon>CompanyRandR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\Dashboard.Designer.cs">
+    <Compile Include="View\UI\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Interfaces\iIncident.cs" />
-    <Compile Include="View\Interfaces\ILogin.cs" />
-    <Compile Include="View\Interfaces\IRegister.cs" />
-    <Compile Include="View\Adapters\Log-RegAdapter.cs" />
-    <Compile Include="View\Forms\Login.cs">
+    <Compile Include="View\UI\EmployeeList\addEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\updateEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\updateEmployee.Designer.cs">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\viewEmployeeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\viewEmployeeList.Designer.cs">
+      <DependentUpon>viewEmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\HRMSLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="View\UI\HRMSLogin.Designer.cs">
+      <DependentUpon>HRMSLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\addReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\addReport.Designer.cs">
+      <DependentUpon>addReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\ReportHub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\ReportHub.Designer.cs">
+      <DependentUpon>ReportHub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\updateReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\updateReports.Designer.cs">
+      <DependentUpon>updateReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\viewReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\IncidentReport\viewReports.Designer.cs">
+      <DependentUpon>viewReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Tools\Directory.resx">
+    <Compile Include="View\UI\EmployeeList\Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\EmployeeList\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\AddIF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\AddIF.Designer.cs">
+      <DependentUpon>AddIF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\EditIF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\EditIF.Designer.cs">
+      <DependentUpon>EditIF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\FeedbackHub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\FeedbackHub.Designer.cs">
+      <DependentUpon>FeedbackHub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\ViewIF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\InformationFeedback\ViewIF.Designer.cs">
+      <DependentUpon>ViewIF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\MemorandumCircular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\MemorandumCircular.Designer.cs">
+      <DependentUpon>MemorandumCircular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\OrgChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\OrgChart.Designer.cs">
+      <DependentUpon>OrgChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\AddPerApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\AddPerApp.Designer.cs">
+      <DependentUpon>AddPerApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\EditPerApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\EditPerApp.Designer.cs">
+      <DependentUpon>EditPerApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\PerAppHub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\PerAppHub.Designer.cs">
+      <DependentUpon>PerAppHub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\ViewPerApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\PerformanceAppraisal\ViewPerApp.Designer.cs">
+      <DependentUpon>ViewPerApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\AddRecruitment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\AddRecruitment.Designer.cs">
+      <DependentUpon>AddRecruitment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\EditRecruitment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\EditRecruitment.Designer.cs">
+      <DependentUpon>EditRecruitment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\Recruitment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\Recruitment.Designer.cs">
+      <DependentUpon>Recruitment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\ViewRecruits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UI\Recruitment\ViewRecruits.Designer.cs">
+      <DependentUpon>ViewRecruits.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resources\Tools\Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\CompanyOrgChart.resx">
-      <DependentUpon>CompanyOrgChart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\DeleteReport.resx">
-      <DependentUpon>DeleteReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\DeleteUser.resx">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\MemorandumCircular.resx">
-      <DependentUpon>MemorandumCircular.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\UpdateReport.resx">
-      <DependentUpon>UpdateReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\UpdateUser.resx">
-      <DependentUpon>UpdateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\IncidentReport.resx">
-      <DependentUpon>IncidentReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\CompanyRandR.resx">
+    <EmbeddedResource Include="View\UI\CompanyRandR.resx">
       <DependentUpon>CompanyRandR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\Dashboard.resx">
+    <EmbeddedResource Include="View\UI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="View\UI\EmployeeList\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\EmployeeList\updateEmployee.resx">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\EmployeeList\viewEmployeeList.resx">
+      <DependentUpon>viewEmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\HRMSLogin.resx">
+      <DependentUpon>HRMSLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\IncidentReport\addReport.resx">
+      <DependentUpon>addReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\IncidentReport\ReportHub.resx">
+      <DependentUpon>ReportHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\IncidentReport\updateReports.resx">
+      <DependentUpon>updateReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\IncidentReport\viewReports.resx">
+      <DependentUpon>viewReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -215,18 +317,63 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CompanyRules.pdf" />
-    <None Include="HRMSDBDataSet.xsc">
-      <DependentUpon>HRMSDBDataSet.xsd</DependentUpon>
+    <EmbeddedResource Include="View\UI\EmployeeList\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\InformationFeedback\AddIF.resx">
+      <DependentUpon>AddIF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\InformationFeedback\EditIF.resx">
+      <DependentUpon>EditIF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\InformationFeedback\FeedbackHub.resx">
+      <DependentUpon>FeedbackHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\InformationFeedback\ViewIF.resx">
+      <DependentUpon>ViewIF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\MemorandumCircular.resx">
+      <DependentUpon>MemorandumCircular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\OrgChart.resx">
+      <DependentUpon>OrgChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\PerformanceAppraisal\AddPerApp.resx">
+      <DependentUpon>AddPerApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\PerformanceAppraisal\EditPerApp.resx">
+      <DependentUpon>EditPerApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\PerformanceAppraisal\PerAppHub.resx">
+      <DependentUpon>PerAppHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\PerformanceAppraisal\ViewPerApp.resx">
+      <DependentUpon>ViewPerApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\Recruitment\AddRecruitment.resx">
+      <DependentUpon>AddRecruitment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\Recruitment\EditRecruitment.resx">
+      <DependentUpon>EditRecruitment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\Recruitment\Recruitment.resx">
+      <DependentUpon>Recruitment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\Recruitment\ViewRecruits.resx">
+      <DependentUpon>ViewRecruits.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HRMSDataSet.xsc">
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
     </None>
-    <None Include="HRMSDBDataSet.xsd">
+    <None Include="HRMSDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HRMSDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>HRMSDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="HRMSDBDataSet.xss">
-      <DependentUpon>HRMSDBDataSet.xsd</DependentUpon>
+    <None Include="HRMSDataSet.xss">
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HRMS_1_TemporaryKey.pfx" />
     <None Include="HRMS_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -237,15 +384,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\Docus\Memo Circulars\CASTILLO_EAF.pdf" />
-    <None Include="Resources\Docus\Memo Circulars\K-Map_Q2.pdf" />
-    <None Include="Resources\Docus\OrgChart\CASTILLO_flowchart.pdf" />
-    <None Include="Resources\Docus\Rules\CompanyRules.pdf" />
+    <None Include="Resources\PDFs\Rules\CompanyRules.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DBInterfaces\iPerform.cs" />
+    <Content Include="Resources\Database\HRMS.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Database\HRMS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\appbg.png" />
+    <Content Include="Resources\Images\logout.jpg" />
+    <Content Include="Resources\Images\ma-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.15.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2019 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroBrokerLib">
+      <Guid>{41738EEA-442F-477F-92CF-2889BD6CD7E7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="AcroPDFLib">
       <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -264,17 +446,6 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
