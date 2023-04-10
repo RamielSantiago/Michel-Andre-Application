@@ -1,22 +1,24 @@
-﻿using System;
+﻿using HRMS.Model.DBInterfaces;
+using HRMS.Model.DBModels;
+using HRMS.View.Interfaces;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HRMS.Model;
-using HRMS.View;
 
 namespace HRMS.Presenter
 {
     public class RegPresenter
     {
-        private readonly IUser repo;
-        private readonly IRegister view;
+        private readonly iUser repo;
+        private readonly iRegister view;
         private BindingSource bs;
         public IEnumerable<UserModel> EmployeeList;
 
-        public RegPresenter(IRegister view, IUser repo)
+        public RegPresenter(iRegister view, iUser repo)
         {
             this.view = view;
             this.repo = repo;
@@ -25,23 +27,24 @@ namespace HRMS.Presenter
             LoadAllUsers();
             this.view.Show();
         }
-        private void LoadAllUsers()
+        public void LoadAllUsers()
         {
             EmployeeList = repo.GetAll();
             bs.DataSource = EmployeeList;
-
         }
-        public void AddUser() {
+        public void AddUser()
+        {
             var validUser = new UserModel();
+            validUser.EmployeeID = repo.GetAll().ElementAt(repo.GetAll().Count() - 1).EmployeeID + 1; ;
             validUser.FirstName = view.FirstName;
+            validUser.MiddleName = view.MiddleName;
             validUser.LastName = view.LastName;
-            validUser.MiddleName = view.MiddleName;
-            validUser.MiddleName = view.MiddleName;
-            validUser.UserName = view.UserName;
-            validUser.Password = view.Password;
             validUser.Email = view.Email;
-            validUser.EmployeeID = view.EmployeeID;
-            validUser.AccessRights = view.AccessRights;
+            validUser.Department = view.Department;
+            validUser.Position = view.Position;
+            validUser.Password = view.Password;
+            validUser.UserName = view.UserName;
+            validUser.DateHired = view.DateHired;
             repo.Add(validUser);
             LoadAllUsers();
         }
@@ -53,7 +56,8 @@ namespace HRMS.Presenter
             {
                 LoadAllUsers();
                 return -1;
-            } else
+            }
+            else
             {
                 bs.DataSource = EmployeeList;
                 return 1;
@@ -64,12 +68,18 @@ namespace HRMS.Presenter
             repo.Update(update);
             LoadAllUsers();
         }
-        public int DeleteUser(string criteria, string query)
-        {
-            int affected = repo.Delete(criteria, query);
-            LoadAllUsers();
 
-            return affected;
+        public int SearchName(string first, string last)
+        {
+            var temp = repo.SearchUserByName(first, last);
+            if (temp.Any())
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using HRMS.Model;
-using HRMS.View;
+﻿using HRMS.Model.DBInterfaces;
+using HRMS.View.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace HRMS.Presenter
 {
-     public class LogPresenter
+    public class LogPresenter
     {
-        private readonly IUser repo;
-        private readonly ILogin view;
+            private readonly iUser repo;
+            private readonly iLogin view;
 
 
-        public LogPresenter(ILogin view, IUser repo)
-        {
-            this.view = view;
-            this.repo = repo;
-            this.view.Show();
-        }
+            public LogPresenter(iLogin view, iUser repo)
+            {
+                this.view = view;
+                this.repo = repo;
+                this.view.Show();
+            }
 
-        public int SearchUser(string Username, string Password)
-        {
-            return repo.SearchLogin(Username, Password);
-        }
+            public int SearchUser(string Username, string Password)
+            {
+                return repo.SearchLogin(Username, Password);
+            }
     }
 }

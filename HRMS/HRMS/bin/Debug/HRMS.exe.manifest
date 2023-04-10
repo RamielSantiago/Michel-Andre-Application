@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="HRMS.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="HRMS.exe" version="1.0.0.16" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>n/RHW8FJIGHCoAEjdQBGAD3B35Kkt91s15hlYop3V0k=</dsig:DigestValue>
+        <dsig:DigestValue>ejBzsj/Q3HzwRsKhqUBazd7naout3YpJyWlL22yl+hw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="152072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="672776">
       <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Mm+N8DfuCpl9uf+qlWv49M/5ZXloZ0UGJe8apaLuSw0=</dsig:DigestValue>
+        <dsig:DigestValue>AA02flJ5aYtpNt5/hI7E7LeciaRycNsOX7xoqRV30XU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,17 +73,44 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GwOjkT3yC0DcE4n2xjNtD8UHAiNAyCJbRclf8nOljCk=</dsig:DigestValue>
+        <dsig:DigestValue>wxHHhORLNug0BP5DWj5s5VyvOesvbTAjxTtCW6NmSAM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HRMS.exe.config" size="532">
+  <file name="HRMS.exe.config" size="462">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qpZHlngQe1Va93Y1GJ93kOG6pZkPmhmgcpRzXBJ+Lg0=</dsig:DigestValue>
+      <dsig:DigestValue>y2pwok5IQXTq2kJmY6KHiesXj4fp1/mjDHOk7bfvdU8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\appbg.png" size="30899">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iJVox+2pxp9eCo93KGG3I/vENz/DgVFKNOxk4hVOYYo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\logout.jpg" size="12924">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4sh9W8VVCLzdQlZ1RwfQ3TzejHJjx/65iN7aQkRVTNI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\ma-logo.png" size="39730">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>c/KAYVvvF/VyQX9+ONNo1qA5SLZgOnNKcO2409Y9TiY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
