@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="HRMS.exe" version="1.0.0.15" publicKeyToken="4228e99db3b97e85" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="HRMS.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.AcroPDFLib.dll" size="8192">
+      <assemblyIdentity name="AxInterop.AcroPDFLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ejBzsj/Q3HzwRsKhqUBazd7naout3YpJyWlL22yl+hw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="511496">
+      <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>T5pdug7bdYT1+I41ijnJOI62du5kPJiimTyK4evXXcY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.AcroPDFLib.dll" size="11776">
+      <assemblyIdentity name="Interop.AcroPDFLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>wxHHhORLNug0BP5DWj5s5VyvOesvbTAjxTtCW6NmSAM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HRMS.exe.config" size="452">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lsTV+nV4L79iuPdd2JAvg4IdAoGhisFcFiSGvrPl6Ec=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Database\HRMS.ldf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ars0NDeMpwXik73odZGP+S80SbCMGdv3ViwMtj4MA00=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Database\HRMS.mdf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rQ4XlzV1Ln3Gf72MxcnCxx5uHhGIz3CW1T3s3gY+bgM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Database\HRMS_log.ldf" size="786432" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7fsncqOZirIlAQm2awjTCyyCXgap9XJn0tvfpTTVCuw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\appbg.png" size="30899">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iJVox+2pxp9eCo93KGG3I/vENz/DgVFKNOxk4hVOYYo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\logout.jpg" size="12924">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4sh9W8VVCLzdQlZ1RwfQ3TzejHJjx/65iN7aQkRVTNI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Images\ma-logo.png" size="39730">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>c/KAYVvvF/VyQX9+ONNo1qA5SLZgOnNKcO2409Y9TiY=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LAPTOP-O3NGTAC5\Ram Santiago" issuerKeyHash="37d3f58eacfb0717a298683cf45af404af891ff9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>4ce79c6eVrV1n0kKcB5aW0ANUndcVF3ynyHC2gp2Ovk=</DigestValue></Reference></SignedInfo><SignatureValue>ABkDrXDcfnNITFoSJ6HzzdK2JkmtXD64oBcCpzvPZaSiHIDNPaAHU0CzIB3sLE7u9Msb1+UPq9TZdnGGWxfkHlUwWLJ58BxUzAsBmqV92UJoOoenGgxyHgfRXTEtjSDQA/oYcK3uVGqtM60OWA6+yX4vItAhHgeOoDmD/eGSqiM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qac+ydGgWxLIDm/QQ3I0hJNo2t7LK/rZ33WZ79swTKX8SOUDXcqWYBYvPgsOCyG/2qPPj0J36cnoCAXRuwPbQg5XcwJlD28cNj26evGpWlsZuDBYpyQLyev4pws+RfM1kd6M+Xn3kTEwLjtUgyIim1Tl9RPeTqhJq1Lz57vyvJ0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f93a760adac2219ff25d545c77520d405b5a1e700a499f75b5569ecef5bbc7e1" Description="" Url=""><as:assemblyIdentity name="HRMS.exe" version="1.0.0.15" publicKeyToken="4228e99db3b97e85" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LAPTOP-O3NGTAC5\Ram Santiago</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>s/AOnd/WqygwZDsRGVheSCUho+rNfxFzabtjrSsfOY4=</DigestValue></Reference></SignedInfo><SignatureValue>mleXNkQlcnOTDGtx1EDXu1GmOWTwzVG2ptk+jCq1g4Qxqmnr66FBYyPtsv0NOT6+5JvD+KFn8GT6HCg6gWP6T/6T3jb818w0z7nqDr4gPrqiFk8b9CTvV0HsZKdsxwzaHd9QsvUaAvGhNSr6xzrXncJZ8x596i1RCLQsgjPvi9Q=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qac+ydGgWxLIDm/QQ3I0hJNo2t7LK/rZ33WZ79swTKX8SOUDXcqWYBYvPgsOCyG/2qPPj0J36cnoCAXRuwPbQg5XcwJlD28cNj26evGpWlsZuDBYpyQLyev4pws+RfM1kd6M+Xn3kTEwLjtUgyIim1Tl9RPeTqhJq1Lz57vyvJ0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICCTCCAXKgAwIBAgIQea1wDwpLqrtOED3JTdaU1TANBgkqhkiG9w0BAQsFADBDMUEwPwYDVQQDHjgATABBAFAAVABPAFAALQBPADMATgBHAFQAQQBDADUAXABSAGEAbQAgAFMAYQBuAHQAaQBhAGcAbzAeFw0yMzA0MDgwNTA0NTdaFw0yNDA0MDcxMTA0NTdaMEMxQTA/BgNVBAMeOABMAEEAUABUAE8AUAAtAE8AMwBOAEcAVABBAEMANQBcAFIAYQBtACAAUwBhAG4AdABpAGEAZwBvMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCppz7J0aBbEsgOb9BDcjSEk2ja3ssr+tnfdZnv2zBMpfxI5QNdypZgFi8+Cw4LIb/ao8+PQnfpyegIBdG7A9tCDldzAmUPbxw2Pbp68alaWxm4MFinJAvJ6/inCz5F8zWR3oz5efeRMTAuO1SDIiKbVOX1E95OqEmrUvPnu/K8nQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAH895K0IBaf0zfLSOKlhZBcW13GzDGV/yxmU1mw2kxuJb9s8KHezYwOQZ4LjwO1iifyB9ZM6hGziSuu/p+b2+jIYSVuPbxv8sXZiH1K7By6qF0dIlLtZLkNZv8S+P4I3rtGPyOaDjOIURmF1kEWcdV49++OTyFfFV2cLiaXapVtl</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
