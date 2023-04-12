@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="HRMS.exe" version="1.0.0.17" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="HRMS.exe" version="1.0.0.20" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YnyDQGJror0KnfrOzjjfhb01kNLO64nN1miV46T7p/g=</dsig:DigestValue>
+        <dsig:DigestValue>Kpt0xs3qrOmIsZzEwm2K+4eQjeceELLgmdbvb5K7Q10=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,31 +77,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HRMS.exe.config" size="462">
+  <file name="HRMS.exe.config" size="626">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>y2pwok5IQXTq2kJmY6KHiesXj4fp1/mjDHOk7bfvdU8=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\Database\HRMS.ldf" size="8388608" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>63fq8z9s+0KfSN9AGpMlPXIwFq1GI4im82hh0HoZhYM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\Database\HRMS.mdf" size="8388608" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vLr0UdYuenDtldUrT2+kHICm0rjnte5/EfAsFbTtcCw=</dsig:DigestValue>
+      <dsig:DigestValue>1yDHVwNEKFAv3Dkgf238pMZr0bQ5DzTfw0a5lXQAzRs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Images\appbg.png" size="30899">

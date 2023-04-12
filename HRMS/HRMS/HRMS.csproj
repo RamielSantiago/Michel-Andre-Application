@@ -26,7 +26,7 @@
     <ProductName>HRMS</ProductName>
     <PublisherName>DLSU</PublisherName>
     <MinimumRequiredVersion>1.0.0.6</MinimumRequiredVersion>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -134,6 +134,12 @@
     </Compile>
     <Compile Include="View\UI\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UI\DBInstallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UI\DBInstallForm.Designer.cs">
+      <DependentUpon>DBInstallForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UI\EmployeeList\addEmployee.cs">
       <SubType>UserControl</SubType>
@@ -284,6 +290,9 @@
     <EmbeddedResource Include="View\UI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UI\DBInstallForm.resx">
+      <DependentUpon>DBInstallForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UI\EmployeeList\addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,12 +400,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DBInterfaces\iPerform.cs" />
-    <Content Include="Resources\Database\HRMS.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Database\HRMS.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Images\appbg.png" />
     <Content Include="Resources\Images\logout.jpg" />
     <Content Include="Resources\Images\ma-logo.png" />
@@ -446,6 +449,8 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Database\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

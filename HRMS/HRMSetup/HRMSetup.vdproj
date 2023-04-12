@@ -15,32 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1C9CF3DA84BF43BAA1CB82EAC3629F14"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_361FDB69758DD323FCDDE27125B769C7"
+        "OwnerKey" = "8:_A3AC47B2A929ED72BBF65D160A981DF1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1D9E1B0EF2796A6B332B33E4E0BB0280"
+        "MsmKey" = "8:_361FDB69758DD323FCDDE27125B769C7"
         "OwnerKey" = "8:_EC551F74AA344AA48E24ECD5A3EA3077"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_4AA7D79B72FFC73655ED8F511113120F"
-        "OwnerKey" = "8:_732EC618E51457EFF066505A81ABE570"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_732EC618E51457EFF066505A81ABE570"
-        "OwnerKey" = "8:_1D9E1B0EF2796A6B332B33E4E0BB0280"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_732EC618E51457EFF066505A81ABE570"
-        "OwnerKey" = "8:_EC551F74AA344AA48E24ECD5A3EA3077"
+        "OwnerKey" = "8:_361FDB69758DD323FCDDE27125B769C7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -51,8 +39,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C0F94B77A26342C39284E64D52033ADC"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_A3AC47B2A929ED72BBF65D160A981DF1"
+        "OwnerKey" = "8:_EC551F74AA344AA48E24ECD5A3EA3077"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,25 +52,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8C3000F0ED26578EB71164E1873E53CA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EC551F74AA344AA48E24ECD5A3EA3077"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1D9E1B0EF2796A6B332B33E4E0BB0280"
+        "OwnerKey" = "8:_A3AC47B2A929ED72BBF65D160A981DF1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_732EC618E51457EFF066505A81ABE570"
+        "OwnerKey" = "8:_361FDB69758DD323FCDDE27125B769C7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8C3000F0ED26578EB71164E1873E53CA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -103,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -119,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -148,40 +152,20 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C9CF3DA84BF43BAA1CB82EAC3629F14"
-            {
-            "SourcePath" = "8:..\\HRMS\\Resources\\Database\\HRMS.mdf"
-            "TargetName" = "8:HRMS.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1D9E1B0EF2796A6B332B33E4E0BB0280"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_361FDB69758DD323FCDDE27125B769C7"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1D9E1B0EF2796A6B332B33E4E0BB0280"
+                    "_361FDB69758DD323FCDDE27125B769C7"
                     {
-                    "Name" = "8:AxInterop.AcroPDFLib.dll"
+                    "Name" = "8:Interop.AcroPDFLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
+            "SourcePath" = "8:Interop.AcroPDFLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"
@@ -203,37 +187,6 @@
             {
             "SourcePath" = "8:AcroPDF.dll"
             "TargetName" = "8:AcroPDF.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_732EC618E51457EFF066505A81ABE570"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_732EC618E51457EFF066505A81ABE570"
-                    {
-                    "Name" = "8:Interop.AcroPDFLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Interop.AcroPDFLib.dll"
-            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"
             "Condition" = "8:"
@@ -281,10 +234,21 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C0F94B77A26342C39284E64D52033ADC"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A3AC47B2A929ED72BBF65D160A981DF1"
             {
-            "SourcePath" = "8:..\\HRMS\\Resources\\Database\\HRMS.ldf"
-            "TargetName" = "8:HRMS.ldf"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A3AC47B2A929ED72BBF65D160A981DF1"
+                    {
+                    "Name" = "8:AxInterop.AcroPDFLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"
             "Condition" = "8:"
@@ -298,7 +262,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -907,7 +871,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EC551F74AA344AA48E24ECD5A3EA3077"
             {
-            "SourcePath" = "8:..\\HRMS\\obj\\Release\\HRMS.exe"
+            "SourcePath" = "8:..\\HRMS\\obj\\Debug\\HRMS.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3C7D58C5B2BE487DABBA0F19B3657F67"

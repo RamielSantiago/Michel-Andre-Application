@@ -27,5 +27,10 @@ namespace HRMS.View.UI
             pdfreader.setShowToolbar(true);
             pdfreader.setShowScrollbars(true);
         }
+
+        private void pdfreader_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

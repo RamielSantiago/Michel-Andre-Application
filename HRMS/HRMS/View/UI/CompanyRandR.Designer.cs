@@ -124,6 +124,7 @@
             this.pdfreader.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfreader.OcxState")));
             this.pdfreader.Size = new System.Drawing.Size(1051, 702);
             this.pdfreader.TabIndex = 53;
+            this.pdfreader.Enter += new System.EventHandler(this.pdfreader_Enter);
             // 
             // randrReader
             // 

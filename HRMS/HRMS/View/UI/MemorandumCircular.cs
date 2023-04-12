@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxAcroPDFLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,24 +18,22 @@ namespace HRMS.View.UI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void upload_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pdfreader.Dock = DockStyle.Fill;
+                pdfreader.setView("FitH");
+                pdfreader.src = openFileDialog1.FileName;
+                pdfreader.setShowToolbar(true);
+                pdfreader.setShowScrollbars(true);
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
         {
-
+            pdfreader.src = "";
         }
     }
 }

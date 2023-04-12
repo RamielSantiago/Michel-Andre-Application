@@ -44,5 +44,3 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.UI.InformationFeedback.A
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.UI.InformationFeedback.EditIF.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.UI.InformationFeedback.FeedbackHub.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Debug\HRMS.View.UI.InformationFeedback.ViewIF.resources
-D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\Resources\Database\HRMS.ldf
-D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Debug\Resources\Database\HRMS.mdf
