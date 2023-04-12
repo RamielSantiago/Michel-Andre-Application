@@ -4,7 +4,7 @@
 						| Regarding the Database |
 Before installing, please be mindful of the following prerequisite programs needed to install the application:
 
-	- SQL Server Express 2019 or later
+	- SQL Server Express 2019
 	
 	- SQL Server Express 2019 LocalDB
 	
