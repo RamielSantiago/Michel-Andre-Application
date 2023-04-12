@@ -1,5 +1,5 @@
 
-	-----HUMAN RESOURCE MANAGEMENT SYSTEM INSTALLATION GUIDE -----
+				-----HUMAN RESOURCE MANAGEMENT SYSTEM INSTALLATION GUIDE -----
 
 						| Regarding the Database |
 Before installing, please be mindful of the following prerequisite programs needed to install the application:
