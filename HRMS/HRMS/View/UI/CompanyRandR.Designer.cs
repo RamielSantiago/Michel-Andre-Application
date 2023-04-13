@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(randrReader));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,9 +36,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pdfreader = new AxAcroPDFLib.AxAcroPDF();
+            this.pdfreader = new Apitron.PDF.Controls.PDFViewer();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfreader)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,17 +84,17 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(331, 808);
+            this.panel3.Location = new System.Drawing.Point(331, 814);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1094, 20);
+            this.panel3.Size = new System.Drawing.Size(1094, 14);
             this.panel3.TabIndex = 49;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1401, 92);
+            this.panel4.Location = new System.Drawing.Point(1415, 92);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(24, 716);
+            this.panel4.Size = new System.Drawing.Size(10, 722);
             this.panel4.TabIndex = 50;
             // 
             // panel5
@@ -104,27 +102,28 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(331, 92);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(19, 716);
+            this.panel5.Size = new System.Drawing.Size(10, 722);
             this.panel5.TabIndex = 52;
             // 
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(350, 92);
+            this.panel6.Location = new System.Drawing.Point(341, 92);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1051, 14);
+            this.panel6.Size = new System.Drawing.Size(1074, 14);
             this.panel6.TabIndex = 51;
             // 
             // pdfreader
             // 
+            this.pdfreader.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pdfreader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pdfreader.Enabled = true;
-            this.pdfreader.Location = new System.Drawing.Point(350, 106);
+            this.pdfreader.Document = null;
+            this.pdfreader.EnableSearch = true;
+            this.pdfreader.Location = new System.Drawing.Point(341, 106);
             this.pdfreader.Name = "pdfreader";
-            this.pdfreader.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfreader.OcxState")));
-            this.pdfreader.Size = new System.Drawing.Size(1051, 702);
+            this.pdfreader.SearchHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.pdfreader.Size = new System.Drawing.Size(1074, 708);
             this.pdfreader.TabIndex = 53;
-            this.pdfreader.Enter += new System.EventHandler(this.pdfreader_Enter);
             // 
             // randrReader
             // 
@@ -145,7 +144,6 @@
             this.Load += new System.EventHandler(this.randrReader_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfreader)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,6 +158,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private AxAcroPDFLib.AxAcroPDF pdfreader;
+        private Apitron.PDF.Controls.PDFViewer pdfreader;
     }
 }

@@ -42,6 +42,30 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Apitron.PDF.Controls.dll" size="84992">
+      <assemblyIdentity name="Apitron.PDF.Controls" version="1.0.170.0" publicKeyToken="6E759DBB0039406E" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Wf8i1qUaVoAw3Q78zWh2JfHfraI9cxexdekAm+7+V/A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Apitron.PDF.Rasterizer.dll" size="9505792">
+      <assemblyIdentity name="Apitron.PDF.Rasterizer" version="3.0.170.0" publicKeyToken="6E759DBB0039406E" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>n8axHBcA2r05waqGrdodZgZ47L8Sk+n1UAZV6zPAoN8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.AcroPDFLib.dll" size="8192">
       <assemblyIdentity name="AxInterop.AcroPDFLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -54,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="650760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="649736">
       <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pCggof7Lq7gy0T+OEwmBqEECLS0Vixc9LUrpyuxlcGs=</dsig:DigestValue>
+        <dsig:DigestValue>YplUeI7bVqUh+qgzIaFbl64nHoRp0E0h4GL9SK0G6Oo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,13 +101,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HRMS.exe.config" size="624">
+  <file name="HRMS.exe.config" size="644">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kY0H65JOQBydYOlR8PyoUqMx1kgdpCzzOKrN03YXiK8=</dsig:DigestValue>
+      <dsig:DigestValue>UL8lLsEGz7NJ7KnxggY8VDe/AfuYX0ziza7vqwyAk5M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Images\appbg.png" size="30899">

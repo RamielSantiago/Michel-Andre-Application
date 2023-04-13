@@ -45,3 +45,9 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.OrgChart.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.PerformanceAppraisal.AddPerApp.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.PerformanceAppraisal.EditPerApp.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.PerformanceAppraisal.ViewPerApp.resources
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Apitron.PDF.Controls.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Apitron.PDF.Rasterizer.dll
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Apitron.PDF.Controls.xml
+D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.csproj.CopyComplete
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Resources\PDFs\Rules\CompanyRules.pdf
+D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Resources\PDFs\OrgChart\MAOrgChart.pdf

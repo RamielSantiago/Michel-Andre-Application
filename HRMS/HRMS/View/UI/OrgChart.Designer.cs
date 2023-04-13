@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrgChart));
-            this.pdfreader = new AxAcroPDFLib.AxAcroPDF();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -38,50 +36,44 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfreader)).BeginInit();
+            this.pdfreader = new Apitron.PDF.Controls.PDFViewer();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pdfreader
-            // 
-            this.pdfreader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pdfreader.Enabled = true;
-            this.pdfreader.Location = new System.Drawing.Point(350, 106);
-            this.pdfreader.Name = "pdfreader";
-            this.pdfreader.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfreader.OcxState")));
-            this.pdfreader.Size = new System.Drawing.Size(1051, 702);
-            this.pdfreader.TabIndex = 60;
-            // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(350, 92);
+            this.panel6.Location = new System.Drawing.Point(341, 92);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1051, 14);
+            this.panel6.Size = new System.Drawing.Size(1074, 10);
             this.panel6.TabIndex = 58;
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(331, 92);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(19, 716);
+            this.panel5.Size = new System.Drawing.Size(10, 726);
             this.panel5.TabIndex = 59;
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1401, 92);
+            this.panel4.Location = new System.Drawing.Point(1415, 92);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(24, 716);
+            this.panel4.Size = new System.Drawing.Size(10, 726);
             this.panel4.TabIndex = 57;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(331, 808);
+            this.panel3.Location = new System.Drawing.Point(331, 818);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1094, 20);
+            this.panel3.Size = new System.Drawing.Size(1094, 10);
             this.panel3.TabIndex = 56;
             // 
             // panel2
@@ -125,6 +117,18 @@
             this.panel1.Size = new System.Drawing.Size(331, 828);
             this.panel1.TabIndex = 55;
             // 
+            // pdfreader
+            // 
+            this.pdfreader.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pdfreader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfreader.Document = null;
+            this.pdfreader.EnableSearch = true;
+            this.pdfreader.Location = new System.Drawing.Point(341, 102);
+            this.pdfreader.Name = "pdfreader";
+            this.pdfreader.SearchHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.pdfreader.Size = new System.Drawing.Size(1074, 716);
+            this.pdfreader.TabIndex = 60;
+            // 
             // OrgChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -138,7 +142,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "OrgChart";
             this.Size = new System.Drawing.Size(1425, 828);
-            ((System.ComponentModel.ISupportInitialize)(this.pdfreader)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -146,8 +149,6 @@
         }
 
         #endregion
-
-        private AxAcroPDFLib.AxAcroPDF pdfreader;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
@@ -156,5 +157,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private Apitron.PDF.Controls.PDFViewer pdfreader;
     }
 }
