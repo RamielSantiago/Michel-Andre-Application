@@ -76,5 +76,10 @@ namespace HRMS.View.UI.PerformanceAppraisal
                 Directory.epa.RefreshNames();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

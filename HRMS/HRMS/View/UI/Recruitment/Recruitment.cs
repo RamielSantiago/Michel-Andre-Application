@@ -77,5 +77,10 @@ namespace HRMS.View.UI.Recruitment
                 Directory.urec.RefreshNames();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

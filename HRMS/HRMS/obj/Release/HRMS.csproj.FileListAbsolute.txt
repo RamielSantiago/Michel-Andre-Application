@@ -3,13 +3,9 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\HRMS.exe.manifest
 D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\HRMS.application
 D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\HRMS.exe
 D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\HRMS.pdb
-D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\Interop.AcroPDFLib.dll
-D:\Desktop\School\CSSWENG\HRMS\HRMS\bin\Release\AxInterop.AcroPDFLib.dll
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.csproj.AssemblyReference.cache
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.csproj.SuggestedBindingRedirects.cache
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\Interop.AcroBrokerLib.dll
-D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\Interop.AcroPDFLib.dll
-D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\AxInterop.AcroPDFLib.dll
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.csproj.ResolveComReference.cache
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.Resources.Tools.Directory.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.randrReader.resources

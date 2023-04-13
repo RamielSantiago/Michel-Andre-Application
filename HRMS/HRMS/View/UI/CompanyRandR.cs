@@ -1,6 +1,4 @@
-﻿using AcroPDFLib;
-using Apitron.PDF.Rasterizer;
-using AxAcroPDFLib;
+﻿using Apitron.PDF.Rasterizer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +24,7 @@ namespace HRMS.View.UI
             pdfreader.Dock = DockStyle.Fill;
             try
             {
-                FileStream fs = new FileStream(Path.GetFullPath("CompanyRules.pdf"), FileMode.Open);
+                FileStream fs = new FileStream(Application.StartupPath + "\\Resources\\PDFs\\Rules\\CompanyRules.pdf", FileMode.Open);
                 pdfreader.Document = new Document(fs);
             }
             catch (Exception ex)

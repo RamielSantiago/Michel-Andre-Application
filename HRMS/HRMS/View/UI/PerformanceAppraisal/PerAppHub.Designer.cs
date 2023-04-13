@@ -37,6 +37,7 @@
             this.pAppUpdateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.informationFeedbackTableAdapter1 = new HRMS.HRMSDataSetTableAdapters.InformationFeedbackTableAdapter();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +102,7 @@
             // 
             this.pAppAddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pAppAddBtn.BackColor = System.Drawing.Color.SteelBlue;
-            this.pAppAddBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.pAppAddBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 9.5F);
             this.pAppAddBtn.ForeColor = System.Drawing.Color.White;
             this.pAppAddBtn.Location = new System.Drawing.Point(829, 15);
             this.pAppAddBtn.Name = "pAppAddBtn";
@@ -146,6 +147,10 @@
             this.panel1.Size = new System.Drawing.Size(331, 953);
             this.panel1.TabIndex = 26;
             // 
+            // informationFeedbackTableAdapter1
+            // 
+            this.informationFeedbackTableAdapter1.ClearBeforeFill = true;
+            // 
             // PerAppHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,5 +178,6 @@
         private System.Windows.Forms.Button pAppUpdateButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private HRMSDataSetTableAdapters.InformationFeedbackTableAdapter informationFeedbackTableAdapter1;
     }
 }

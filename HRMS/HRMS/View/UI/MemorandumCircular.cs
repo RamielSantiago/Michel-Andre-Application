@@ -1,5 +1,4 @@
 ﻿using Apitron.PDF.Rasterizer;
-using AxAcroPDFLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

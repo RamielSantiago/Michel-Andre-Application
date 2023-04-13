@@ -31,5 +31,10 @@ namespace HRMS.View.UI.InformationFeedback
         {
 
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

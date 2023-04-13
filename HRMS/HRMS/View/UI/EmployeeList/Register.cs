@@ -81,5 +81,10 @@ namespace HRMS.View
                 Directory.uList.BringToFront();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

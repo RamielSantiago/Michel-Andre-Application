@@ -100,7 +100,7 @@
             // 
             this.fbAddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fbAddBtn.BackColor = System.Drawing.Color.SteelBlue;
-            this.fbAddBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.fbAddBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
             this.fbAddBtn.ForeColor = System.Drawing.Color.White;
             this.fbAddBtn.Location = new System.Drawing.Point(824, 15);
             this.fbAddBtn.Name = "fbAddBtn";

@@ -154,6 +154,10 @@ namespace HRMS.View.UI
             Directory.uList = null;
             Directory.loadRules = null;
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
             Application.Exit();
         }
     }

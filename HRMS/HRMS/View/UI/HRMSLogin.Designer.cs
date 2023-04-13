@@ -41,23 +41,25 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(315, 34);
+            this.panel1.Location = new System.Drawing.Point(343, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 211);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.logBtn);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.logpass);
             this.panel2.Controls.Add(this.logname);
-            this.panel2.Location = new System.Drawing.Point(217, 269);
+            this.panel2.Location = new System.Drawing.Point(245, 276);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(521, 296);
             this.panel2.TabIndex = 1;

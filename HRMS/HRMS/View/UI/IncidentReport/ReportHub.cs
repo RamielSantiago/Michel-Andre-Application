@@ -74,5 +74,10 @@ namespace HRMS.View.UI.IncidentReport
                 Directory.uReport.BringToFront();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
