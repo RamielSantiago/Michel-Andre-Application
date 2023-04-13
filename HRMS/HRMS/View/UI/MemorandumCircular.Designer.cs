@@ -33,7 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.delete = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.upload = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pdfreader = new Apitron.PDF.Controls.PDFViewer();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,8 +78,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.delete);
-            this.panel2.Controls.Add(this.upload);
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,24 +87,37 @@
             this.panel2.Size = new System.Drawing.Size(1094, 92);
             this.panel2.TabIndex = 32;
             // 
-            // delete
+            // panel7
             // 
-            this.delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("delete.BackgroundImage")));
-            this.delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.delete.Location = new System.Drawing.Point(940, 15);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(53, 58);
-            this.delete.TabIndex = 23;
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.upload);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(894, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 92);
+            this.panel7.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Book", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(51, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Upload Circular";
             // 
             // upload
             // 
+            this.upload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
             this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.upload.Location = new System.Drawing.Point(999, 15);
+            this.upload.Location = new System.Drawing.Point(74, 0);
             this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(53, 58);
+            this.upload.Size = new System.Drawing.Size(67, 71);
             this.upload.TabIndex = 0;
             this.upload.UseVisualStyleBackColor = true;
             this.upload.Click += new System.EventHandler(this.upload_Click);
@@ -166,8 +180,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "MemorandumCircular";
             this.Size = new System.Drawing.Size(1425, 828);
+            this.Load += new System.EventHandler(this.MemorandumCircular_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,8 +199,9 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button upload;
         private Apitron.PDF.Controls.PDFViewer pdfreader;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label3;
     }
 }

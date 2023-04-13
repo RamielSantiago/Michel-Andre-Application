@@ -12,12 +12,7 @@ using System.Windows.Forms;
 namespace HRMS.View.UI
 {
     public partial class Dashboard : Form
-    {
-        public Dashboard()
-        {
-            InitializeComponent();
-        }
-
+    { 
         private Panel ap;
         private HRMSLogin loginform;
         public Dashboard(string Username, HRMSLogin loginform)
@@ -25,6 +20,7 @@ namespace HRMS.View.UI
             this.loginform = loginform;
             InitializeComponent();
             this.ap = activityPanel;
+            Directory.username = Username;
         }
 
         private void orgchart_Click(object sender, EventArgs e)
@@ -80,6 +76,9 @@ namespace HRMS.View.UI
             else
             {
                 Directory.pah.BringToFront();
+                Directory.apa.RefreshNames();
+                Directory.vpa.RefreshNames();
+                Directory.epa.RefreshNames();
             }
         }
 
@@ -94,20 +93,23 @@ namespace HRMS.View.UI
             else
             {
                 Directory.IReports.BringToFront();
+                Directory.aReport.RefreshNames();
+                Directory.vReport.RefreshNames();
+                Directory.uReport.RefreshNames();
             }
         }
 
         private void feedback_Click(object sender, EventArgs e)
         {
-            if (!ap.Controls.Contains(Directory.fbh))
+            if (!ap.Controls.Contains(Directory.fh))
             {
-                ap.Controls.Add(Directory.fbh);
-                Directory.fbh.Dock = DockStyle.Fill;
-                Directory.fbh.BringToFront();
+                ap.Controls.Add(Directory.fh);
+                Directory.fh.Dock = DockStyle.Fill;
+                Directory.fh.BringToFront();
             }
             else
             {
-                Directory.fbh.BringToFront();
+                Directory.fh.BringToFront();
             }
         }
 
@@ -152,7 +154,30 @@ namespace HRMS.View.UI
             Directory.aList = null;
             Directory.eList = null;
             Directory.uList = null;
+
             Directory.loadRules = null;
+            Directory.mem = null;
+            Directory.og = null;
+
+            Directory.pah = null;
+            Directory.vpa = null;
+            Directory.apa = null;
+            Directory.epa = null;
+
+            Directory.rechub = null;
+            Directory.arec = null;
+            Directory.vrec = null;
+            Directory.urec = null;
+
+            Directory.IReports = null;
+            Directory.aReport = null;
+            Directory.vReport = null;
+            Directory.uReport = null;
+
+            Directory.fh = null;
+            Directory.eif = null;
+            Directory.aif = null;
+            Directory.vif = null;
             this.Close();
         }
 

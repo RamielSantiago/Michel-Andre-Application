@@ -307,7 +307,7 @@ namespace HRMS.View.UI.IncidentReport
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString))
                 {
                     con.Open();
-                    if (e.RowIndex > 0)
+                    if (Convert.ToInt32(this.reports.Rows[e.RowIndex].Cells[1].Value) > 0)
                     {
                         using (SqlCommand command = new SqlCommand())
                         {

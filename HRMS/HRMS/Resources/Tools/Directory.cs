@@ -39,7 +39,11 @@ namespace HRMS.Resources.Tools
         private static ViewPerApp VPA;
         private static FeedbackHub FBH;
         private static OrgChart OG;
-
+        private static FeedbackHub FH;
+        private static AddIF AIF;
+        private static EditIF EIF;
+        private static ViewIF VIF;
+        public static string username { get; set; }
         public static HRMSRegister Register
         {
             get
@@ -212,7 +216,7 @@ namespace HRMS.Resources.Tools
             {
                 if(mc == null)
                 {
-                    mc = new MemorandumCircular();
+                    mc = new MemorandumCircular(username);
                 }
                 return mc;
             }
@@ -271,19 +275,6 @@ namespace HRMS.Resources.Tools
             set { APA = value; }
         }
 
-        public static FeedbackHub fbh
-        {
-            get
-            {
-                if (FBH == null)
-                {
-                    FBH = new FeedbackHub();
-                }
-                return FBH;
-            }
-            set { FBH = value; }
-        }
-
         public static OrgChart og
         {
             get
@@ -295,6 +286,58 @@ namespace HRMS.Resources.Tools
                 return OG;
             }
             set { OG = value; }
+        }
+
+        public static FeedbackHub fh
+        {
+            get
+            {
+                if (FH == null)
+                {
+                    FH = new FeedbackHub();
+                }
+                return FH;
+            }
+            set { FH = value;}
+        }
+
+        public static EditIF eif
+        {
+            get
+            {
+                if (EIF == null)
+                {
+                    EIF = new EditIF();
+                }
+                return EIF;
+            }
+            set { EIF = value; }
+        }
+
+        public static AddIF aif
+        {
+            get
+            {
+                if (AIF == null)
+                {
+                    AIF = new AddIF();
+                }
+                return AIF;
+            }
+            set { AIF = value; }
+        }
+
+        public static ViewIF vif
+        {
+            get
+            {
+                if (VIF == null)
+                {
+                    VIF = new ViewIF();
+                }
+                return VIF;
+            }
+            set { VIF = value; }
         }
         private void InitializeComponent()
         {
