@@ -26,7 +26,7 @@
     <ProductName>HRMS</ProductName>
     <PublisherName>DLSU</PublisherName>
     <MinimumRequiredVersion>1.0.0.6</MinimumRequiredVersion>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -140,12 +140,6 @@
     </Compile>
     <Compile Include="View\UI\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UI\DBInstallForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UI\DBInstallForm.Designer.cs">
-      <DependentUpon>DBInstallForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UI\EmployeeList\addEmployee.cs">
       <SubType>UserControl</SubType>
@@ -295,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\UI\DBInstallForm.resx">
-      <DependentUpon>DBInstallForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UI\EmployeeList\addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>

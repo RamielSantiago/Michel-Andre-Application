@@ -30,7 +30,6 @@ D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.Recruitment.Recruit
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.Recruitment.ViewRecruits.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.PerformanceAppraisal.PerAppHub.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.Recruitment.AddRecruitment.resources
-D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.DBInstallForm.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.HRMSLogin.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.InformationFeedback.AddIF.resources
 D:\Desktop\School\CSSWENG\HRMS\HRMS\obj\Release\HRMS.View.UI.InformationFeedback.EditIF.resources
