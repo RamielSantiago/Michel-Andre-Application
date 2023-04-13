@@ -26,7 +26,7 @@
     <ProductName>HRMS</ProductName>
     <PublisherName>DLSU</PublisherName>
     <MinimumRequiredVersion>1.0.0.6</MinimumRequiredVersion>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -400,12 +400,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\PDFs\OrgChart\MAOrgChart.pdf">
+    <Content Include="Resources\PDFs\OrgChart\MAOrgChart.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\PDFs\Rules\CompanyRules.pdf">
+    </Content>
+    <Content Include="Resources\PDFs\Rules\CompanyRules.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
