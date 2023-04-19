@@ -40,7 +40,7 @@ namespace HRMS.Resources.Tools
         private static FeedbackHub FBH;
         private static OrgChart OG;
         private static FeedbackHub FH;
-        private static AddIF AIF;
+        private static addIF AIF;
         private static EditIF EIF;
         private static ViewIF VIF;
         public static string username { get; set; }
@@ -314,13 +314,13 @@ namespace HRMS.Resources.Tools
             set { EIF = value; }
         }
 
-        public static AddIF aif
+        public static addIF aif
         {
             get
             {
                 if (AIF == null)
                 {
-                    AIF = new AddIF();
+                    AIF = new addIF();
                 }
                 return AIF;
             }

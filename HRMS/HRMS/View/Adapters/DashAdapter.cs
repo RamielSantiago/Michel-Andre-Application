@@ -37,5 +37,10 @@ namespace HRMS.View.Adapters
             this.crudApp = new AppraisalDBCRUD(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString);
             this.APP = new AppraisalPresenter(reg, crudApp);
         }
+        public DashAdapter(iFeedback reg)
+        {
+            this.crudApp = new FeedbackDBCRUD(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString);
+            this.APP = new FeedbackPresenter(reg, crudApp);
+        }
     }
 }

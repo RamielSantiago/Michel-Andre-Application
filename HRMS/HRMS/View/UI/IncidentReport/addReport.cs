@@ -305,5 +305,10 @@ namespace HRMS.View.UI.IncidentReport
         {
             Console.Write("Somwthing");
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
