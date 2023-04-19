@@ -43,7 +43,7 @@ namespace HRMS.Presenter
 
         public void Update()
         {
-
+            var test = new FeedbackModel();
         }
 
         public int Search(int[] criterias, string[] queries)

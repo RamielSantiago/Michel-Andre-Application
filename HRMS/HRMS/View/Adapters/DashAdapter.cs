@@ -17,9 +17,11 @@ namespace HRMS.View.Adapters
         public iReport crudRep;
         public iNewbies crudRec;
         public iPerform crudApp;
+        public iInfo crudFB;
         public RecruitPresenter RP;
         public IRPresenter IR;
         public AppraisalPresenter APP;
+        public FeedbackPresenter FB;
         public DashAdapter(iIncident reg)
         {
             this.crudRep = new IncidentDBCRUD(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString);
@@ -39,8 +41,8 @@ namespace HRMS.View.Adapters
         }
         public DashAdapter(iFeedback reg)
         {
-            this.crudApp = new FeedbackDBCRUD(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString);
-            this.APP = new FeedbackPresenter(reg, crudApp);
+            this.crudFB = new FeedbackDBCRUD(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString);
+            this.FB = new FeedbackPresenter(reg, crudFB);
         }
     }
 }

@@ -128,70 +128,47 @@ namespace HRMS.View.UI.InformationFeedback
         {
             IRA.IR.LoadAllReports();
         }
-        private void rSearchBtn_Click(object sender, EventArgs e)
+
+        public void RefreshNames()
         {
-            if (LastNames.SelectedIndex == -1 && FNames.SelectedIndex == -1 && dept.SelectedIndex == -1 && position.SelectedIndex == -1)
+            LastNames.Items.Clear();
+            FNames.Items.Clear();
+            IEnumerable<UserModel> Names = LRA.crud.GetAll();
+            for (int i = 0; i < Names.Count(); i++)
             {
-                MessageBox.Show("Please provide a criteria to search from the dropdowns above the table", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                FNames.Items.Add(Names.ElementAt(i).FirstName);
+                LastNames.Items.Add(Names.ElementAt(i).LastName);
             }
-            else
-            {
-                int[] criterias = new int[4];
-                string[] queries = new string[4];
-                if (LastNames.SelectedIndex > -1)
-                {
-                    criterias[0] = 1;
-                    queries[0] = LastNames.SelectedItem.ToString();
-                }
-                else
-                {
-                    criterias[0] = 0;
-                    queries[0] = "";
-                }
-
-                if (FNames.SelectedIndex > -1)
-                {
-                    criterias[1] = 1;
-                    queries[1] = FNames.SelectedItem.ToString();
-                }
-                else
-                {
-                    criterias[1] = 0;
-                    queries[1] = "";
-                }
-
-                if (dept.SelectedIndex > -1)
-                {
-                    criterias[2] = 1;
-                    queries[2] = dept.SelectedItem.ToString();
-                }
-                else
-                {
-                    criterias[2] = 0;
-                    queries[2] = "";
-                }
-
-                if (position.SelectedIndex > -1)
-                {
-                    criterias[3] = 1;
-                    queries[3] = position.SelectedItem.ToString();
-                }
-                else
-                {
-                    criterias[3] = 0;
-                    queries[3] = "";
-                }
-
-                if (IRA.IR.SearchReport(criterias, queries) == -1)
-                {
-                    MessageBox.Show("No Results Found.", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            LastNames.SelectedIndex = -1;
-            FNames.SelectedIndex = -1;
-            dept.SelectedIndex = -1;
-            position.SelectedIndex = -1;
+            LastNames.Items.RemoveAt(0);
+            FNames.Items.RemoveAt(0);
         }
+        private void reports_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (reports.Columns[e.ColumnIndex].Name == "btndelete")
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString))
+                {
+                    con.Open();
+                    if (Convert.ToInt32(this.reports.Rows[e.RowIndex].Cells[1].Value) > 0)
+                    {
+                        using (SqlCommand command = new SqlCommand())
+                        {
+                            command.Connection = con;
+                            command.CommandText = "DELETE FROM Incidents WHERE IncidentID = @iID";
+                            command.Parameters.AddWithValue("@iID", Convert.ToInt32(this.reports.Rows[e.RowIndex].Cells[1].Value));
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Report with ID 0 cannot be deleted.", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    con.Close();
+                }
+                refreshList();
+            }
+        }
+
         private void dept_SelectedIndexChanged(object sender, EventArgs e)
         {
             position.Items.Clear();
@@ -285,59 +262,70 @@ namespace HRMS.View.UI.InformationFeedback
                     break;
             }
         }
-        public void RefreshNames()
-        {
-            LastNames.Items.Clear();
-            FNames.Items.Clear();
-            IEnumerable<UserModel> Names = LRA.crud.GetAll();
-            for (int i = 0; i < Names.Count(); i++)
-            {
-                FNames.Items.Add(Names.ElementAt(i).FirstName);
-                LastNames.Items.Add(Names.ElementAt(i).LastName);
-            }
-            LastNames.Items.RemoveAt(0);
-            FNames.Items.RemoveAt(0);
-        }
-        private void reports_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (reports.Columns[e.ColumnIndex].Name == "btndelete")
-            {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString))
-                {
-                    con.Open();
-                    if (Convert.ToInt32(this.reports.Rows[e.RowIndex].Cells[1].Value) > 0)
-                    {
-                        using (SqlCommand command = new SqlCommand())
-                        {
-                            command.Connection = con;
-                            command.CommandText = "DELETE FROM Incidents WHERE IncidentID = @iID";
-                            command.Parameters.AddWithValue("@iID", Convert.ToInt32(this.reports.Rows[e.RowIndex].Cells[1].Value));
-                            command.ExecuteNonQuery();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Report with ID 0 cannot be deleted.", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    con.Close();
-                }
-                refreshList();
-            }
-        }
-        private void LastNames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (LastNames.SelectedIndex > -1)
-            {
-                FNames.SelectedIndex = LastNames.SelectedIndex;
-            }
-        }
 
-        private void FNames_SelectedIndexChanged(object sender, EventArgs e)
+        private void rSearchBtn_Click(object sender, EventArgs e)
         {
-            if (FNames.SelectedIndex > -1)
+            if (LastNames.SelectedIndex == -1 && FNames.SelectedIndex == -1 && dept.SelectedIndex == -1 && position.SelectedIndex == -1)
             {
-                LastNames.SelectedIndex = FNames.SelectedIndex;
+                MessageBox.Show("Please provide a criteria to search from the dropdowns above the table", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                int[] criterias = new int[4];
+                string[] queries = new string[4];
+                if (LastNames.SelectedIndex > -1)
+                {
+                    criterias[0] = 1;
+                    queries[0] = LastNames.SelectedItem.ToString();
+                }
+                else
+                {
+                    criterias[0] = 0;
+                    queries[0] = "";
+                }
+
+                if (FNames.SelectedIndex > -1)
+                {
+                    criterias[1] = 1;
+                    queries[1] = FNames.SelectedItem.ToString();
+                }
+                else
+                {
+                    criterias[1] = 0;
+                    queries[1] = "";
+                }
+
+                if (dept.SelectedIndex > -1)
+                {
+                    criterias[2] = 1;
+                    queries[2] = dept.SelectedItem.ToString();
+                }
+                else
+                {
+                    criterias[2] = 0;
+                    queries[2] = "";
+                }
+
+                if (position.SelectedIndex > -1)
+                {
+                    criterias[3] = 1;
+                    queries[3] = position.SelectedItem.ToString();
+                }
+                else
+                {
+                    criterias[3] = 0;
+                    queries[3] = "";
+                }
+
+                if (IRA.IR.SearchReport(criterias, queries) == -1)
+                {
+                    MessageBox.Show("No Results Found.", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            LastNames.SelectedIndex = -1;
+            FNames.SelectedIndex = -1;
+            dept.SelectedIndex = -1;
+            position.SelectedIndex = -1;
         }
     }
 }

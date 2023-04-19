@@ -90,7 +90,7 @@
             this.to.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.to.Location = new System.Drawing.Point(3, 4);
             this.to.Name = "to";
-            this.to.Size = new System.Drawing.Size(34, 30);
+            this.to.Size = new System.Drawing.Size(27, 24);
             this.to.TabIndex = 128;
             this.to.Text = "To";
             // 
@@ -100,9 +100,9 @@
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(177, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 24);
+            this.label3.Size = new System.Drawing.Size(46, 24);
             this.label3.TabIndex = 127;
-            this.label3.Text = "First Name";
+            this.label3.Text = "From";
             // 
             // label2
             // 
@@ -133,6 +133,7 @@
             this.rSearchBtn.TabIndex = 1;
             this.rSearchBtn.Text = "Search";
             this.rSearchBtn.UseVisualStyleBackColor = false;
+            this.rSearchBtn.Click += new System.EventHandler(this.rSearchBtn_Click);
             // 
             // position
             // 
@@ -189,6 +190,7 @@
             this.dept.Name = "dept";
             this.dept.Size = new System.Drawing.Size(269, 28);
             this.dept.TabIndex = 2;
+            this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged);
             // 
             // FNames
             // 
@@ -216,6 +218,7 @@
             this.reports.RowTemplate.Height = 24;
             this.reports.Size = new System.Drawing.Size(970, 857);
             this.reports.TabIndex = 2;
+            this.reports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reports_CellContentClick);
             // 
             // ViewIF
             // 
