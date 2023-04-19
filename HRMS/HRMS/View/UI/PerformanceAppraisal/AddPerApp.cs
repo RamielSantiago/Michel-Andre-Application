@@ -1,6 +1,7 @@
 ﻿using HRMS.Model.DBModels;
 using HRMS.Resources.Tools;
 using HRMS.View.Adapters;
+using HRMS.View.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace HRMS.View.UI.PerformanceAppraisal
 {
-    public partial class AddPerApp : UserControl
+    public partial class AddPerApp : UserControl, iAppraisal
     {
         private string[] acctPos = {"EVP Finance & Accounting",
                                     "Accounting Officer",
@@ -88,9 +89,32 @@ namespace HRMS.View.UI.PerformanceAppraisal
         DashAdapter IRA;
         private int attend = 0, accurate = 0, house = 0, efficient = 0, courteous = 0, alert = 0, DDR = 0, compliance = 0, coop = 0, judge = 0, appear = 0, friend = 0;
         private int score = 0;
+
+        public string FirstName { get { return fNames.SelectedItem.ToString(); } set { fNames.SelectedIndex = -1; } }
+        public string LastName { get { return lNames.SelectedItem.ToString(); } set { lNames.SelectedIndex = -1; } }
+        public string MiddleName { get { return mNames.SelectedItem.ToString(); } set { mNames.SelectedIndex = -1; } }
+        public string Position { get { return position.SelectedItem.ToString(); } set { position.SelectedIndex = -1; } }
+        public string Department { get { return dept.SelectedItem.ToString(); } set { dept.SelectedIndex = -1; } }
+        public DateTime appDate { get { return DateAdd.Value; } set { DateAdd.Value = DateTime.Now; } }
+        public int Attendance { get { return attendance.SelectedIndex; } set { Attendance = 0;} }
+        public int Accuracy { get { return accuracy.SelectedIndex; } set { Accuracy = 0; } }
+        public int HouseKeeping { get { return housekeeping.SelectedIndex; } set { HouseKeeping = 0; } }
+        public int Efficiency { get { return efficiency.SelectedIndex; } set { Efficiency = 0; } }
+        public int CourtesyAtt { get { return courtesy.SelectedIndex; } set { CourtesyAtt = 0; } }
+        public int Alertness { get { return alertness.SelectedIndex; } set { Alertness = 0; } }
+        public int DRR { get { return ddr.SelectedIndex; } set { DRR = 0; } }
+        public int Cooperation { get { return cooperation.SelectedIndex; } set { Cooperation = 0; } }
+        public int CCP { get { return comply.SelectedIndex; } set { CCP = 0; } }
+        public int Judgement { get { return judgement.SelectedIndex; } set { Judgement = 0; } }
+        public int Appearance { get { return appearance.SelectedIndex; } set { Appearance = 0; } }
+        public int Friendliness { get { return friendliness.SelectedIndex; } set { Friendliness = 0; } }
+        public int Total { get { return score; } set { score = 0; } }
+
         public AddPerApp()
         {
-            InitializeComponent(); this.LRA = new Log_RegAdapter(Directory.uList);
+            InitializeComponent(); 
+            this.LRA = new Log_RegAdapter(Directory.uList);
+            this.IRA = new DashAdapter(this);
             RefreshNames();
             attendance.SelectedIndex = 0;
             accuracy.SelectedIndex = 0;
@@ -220,6 +244,46 @@ namespace HRMS.View.UI.PerformanceAppraisal
                     break;
             }
         }
+        private void addPA_Click(object sender, EventArgs e)
+        {
+            bool valid = true;
+            string errorMsg = "";
+            if(lNames.SelectedIndex == -1 || fNames.SelectedIndex == -1 || mNames.SelectedIndex == -1 || dept.SelectedIndex == -1 ||
+                position.SelectedIndex == -1)
+            {
+                valid = false;
+                MessageBox.Show("Please fill all the required fields", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if(DateAdd.Value > DateTime.Now)
+                {
+                    valid = false;
+                    errorMsg = errorMsg + "Date Input cannot be a future date." + Environment.NewLine;
+                }
+                if (valid)
+                {
+                    IRA.APP.Add();
+                    MessageBox.Show("New Appraisal Added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else
+                {
+                    MessageBox.Show(errorMsg, "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            attendance.SelectedIndex = 0;
+            accuracy.SelectedIndex = 0;
+            housekeeping.SelectedIndex = 0;
+            efficiency.SelectedIndex = 0;
+            courtesy.SelectedIndex = 0;
+            alertness.SelectedIndex = 0;
+            ddr.SelectedIndex = 0;
+            comply.SelectedIndex = 0;
+            cooperation.SelectedIndex = 0;
+            judgement.SelectedIndex = 0;
+            appearance.SelectedIndex = 0;
+            friendliness.SelectedIndex = 0;
+        }
+
         private void housekeeping_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeTotalScore();
@@ -248,11 +312,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
         private void comply_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeTotalScore();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cooperation_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,6 +393,11 @@ namespace HRMS.View.UI.PerformanceAppraisal
                 lNames.SelectedIndex = mNames.SelectedIndex;
                 fNames.SelectedIndex = mNames.SelectedIndex;
             }
+        }
+
+        public void setAppraisalBS(BindingSource bs)
+        {
+            Console.Write("Something");
         }
     }
 }

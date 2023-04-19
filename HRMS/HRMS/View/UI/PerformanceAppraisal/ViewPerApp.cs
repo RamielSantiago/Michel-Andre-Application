@@ -3,10 +3,13 @@ using HRMS.Model.DBModels;
 using HRMS.Resources.Tools;
 using HRMS.View.Adapters;
 using HRMS.View.Interfaces;
+using HRMS.View.UI.Recruitment;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -95,8 +98,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public string MiddleName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Department { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Year { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Month { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Attendance { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Accuracy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int HouseKeeping { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -110,6 +111,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public int Appearance { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Friendliness { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Total { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime appDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ViewPerApp()
         {
@@ -143,7 +145,29 @@ namespace HRMS.View.UI.PerformanceAppraisal
 
         private void appraisals_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (appraisals.Columns[e.ColumnIndex].Name == "btndelete")
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnectionString"].ConnectionString))
+                {
+                    con.Open();
+                    if (Convert.ToInt32(this.appraisals.Rows[e.RowIndex].Cells[1].Value) > 0)
+                    {
+                        using (SqlCommand command = new SqlCommand())
+                        {
+                            command.Connection = con;
+                            command.CommandText = "DELETE FROM PerformanceAppraisals WHERE AppraisalID = @RID";
+                            command.Parameters.AddWithValue("@RID", Convert.ToInt32(this.appraisals.Rows[e.RowIndex].Cells[1].Value));
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record with ID 0 cannot be deleted.", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    con.Close();
+                }
+                refreshList();
+            }
         }
 
         private void searchapp_Click(object sender, EventArgs e)

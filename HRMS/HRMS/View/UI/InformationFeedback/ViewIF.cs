@@ -113,6 +113,18 @@ namespace HRMS.View.UI.InformationFeedback
         public bool HRofficer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Supervisor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool President { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int FeedbackID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string To { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string From { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Subject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime date { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Details { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string RecAct { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Comments { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool CompSig { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool HRSig { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool SuperSig { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool PresSig { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void setFeedbackBS(BindingSource bs)
         {

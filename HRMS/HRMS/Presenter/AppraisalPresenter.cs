@@ -30,28 +30,48 @@ namespace HRMS.Presenter
 
         public void LoadAllAppraisals()
         {
-            //AppList = repo.GetAll();
-            //bs.DataSource = AppList;
+            AppList = repo.GetAll();
+            bs.DataSource = AppList;
         }
 
         public void Add()
         {
             var test = new AppraisalModel();
-            //repo.Add(test);
+            test.Id = AppList.ElementAt(AppList.Count() - 1).Id + 1;
+            test.FirstName = view.FirstName;
+            test.LastName = view.LastName;
+            test.MiddleName = view.MiddleName;
+            test.Department= view.Department;
+            test.Position = view.Position;
+            test.appDate = view.appDate;
+            test.Attendance= view.Attendance;
+            test.Accuracy= view.Accuracy;
+            test.HouseKeeping= view.HouseKeeping;
+            test.Efficiency= view.Efficiency;
+            test.CourtesyAtt = view.CourtesyAtt;
+            test.Alertness = view.Alertness;
+            test.DRR= view.DRR;
+            test.Cooperation= view.Cooperation;
+            test.Judgement= view.Judgement;
+            test.CCP = view.CCP;
+            test.Appearance = view.Appearance;
+            test.Friendliness= view.Friendliness;
+            test.Total = view.Total;
+            repo.Add(test);
             LoadAllAppraisals();
         }
 
         public int Search(int[] criteria, string[] query)
         {
-            //IRList = repo.SearchIncident(criteria, query);
-            //if (!IRList.Any())
+            //AppList = repo.SearchIncident(criteria, query);
+            //if (!AppList.Any())
             //{
-            //    LoadAllReports();
+            //    LoadAllAppraisals();
             //    return -1;
             //}
             //else
             //{
-            //    bs.DataSource = IRList;
+            //    bs.DataSource = AppList;
             return 1;
             //}
         }

@@ -96,8 +96,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public string MiddleName { get { return mNames.SelectedItem.ToString(); } set { mNames.SelectedIndex = -1; } }
         public string Position { get { return position.SelectedItem.ToString(); } set { position.SelectedIndex = -1; } }
         public string Department { get { return dept.SelectedItem.ToString(); } set { dept.SelectedIndex = -1; } }
-        public int Year { get { return DateAdd.Value.Year; } set { DateAdd.Value = DateTime.Now; } }
-        public int Month { get { return DateAdd.Value.Month; } set { DateAdd.Value = DateTime.Now; } }
         public int Attendance { get { return attend; } set { attend = value; } }
         public int Accuracy { get { return accurate; } set {accurate = value; } }
         public int HouseKeeping { get { return house; } set { house = value; } }
@@ -110,8 +108,8 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public int Judgement { get { return judge; } set {judge = value; } }
         public int Appearance { get { return appear; } set {appear = value; } }
         public int Friendliness { get { return friend; } set {friend = value; } }
-
         public int Total { get { return score; } set { score = value; } }
+        public DateTime appDate { get { return DateAdd.Value; } set { DateAdd.Value = DateTime.Now; } }
 
         public EditPerApp()
         {

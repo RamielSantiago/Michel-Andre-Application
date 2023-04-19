@@ -14,8 +14,7 @@ namespace HRMS.View.Interfaces
         string MiddleName { get; set; }
         string Position { get; set; }
         string Department { get; set; }
-        int Year { get; set; }
-        int Month { get; set; }
+        DateTime appDate { get; set; }
         int Attendance { get; set; }
         int Accuracy { get; set; }
         int HouseKeeping { get; set; }

@@ -73,12 +73,11 @@
             // 
             // mNames
             // 
-            this.mNames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mNames.BackColor = System.Drawing.Color.LightSkyBlue;
             this.mNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.mNames.FormattingEnabled = true;
-            this.mNames.Location = new System.Drawing.Point(324, 33);
+            this.mNames.Location = new System.Drawing.Point(467, 33);
             this.mNames.Name = "mNames";
             this.mNames.Size = new System.Drawing.Size(188, 25);
             this.mNames.TabIndex = 129;
@@ -86,12 +85,11 @@
             // 
             // lNames
             // 
-            this.lNames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lNames.BackColor = System.Drawing.Color.LightSkyBlue;
             this.lNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.lNames.FormattingEnabled = true;
-            this.lNames.Location = new System.Drawing.Point(517, 33);
+            this.lNames.Location = new System.Drawing.Point(37, 30);
             this.lNames.Name = "lNames";
             this.lNames.Size = new System.Drawing.Size(190, 25);
             this.lNames.TabIndex = 128;
@@ -99,12 +97,11 @@
             // 
             // fNames
             // 
-            this.fNames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fNames.BackColor = System.Drawing.Color.LightSkyBlue;
             this.fNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.fNames.FormattingEnabled = true;
-            this.fNames.Location = new System.Drawing.Point(98, 33);
+            this.fNames.Location = new System.Drawing.Point(242, 30);
             this.fNames.Name = "fNames";
             this.fNames.Size = new System.Drawing.Size(210, 25);
             this.fNames.TabIndex = 127;
@@ -114,7 +111,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(94, 0);
+            this.label2.Location = new System.Drawing.Point(33, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 24);
             this.label2.TabIndex = 126;
@@ -124,11 +121,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(718, 0);
+            this.label6.Location = new System.Drawing.Point(665, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 24);
+            this.label6.Size = new System.Drawing.Size(139, 30);
             this.label6.TabIndex = 121;
-            this.label6.Text = "Application Date";
+            this.label6.Text = "Appraisal Date";
             // 
             // label5
             // 
@@ -144,7 +141,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(320, 0);
+            this.label4.Location = new System.Drawing.Point(238, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 24);
             this.label4.TabIndex = 124;
@@ -154,7 +151,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(513, 0);
+            this.label3.Location = new System.Drawing.Point(463, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 123;
@@ -212,7 +209,7 @@
             // DateAdd
             // 
             this.DateAdd.CalendarFont = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.DateAdd.Location = new System.Drawing.Point(722, 33);
+            this.DateAdd.Location = new System.Drawing.Point(669, 33);
             this.DateAdd.Margin = new System.Windows.Forms.Padding(4);
             this.DateAdd.Name = "DateAdd";
             this.DateAdd.Size = new System.Drawing.Size(230, 22);

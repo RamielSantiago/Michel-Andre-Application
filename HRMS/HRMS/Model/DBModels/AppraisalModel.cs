@@ -8,26 +8,25 @@ namespace HRMS.Model.DBModels
 {
     public class AppraisalModel
     {
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string MiddleName { get; set; }
-        string Position { get; set; }
-        string Department { get; set; }
-        int Year { get; set; }
-        int Month { get; set; }
-        int Attendance { get; set; }
-        int Accuracy { get; set; }
-        int HouseKeeping { get; set; }
-        int Efficiency { get; set; }
-        int CourtesyAtt { get; set; }
-        int Alertness { get; set; }
-        int DRR { get; set; }
-        int Cooperation { get; set; }
-        int CCP { get; set; }
-        int Judgement { get; set; }
-        int Appearance { get; set; }
-        int Friendliness { get; set; }
-        int Total { get; set; }
-
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        public string Position { get; set; }
+        public string Department { get; set; }
+        public DateTime appDate { get; set; }
+        public int Attendance { get; set; }
+        public int Accuracy { get; set; }
+        public int HouseKeeping { get; set; }
+        public int Efficiency { get; set; }
+        public int CourtesyAtt { get; set; }
+        public int Alertness { get; set; }
+        public int DRR { get; set; }
+        public int Cooperation { get; set; }
+        public int CCP { get; set; }
+        public int Judgement { get; set; }
+        public int Appearance { get; set; }
+        public int Friendliness { get; set; }
+        public int Total { get; set; }
     }
 }

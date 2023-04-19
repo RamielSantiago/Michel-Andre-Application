@@ -149,9 +149,9 @@
             this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(729, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 24);
+            this.label6.Size = new System.Drawing.Size(139, 30);
             this.label6.TabIndex = 48;
-            this.label6.Text = "Date";
+            this.label6.Text = "Appraisal Date";
             // 
             // label5
             // 

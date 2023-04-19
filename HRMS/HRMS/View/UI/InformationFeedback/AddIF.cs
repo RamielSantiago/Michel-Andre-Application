@@ -116,17 +116,14 @@ namespace HRMS.View.UI.InformationFeedback
         public void RefreshNames()
         {
             to.Items.Clear();
-            lNames.Items.Clear();
             from.Items.Clear();
             IEnumerable<UserModel> Names = LRA.crud.GetAll();
             for (int i = 0; i < Names.Count(); i++)
             {
                 to.Items.Add(Names.ElementAt(i).FirstName);
-                lNames.Items.Add(Names.ElementAt(i).LastName);
                 from.Items.Add(Names.ElementAt(i).MiddleName);
             }
             to.Items.RemoveAt(0);
-            lNames.Items.RemoveAt(0);
             from.Items.RemoveAt(0);
         }
 

@@ -67,7 +67,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addPA = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,7 +102,7 @@
             this.mNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.mNames.FormattingEnabled = true;
-            this.mNames.Location = new System.Drawing.Point(337, 30);
+            this.mNames.Location = new System.Drawing.Point(534, 30);
             this.mNames.Name = "mNames";
             this.mNames.Size = new System.Drawing.Size(188, 25);
             this.mNames.TabIndex = 120;
@@ -115,7 +115,7 @@
             this.lNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.lNames.FormattingEnabled = true;
-            this.lNames.Location = new System.Drawing.Point(534, 30);
+            this.lNames.Location = new System.Drawing.Point(111, 30);
             this.lNames.Name = "lNames";
             this.lNames.Size = new System.Drawing.Size(190, 25);
             this.lNames.TabIndex = 119;
@@ -128,7 +128,7 @@
             this.fNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.fNames.FormattingEnabled = true;
-            this.fNames.Location = new System.Drawing.Point(111, 30);
+            this.fNames.Location = new System.Drawing.Point(318, 30);
             this.fNames.Name = "fNames";
             this.fNames.Size = new System.Drawing.Size(210, 25);
             this.fNames.TabIndex = 118;
@@ -140,9 +140,9 @@
             this.label2.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(107, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
+            this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Last Name";
+            this.label2.Text = "Last Name*";
             // 
             // label6
             // 
@@ -150,9 +150,9 @@
             this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(729, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 24);
+            this.label6.Size = new System.Drawing.Size(119, 24);
             this.label6.TabIndex = 48;
-            this.label6.Text = "Application Date";
+            this.label6.Text = "Appraisal Date*";
             // 
             // label5
             // 
@@ -160,19 +160,19 @@
             this.label5.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(461, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 24);
+            this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 52;
-            this.label5.Text = "Position";
+            this.label5.Text = "Position*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(333, 0);
+            this.label4.Location = new System.Drawing.Point(314, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
+            this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 51;
-            this.label4.Text = "First Name";
+            this.label4.Text = "First Name*";
             // 
             // label3
             // 
@@ -180,9 +180,9 @@
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(530, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.Size = new System.Drawing.Size(105, 24);
             this.label3.TabIndex = 50;
-            this.label3.Text = "Middle Name";
+            this.label3.Text = "Middle Name*";
             // 
             // label1
             // 
@@ -190,9 +190,9 @@
             this.label1.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(172, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 24);
+            this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 49;
-            this.label1.Text = "Department";
+            this.label1.Text = "Department*";
             // 
             // position
             // 
@@ -269,7 +269,7 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.addPA);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 129);
@@ -652,18 +652,18 @@
             this.label15.TabIndex = 64;
             this.label15.Text = "Attendance (10%)";
             // 
-            // button1
+            // addPA
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Font = new System.Drawing.Font("Sans Serif Collection", 10F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(477, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 50);
-            this.button1.TabIndex = 71;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addPA.BackColor = System.Drawing.Color.SteelBlue;
+            this.addPA.Font = new System.Drawing.Font("Sans Serif Collection", 10F);
+            this.addPA.ForeColor = System.Drawing.Color.White;
+            this.addPA.Location = new System.Drawing.Point(477, 461);
+            this.addPA.Name = "addPA";
+            this.addPA.Size = new System.Drawing.Size(150, 50);
+            this.addPA.TabIndex = 71;
+            this.addPA.Text = "Add";
+            this.addPA.UseVisualStyleBackColor = false;
+            this.addPA.Click += new System.EventHandler(this.addPA_Click);
             // 
             // label7
             // 
@@ -706,7 +706,7 @@
         private System.Windows.Forms.ComboBox dept;
         private System.Windows.Forms.DateTimePicker DateAdd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addPA;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
