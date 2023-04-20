@@ -12,7 +12,8 @@ namespace HRMS.Model.DBInterfaces
         void Add(AppraisalModel user);
         void Update(AppraisalModel user);
         int SearchID(int query);
-        IEnumerable<AppraisalModel> Search(int[] criterias, string[] queries);
+        AppraisalModel getExisting(AppraisalModel user);
+        IEnumerable<AppraisalModel> Search(int criterias, string queries);
         IEnumerable<AppraisalModel> GetAll();
     }
 }

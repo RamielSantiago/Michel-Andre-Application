@@ -28,7 +28,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
             {
                 Directory.vpa.BringToFront();
                 Directory.vpa.refreshList();
-                Directory.vpa.RefreshNames();
             }
         }
 
@@ -44,7 +43,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
             {
                 Directory.vpa.BringToFront();
                 Directory.vpa.refreshList();
-                Directory.vpa.RefreshNames();
             }
         }
 

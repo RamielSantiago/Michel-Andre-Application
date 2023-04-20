@@ -122,9 +122,6 @@ namespace HRMS.View.UI.IncidentReport
                 lNames.Items.Add(Names.ElementAt(i).LastName);
                 mNames.Items.Add(Names.ElementAt(i).MiddleName);
             }
-            fNames.Items.RemoveAt(0);
-            lNames.Items.RemoveAt(0);
-            mNames.Items.RemoveAt(0);
         }
 
         private void lNames_SelectedIndexChanged(object sender, EventArgs e)

@@ -95,7 +95,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public string MiddleName { get { return mNames.SelectedItem.ToString(); } set { mNames.SelectedIndex = -1; } }
         public string Position { get { return position.SelectedItem.ToString(); } set { position.SelectedIndex = -1; } }
         public string Department { get { return dept.SelectedItem.ToString(); } set { dept.SelectedIndex = -1; } }
-        public DateTime appDate { get { return DateAdd.Value; } set { DateAdd.Value = DateTime.Now; } }
+        public DateTime appDate { get { return DateTime.Now; } set { appDate = DateTime.Now; } }
         public int Attendance { get { return attendance.SelectedIndex; } set { Attendance = 0;} }
         public int Accuracy { get { return accuracy.SelectedIndex; } set { Accuracy = 0; } }
         public int HouseKeeping { get { return housekeeping.SelectedIndex; } set { HouseKeeping = 0; } }
@@ -141,9 +141,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
                 lNames.Items.Add(Names.ElementAt(i).LastName);
                 mNames.Items.Add(Names.ElementAt(i).MiddleName);
             }
-            fNames.Items.RemoveAt(0);
-            lNames.Items.RemoveAt(0);
-            mNames.Items.RemoveAt(0);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -256,10 +253,16 @@ namespace HRMS.View.UI.PerformanceAppraisal
             }
             else
             {
-                if(DateAdd.Value > DateTime.Now)
+                var test = new UserModel();
+                test.FirstName = fNames.SelectedItem.ToString();
+                test.LastName = lNames.SelectedItem.ToString();
+                test.MiddleName = mNames.SelectedItem.ToString();
+                test.Department = dept.SelectedItem.ToString();
+                test.Position = position.SelectedItem.ToString();
+                if (LRA.crud.checkifExists(test) == 0)
                 {
                     valid = false;
-                    errorMsg = errorMsg + "Date Input cannot be a future date." + Environment.NewLine;
+                    errorMsg = errorMsg + "No such user exists." + Environment.NewLine;
                 }
                 if (valid)
                 {

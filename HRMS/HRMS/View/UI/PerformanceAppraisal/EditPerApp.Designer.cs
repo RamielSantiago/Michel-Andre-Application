@@ -33,14 +33,12 @@
             this.lNames = new System.Windows.Forms.ComboBox();
             this.fNames = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.ComboBox();
             this.dept = new System.Windows.Forms.ComboBox();
-            this.DateAdd = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.updateApp = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -57,6 +55,18 @@
             this.label20 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.eFF = new System.Windows.Forms.CheckBox();
+            this.eAcc = new System.Windows.Forms.CheckBox();
+            this.eHK = new System.Windows.Forms.CheckBox();
+            this.eEff = new System.Windows.Forms.CheckBox();
+            this.eCAA = new System.Windows.Forms.CheckBox();
+            this.eAl = new System.Windows.Forms.CheckBox();
+            this.eDRR = new System.Windows.Forms.CheckBox();
+            this.eCRR = new System.Windows.Forms.CheckBox();
+            this.eCoop = new System.Windows.Forms.CheckBox();
+            this.eJud = new System.Windows.Forms.CheckBox();
+            this.ePA = new System.Windows.Forms.CheckBox();
+            this.eAtt = new System.Windows.Forms.CheckBox();
             this.judgement = new System.Windows.Forms.ComboBox();
             this.appearance = new System.Windows.Forms.ComboBox();
             this.friendliness = new System.Windows.Forms.ComboBox();
@@ -69,6 +79,8 @@
             this.comply = new System.Windows.Forms.ComboBox();
             this.ddr = new System.Windows.Forms.ComboBox();
             this.attendance = new System.Windows.Forms.ComboBox();
+            this.appDatePick = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,18 +88,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.appDatePick);
             this.panel1.Controls.Add(this.mNames);
             this.panel1.Controls.Add(this.lNames);
             this.panel1.Controls.Add(this.fNames);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.position);
             this.panel1.Controls.Add(this.dept);
-            this.panel1.Controls.Add(this.DateAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -101,7 +113,7 @@
             this.mNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.mNames.FormattingEnabled = true;
-            this.mNames.Location = new System.Drawing.Point(337, 33);
+            this.mNames.Location = new System.Drawing.Point(346, 33);
             this.mNames.Name = "mNames";
             this.mNames.Size = new System.Drawing.Size(188, 25);
             this.mNames.TabIndex = 117;
@@ -114,7 +126,7 @@
             this.lNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.lNames.FormattingEnabled = true;
-            this.lNames.Location = new System.Drawing.Point(534, 33);
+            this.lNames.Location = new System.Drawing.Point(543, 33);
             this.lNames.Name = "lNames";
             this.lNames.Size = new System.Drawing.Size(190, 25);
             this.lNames.TabIndex = 116;
@@ -127,7 +139,7 @@
             this.fNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.fNames.FormattingEnabled = true;
-            this.fNames.Location = new System.Drawing.Point(111, 33);
+            this.fNames.Location = new System.Drawing.Point(120, 33);
             this.fNames.Name = "fNames";
             this.fNames.Size = new System.Drawing.Size(210, 25);
             this.fNames.TabIndex = 115;
@@ -137,21 +149,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(107, 0);
+            this.label2.Location = new System.Drawing.Point(116, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
+            this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Last Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(729, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 30);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Appraisal Date";
+            this.label2.Text = "Last Name*";
             // 
             // label5
             // 
@@ -159,29 +161,29 @@
             this.label5.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(461, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 24);
+            this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 52;
-            this.label5.Text = "Position";
+            this.label5.Text = "Position*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(333, 0);
+            this.label4.Location = new System.Drawing.Point(342, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
+            this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 51;
-            this.label4.Text = "First Name";
+            this.label4.Text = "First Name*";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(530, 0);
+            this.label3.Location = new System.Drawing.Point(539, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.Size = new System.Drawing.Size(105, 24);
             this.label3.TabIndex = 50;
-            this.label3.Text = "Middle Name";
+            this.label3.Text = "Middle Name*";
             // 
             // label1
             // 
@@ -189,9 +191,9 @@
             this.label1.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(172, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 24);
+            this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 49;
-            this.label1.Text = "Department";
+            this.label1.Text = "Department*";
             // 
             // position
             // 
@@ -231,16 +233,6 @@
             this.dept.Size = new System.Drawing.Size(266, 29);
             this.dept.TabIndex = 46;
             this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged);
-            // 
-            // DateAdd
-            // 
-            this.DateAdd.CalendarFont = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.DateAdd.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.DateAdd.Location = new System.Drawing.Point(733, 33);
-            this.DateAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.DateAdd.Name = "DateAdd";
-            this.DateAdd.Size = new System.Drawing.Size(230, 23);
-            this.DateAdd.TabIndex = 45;
             // 
             // label7
             // 
@@ -309,11 +301,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(66, 226);
+            this.label11.Location = new System.Drawing.Point(66, 198);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(203, 24);
+            this.label11.Size = new System.Drawing.Size(138, 48);
             this.label11.TabIndex = 60;
-            this.label11.Text = "Courtesy and Attitude (10%)";
+            this.label11.Text = "Courtesy \r\nand Attitude (10%)";
             // 
             // label10
             // 
@@ -359,11 +351,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(570, 363);
+            this.label18.Location = new System.Drawing.Point(573, 339);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(193, 24);
+            this.label18.Size = new System.Drawing.Size(130, 48);
             this.label18.TabIndex = 74;
-            this.label18.Text = "Personal Appearance (5%)";
+            this.label18.Text = "Personal \r\nAppearance (5%)";
             // 
             // label19
             // 
@@ -398,6 +390,18 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.eFF);
+            this.panel2.Controls.Add(this.eAcc);
+            this.panel2.Controls.Add(this.eHK);
+            this.panel2.Controls.Add(this.eEff);
+            this.panel2.Controls.Add(this.eCAA);
+            this.panel2.Controls.Add(this.eAl);
+            this.panel2.Controls.Add(this.eDRR);
+            this.panel2.Controls.Add(this.eCRR);
+            this.panel2.Controls.Add(this.eCoop);
+            this.panel2.Controls.Add(this.eJud);
+            this.panel2.Controls.Add(this.ePA);
+            this.panel2.Controls.Add(this.eAtt);
             this.panel2.Controls.Add(this.judgement);
             this.panel2.Controls.Add(this.appearance);
             this.panel2.Controls.Add(this.friendliness);
@@ -430,6 +434,138 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1122, 597);
             this.panel2.TabIndex = 4;
+            // 
+            // eFF
+            // 
+            this.eFF.AutoSize = true;
+            this.eFF.Location = new System.Drawing.Point(986, 368);
+            this.eFF.Name = "eFF";
+            this.eFF.Size = new System.Drawing.Size(59, 20);
+            this.eFF.TabIndex = 100;
+            this.eFF.Text = "Edit?";
+            this.eFF.UseVisualStyleBackColor = true;
+            this.eFF.CheckedChanged += new System.EventHandler(this.eFF_CheckedChanged);
+            // 
+            // eAcc
+            // 
+            this.eAcc.AutoSize = true;
+            this.eAcc.Location = new System.Drawing.Point(486, 110);
+            this.eAcc.Name = "eAcc";
+            this.eAcc.Size = new System.Drawing.Size(59, 20);
+            this.eAcc.TabIndex = 99;
+            this.eAcc.Text = "Edit?";
+            this.eAcc.UseVisualStyleBackColor = true;
+            this.eAcc.CheckedChanged += new System.EventHandler(this.eAcc_CheckedChanged);
+            // 
+            // eHK
+            // 
+            this.eHK.AutoSize = true;
+            this.eHK.Location = new System.Drawing.Point(736, 109);
+            this.eHK.Name = "eHK";
+            this.eHK.Size = new System.Drawing.Size(59, 20);
+            this.eHK.TabIndex = 98;
+            this.eHK.Text = "Edit?";
+            this.eHK.UseVisualStyleBackColor = true;
+            this.eHK.CheckedChanged += new System.EventHandler(this.eHK_CheckedChanged);
+            // 
+            // eEff
+            // 
+            this.eEff.AutoSize = true;
+            this.eEff.Location = new System.Drawing.Point(986, 110);
+            this.eEff.Name = "eEff";
+            this.eEff.Size = new System.Drawing.Size(59, 20);
+            this.eEff.TabIndex = 97;
+            this.eEff.Text = "Edit?";
+            this.eEff.UseVisualStyleBackColor = true;
+            this.eEff.CheckedChanged += new System.EventHandler(this.eEff_CheckedChanged);
+            // 
+            // eCAA
+            // 
+            this.eCAA.AutoSize = true;
+            this.eCAA.Location = new System.Drawing.Point(232, 227);
+            this.eCAA.Name = "eCAA";
+            this.eCAA.Size = new System.Drawing.Size(59, 20);
+            this.eCAA.TabIndex = 96;
+            this.eCAA.Text = "Edit?";
+            this.eCAA.UseVisualStyleBackColor = true;
+            this.eCAA.CheckedChanged += new System.EventHandler(this.eCAA_CheckedChanged);
+            // 
+            // eAl
+            // 
+            this.eAl.AutoSize = true;
+            this.eAl.Location = new System.Drawing.Point(486, 231);
+            this.eAl.Name = "eAl";
+            this.eAl.Size = new System.Drawing.Size(59, 20);
+            this.eAl.TabIndex = 95;
+            this.eAl.Text = "Edit?";
+            this.eAl.UseVisualStyleBackColor = true;
+            this.eAl.CheckedChanged += new System.EventHandler(this.eAl_CheckedChanged);
+            // 
+            // eDRR
+            // 
+            this.eDRR.AutoSize = true;
+            this.eDRR.Location = new System.Drawing.Point(755, 231);
+            this.eDRR.Name = "eDRR";
+            this.eDRR.Size = new System.Drawing.Size(59, 20);
+            this.eDRR.TabIndex = 94;
+            this.eDRR.Text = "Edit?";
+            this.eDRR.UseVisualStyleBackColor = true;
+            this.eDRR.CheckedChanged += new System.EventHandler(this.eDRR_CheckedChanged);
+            // 
+            // eCRR
+            // 
+            this.eCRR.AutoSize = true;
+            this.eCRR.Location = new System.Drawing.Point(986, 231);
+            this.eCRR.Name = "eCRR";
+            this.eCRR.Size = new System.Drawing.Size(59, 20);
+            this.eCRR.TabIndex = 93;
+            this.eCRR.Text = "Edit?";
+            this.eCRR.UseVisualStyleBackColor = true;
+            this.eCRR.CheckedChanged += new System.EventHandler(this.eCRR_CheckedChanged);
+            // 
+            // eCoop
+            // 
+            this.eCoop.AutoSize = true;
+            this.eCoop.Location = new System.Drawing.Point(232, 367);
+            this.eCoop.Name = "eCoop";
+            this.eCoop.Size = new System.Drawing.Size(59, 20);
+            this.eCoop.TabIndex = 92;
+            this.eCoop.Text = "Edit?";
+            this.eCoop.UseVisualStyleBackColor = true;
+            this.eCoop.CheckedChanged += new System.EventHandler(this.eCoop_CheckedChanged);
+            // 
+            // eJud
+            // 
+            this.eJud.AutoSize = true;
+            this.eJud.Location = new System.Drawing.Point(486, 368);
+            this.eJud.Name = "eJud";
+            this.eJud.Size = new System.Drawing.Size(59, 20);
+            this.eJud.TabIndex = 91;
+            this.eJud.Text = "Edit?";
+            this.eJud.UseVisualStyleBackColor = true;
+            this.eJud.CheckedChanged += new System.EventHandler(this.eJud_CheckedChanged);
+            // 
+            // ePA
+            // 
+            this.ePA.AutoSize = true;
+            this.ePA.Location = new System.Drawing.Point(739, 368);
+            this.ePA.Name = "ePA";
+            this.ePA.Size = new System.Drawing.Size(59, 20);
+            this.ePA.TabIndex = 90;
+            this.ePA.Text = "Edit?";
+            this.ePA.UseVisualStyleBackColor = true;
+            this.ePA.CheckedChanged += new System.EventHandler(this.ePA_CheckedChanged);
+            // 
+            // eAtt
+            // 
+            this.eAtt.AutoSize = true;
+            this.eAtt.Location = new System.Drawing.Point(232, 110);
+            this.eAtt.Name = "eAtt";
+            this.eAtt.Size = new System.Drawing.Size(59, 20);
+            this.eAtt.TabIndex = 89;
+            this.eAtt.Text = "Edit?";
+            this.eAtt.UseVisualStyleBackColor = true;
+            this.eAtt.CheckedChanged += new System.EventHandler(this.eAtt_CheckedChanged);
             // 
             // judgement
             // 
@@ -675,6 +811,24 @@
             this.attendance.TabIndex = 0;
             this.attendance.SelectedIndexChanged += new System.EventHandler(this.attendance_SelectedIndexChanged);
             // 
+            // appDatePick
+            // 
+            this.appDatePick.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
+            this.appDatePick.Location = new System.Drawing.Point(780, 33);
+            this.appDatePick.Name = "appDatePick";
+            this.appDatePick.Size = new System.Drawing.Size(236, 23);
+            this.appDatePick.TabIndex = 118;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(776, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 24);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "Date*";
+            // 
             // EditPerApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -694,14 +848,12 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox position;
         private System.Windows.Forms.ComboBox dept;
-        private System.Windows.Forms.DateTimePicker DateAdd;
         private System.Windows.Forms.ComboBox mNames;
         private System.Windows.Forms.ComboBox lNames;
         private System.Windows.Forms.ComboBox fNames;
@@ -733,5 +885,19 @@
         private System.Windows.Forms.ComboBox comply;
         private System.Windows.Forms.ComboBox ddr;
         private System.Windows.Forms.ComboBox attendance;
+        private System.Windows.Forms.CheckBox eFF;
+        private System.Windows.Forms.CheckBox eAcc;
+        private System.Windows.Forms.CheckBox eHK;
+        private System.Windows.Forms.CheckBox eEff;
+        private System.Windows.Forms.CheckBox eCAA;
+        private System.Windows.Forms.CheckBox eAl;
+        private System.Windows.Forms.CheckBox eDRR;
+        private System.Windows.Forms.CheckBox eCRR;
+        private System.Windows.Forms.CheckBox eCoop;
+        private System.Windows.Forms.CheckBox eJud;
+        private System.Windows.Forms.CheckBox ePA;
+        private System.Windows.Forms.CheckBox eAtt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker appDatePick;
     }
 }

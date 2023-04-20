@@ -33,14 +33,12 @@
             this.lNames = new System.Windows.Forms.ComboBox();
             this.fNames = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.ComboBox();
             this.dept = new System.Windows.Forms.ComboBox();
-            this.DateAdd = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.judgement = new System.Windows.Forms.ComboBox();
             this.appearance = new System.Windows.Forms.ComboBox();
@@ -80,14 +78,12 @@
             this.panel1.Controls.Add(this.lNames);
             this.panel1.Controls.Add(this.fNames);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.position);
             this.panel1.Controls.Add(this.dept);
-            this.panel1.Controls.Add(this.DateAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -102,7 +98,7 @@
             this.mNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.mNames.FormattingEnabled = true;
-            this.mNames.Location = new System.Drawing.Point(534, 30);
+            this.mNames.Location = new System.Drawing.Point(669, 30);
             this.mNames.Name = "mNames";
             this.mNames.Size = new System.Drawing.Size(188, 25);
             this.mNames.TabIndex = 120;
@@ -115,7 +111,7 @@
             this.lNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.lNames.FormattingEnabled = true;
-            this.lNames.Location = new System.Drawing.Point(111, 30);
+            this.lNames.Location = new System.Drawing.Point(246, 30);
             this.lNames.Name = "lNames";
             this.lNames.Size = new System.Drawing.Size(190, 25);
             this.lNames.TabIndex = 119;
@@ -128,7 +124,7 @@
             this.fNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
             this.fNames.FormattingEnabled = true;
-            this.fNames.Location = new System.Drawing.Point(318, 30);
+            this.fNames.Location = new System.Drawing.Point(453, 30);
             this.fNames.Name = "fNames";
             this.fNames.Size = new System.Drawing.Size(210, 25);
             this.fNames.TabIndex = 118;
@@ -138,21 +134,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(107, 0);
+            this.label2.Location = new System.Drawing.Point(242, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 53;
             this.label2.Text = "Last Name*";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(729, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 24);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Appraisal Date*";
             // 
             // label5
             // 
@@ -168,7 +154,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(314, 0);
+            this.label4.Location = new System.Drawing.Point(449, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 51;
@@ -178,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(530, 0);
+            this.label3.Location = new System.Drawing.Point(665, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 24);
             this.label3.TabIndex = 50;
@@ -232,15 +218,6 @@
             this.dept.Size = new System.Drawing.Size(266, 29);
             this.dept.TabIndex = 46;
             this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged);
-            // 
-            // DateAdd
-            // 
-            this.DateAdd.CalendarFont = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.DateAdd.Location = new System.Drawing.Point(733, 33);
-            this.DateAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.DateAdd.Name = "DateAdd";
-            this.DateAdd.Size = new System.Drawing.Size(230, 22);
-            this.DateAdd.TabIndex = 45;
             // 
             // panel2
             // 
@@ -697,14 +674,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox position;
         private System.Windows.Forms.ComboBox dept;
-        private System.Windows.Forms.DateTimePicker DateAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button addPA;
         private System.Windows.Forms.Label label20;

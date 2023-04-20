@@ -29,19 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mNames = new System.Windows.Forms.ComboBox();
-            this.lNames = new System.Windows.Forms.ComboBox();
-            this.fNames = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.position = new System.Windows.Forms.ComboBox();
-            this.dept = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.appsearchcriteria = new System.Windows.Forms.ComboBox();
+            this.query = new System.Windows.Forms.ComboBox();
             this.DateAdd = new System.Windows.Forms.DateTimePicker();
             this.searchapp = new System.Windows.Forms.Button();
+            this.aID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.appraisals = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -52,138 +48,89 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.mNames);
-            this.panel1.Controls.Add(this.lNames);
-            this.panel1.Controls.Add(this.fNames);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.position);
-            this.panel1.Controls.Add(this.dept);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.appsearchcriteria);
+            this.panel1.Controls.Add(this.query);
             this.panel1.Controls.Add(this.DateAdd);
             this.panel1.Controls.Add(this.searchapp);
+            this.panel1.Controls.Add(this.aID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(987, 129);
             this.panel1.TabIndex = 0;
             // 
-            // mNames
-            // 
-            this.mNames.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.mNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.mNames.FormattingEnabled = true;
-            this.mNames.Location = new System.Drawing.Point(467, 33);
-            this.mNames.Name = "mNames";
-            this.mNames.Size = new System.Drawing.Size(188, 25);
-            this.mNames.TabIndex = 129;
-            this.mNames.SelectedIndexChanged += new System.EventHandler(this.mNames_SelectedIndexChanged);
-            // 
-            // lNames
-            // 
-            this.lNames.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.lNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.lNames.FormattingEnabled = true;
-            this.lNames.Location = new System.Drawing.Point(37, 30);
-            this.lNames.Name = "lNames";
-            this.lNames.Size = new System.Drawing.Size(190, 25);
-            this.lNames.TabIndex = 128;
-            this.lNames.SelectedIndexChanged += new System.EventHandler(this.lNames_SelectedIndexChanged);
-            // 
-            // fNames
-            // 
-            this.fNames.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.fNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.fNames.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.fNames.FormattingEnabled = true;
-            this.fNames.Location = new System.Drawing.Point(242, 30);
-            this.fNames.Name = "fNames";
-            this.fNames.Size = new System.Drawing.Size(210, 25);
-            this.fNames.TabIndex = 127;
-            this.fNames.SelectedIndexChanged += new System.EventHandler(this.fNames_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
-            this.label2.TabIndex = 126;
-            this.label2.Text = "Last Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(665, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 30);
-            this.label6.TabIndex = 121;
-            this.label6.Text = "Appraisal Date";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(373, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 24);
-            this.label5.TabIndex = 125;
-            this.label5.Text = "Position";
-            // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 0);
+            this.label4.Location = new System.Drawing.Point(171, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
-            this.label4.TabIndex = 124;
-            this.label4.Text = "First Name";
+            this.label4.Size = new System.Drawing.Size(62, 24);
+            this.label4.TabIndex = 140;
+            this.label4.Text = "Criteria";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(463, 0);
+            this.label3.Location = new System.Drawing.Point(408, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
-            this.label3.TabIndex = 123;
-            this.label3.Text = "Middle Name";
+            this.label3.Size = new System.Drawing.Size(52, 24);
+            this.label3.TabIndex = 139;
+            this.label3.Text = "Query";
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 64);
+            this.label1.Location = new System.Drawing.Point(732, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 24);
-            this.label1.TabIndex = 122;
-            this.label1.Text = "Department";
+            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.TabIndex = 138;
             // 
-            // position
+            // label2
             // 
-            this.position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.position.Font = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.position.FormattingEnabled = true;
-            this.position.Location = new System.Drawing.Point(373, 93);
-            this.position.Margin = new System.Windows.Forms.Padding(4);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(432, 25);
-            this.position.TabIndex = 120;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 7F);
+            this.label2.Location = new System.Drawing.Point(45, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 29);
+            this.label2.TabIndex = 134;
+            this.label2.Text = "Search By:";
             // 
-            // dept
+            // appsearchcriteria
             // 
-            this.dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dept.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
-            this.dept.FormattingEnabled = true;
-            this.dept.Items.AddRange(new object[] {
+            this.appsearchcriteria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.appsearchcriteria.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.appsearchcriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.appsearchcriteria.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.appsearchcriteria.FormattingEnabled = true;
+            this.appsearchcriteria.Items.AddRange(new object[] {
+            "Appraisal ID",
+            "Last Name",
+            "First Name",
+            "Department",
+            "Date"});
+            this.appsearchcriteria.Location = new System.Drawing.Point(163, 62);
+            this.appsearchcriteria.Name = "appsearchcriteria";
+            this.appsearchcriteria.Size = new System.Drawing.Size(194, 33);
+            this.appsearchcriteria.TabIndex = 135;
+            this.appsearchcriteria.SelectedIndexChanged += new System.EventHandler(this.appsearchcriteria_SelectedIndexChanged);
+            // 
+            // query
+            // 
+            this.query.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.query.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.query.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.query.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.query.Items.AddRange(new object[] {
             "President",
             "General Manager",
             "Accounting",
@@ -198,35 +145,50 @@
             "Creative",
             "Warehouse and Logistics",
             "MCE Production",
-            "MCE Quality Assurance"});
-            this.dept.Location = new System.Drawing.Point(84, 92);
-            this.dept.Margin = new System.Windows.Forms.Padding(4);
-            this.dept.Name = "dept";
-            this.dept.Size = new System.Drawing.Size(266, 29);
-            this.dept.TabIndex = 119;
-            this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged_1);
+            "MCE Quality Assurance",
+            "--Department--"});
+            this.query.Location = new System.Drawing.Point(400, 62);
+            this.query.Name = "query";
+            this.query.Size = new System.Drawing.Size(361, 33);
+            this.query.TabIndex = 133;
+            this.query.SelectedIndexChanged += new System.EventHandler(this.query_SelectedIndexChanged);
             // 
             // DateAdd
             // 
+            this.DateAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DateAdd.CalendarFont = new System.Drawing.Font("Franklin Gothic Book", 8F);
-            this.DateAdd.Location = new System.Drawing.Point(669, 33);
+            this.DateAdd.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.DateAdd.Location = new System.Drawing.Point(400, 65);
             this.DateAdd.Margin = new System.Windows.Forms.Padding(4);
             this.DateAdd.Name = "DateAdd";
-            this.DateAdd.Size = new System.Drawing.Size(230, 22);
+            this.DateAdd.Size = new System.Drawing.Size(360, 30);
             this.DateAdd.TabIndex = 118;
             // 
             // searchapp
             // 
+            this.searchapp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchapp.BackColor = System.Drawing.Color.SteelBlue;
             this.searchapp.Font = new System.Drawing.Font("Sans Serif Collection", 7F);
             this.searchapp.ForeColor = System.Drawing.Color.White;
-            this.searchapp.Location = new System.Drawing.Point(822, 80);
+            this.searchapp.Location = new System.Drawing.Point(811, 55);
             this.searchapp.Name = "searchapp";
             this.searchapp.Size = new System.Drawing.Size(137, 43);
             this.searchapp.TabIndex = 21;
             this.searchapp.Text = "Search";
             this.searchapp.UseVisualStyleBackColor = false;
             this.searchapp.Click += new System.EventHandler(this.searchapp_Click);
+            // 
+            // aID
+            // 
+            this.aID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aID.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.aID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aID.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aID.ForeColor = System.Drawing.Color.Black;
+            this.aID.Location = new System.Drawing.Point(400, 65);
+            this.aID.Name = "aID";
+            this.aID.Size = new System.Drawing.Size(360, 30);
+            this.aID.TabIndex = 141;
             // 
             // panel2
             // 
@@ -275,17 +237,13 @@
         private System.Windows.Forms.Button searchapp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView appraisals;
-        private System.Windows.Forms.ComboBox mNames;
-        private System.Windows.Forms.ComboBox lNames;
-        private System.Windows.Forms.ComboBox fNames;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker DateAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox position;
-        private System.Windows.Forms.ComboBox dept;
-        private System.Windows.Forms.DateTimePicker DateAdd;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox appsearchcriteria;
+        private System.Windows.Forms.ComboBox query;
+        private System.Windows.Forms.TextBox aID;
     }
 }

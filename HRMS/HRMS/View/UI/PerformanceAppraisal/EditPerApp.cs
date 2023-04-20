@@ -109,12 +109,13 @@ namespace HRMS.View.UI.PerformanceAppraisal
         public int Appearance { get { return appear; } set {appear = value; } }
         public int Friendliness { get { return friend; } set {friend = value; } }
         public int Total { get { return score; } set { score = value; } }
-        public DateTime appDate { get { return DateAdd.Value; } set { DateAdd.Value = DateTime.Now; } }
+        public DateTime appDate { get { return DateTime.Now; } set { appDate = DateTime.Now; } }
 
         public EditPerApp()
         {
             InitializeComponent(); 
             this.LRA = new Log_RegAdapter(Directory.uList);
+            this.IRA = new DashAdapter(this);
             RefreshNames();
             attendance.SelectedIndex = 0;
             accuracy.SelectedIndex = 0;
@@ -128,6 +129,19 @@ namespace HRMS.View.UI.PerformanceAppraisal
             judgement.SelectedIndex = 0;
             appearance.SelectedIndex = 0;
             friendliness.SelectedIndex = 0;
+
+            attendance.Enabled = false;
+            accuracy.Enabled = false;
+            housekeeping.Enabled = false;
+            efficiency.Enabled = false;
+            courtesy.Enabled = false;
+            alertness.Enabled = false;
+            ddr.Enabled = false;
+            comply.Enabled = false;
+            cooperation.Enabled = false;
+            judgement.Enabled = false;
+            appearance.Enabled = false;
+            friendliness.Enabled = false;
         }
         public void RefreshNames()
         {
@@ -141,14 +155,215 @@ namespace HRMS.View.UI.PerformanceAppraisal
                 lNames.Items.Add(Names.ElementAt(i).LastName);
                 mNames.Items.Add(Names.ElementAt(i).MiddleName);
             }
-            fNames.Items.RemoveAt(0);
-            lNames.Items.RemoveAt(0);
-            mNames.Items.RemoveAt(0);
+        }
+
+        public void setAppraisalBS(BindingSource bs)
+        {
+            Console.Write("Something");
+        }
+
+        private void changeTotalScore()
+        {
+            attend = attendance.SelectedIndex;
+            accurate = accuracy.SelectedIndex;
+            house = housekeeping.SelectedIndex;
+            efficient = efficiency.SelectedIndex;
+            courteous = courtesy.SelectedIndex;
+            alert = alertness.SelectedIndex;
+            DDR = ddr.SelectedIndex;
+            compliance = comply.SelectedIndex;
+            coop = cooperation.SelectedIndex;
+            judge = judgement.SelectedIndex;
+            appear = appearance.SelectedIndex;
+            friend = friendliness.SelectedIndex;
+
+            score = attend + accurate + house + efficient + courteous + alert + DDR + compliance + coop + judge + appear + friend;
+            total.Text = "Total: " + score.ToString() + "%";
         }
 
         private void updateApp_Click(object sender, EventArgs e)
         {
+            bool valid = true;
+            string errorMsg = "";
+            if (lNames.SelectedIndex == -1 || fNames.SelectedIndex == -1 || mNames.SelectedIndex == -1 || dept.SelectedIndex == -1 ||
+                position.SelectedIndex == -1)
+            {
+                valid = false;
+                MessageBox.Show("Please fill all the required fields", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var test = new UserModel();
+                test.FirstName = fNames.SelectedItem.ToString();
+                test.LastName = lNames.SelectedItem.ToString();
+                test.MiddleName = mNames.SelectedItem.ToString();
+                test.Department = dept.SelectedItem.ToString();
+                test.Position = position.SelectedItem.ToString();
+                if (LRA.crud.checkifExists(test) == 0)
+                {
+                    valid = false;
+                    errorMsg = errorMsg + "No such user exists." + Environment.NewLine;
+                }
+                var toUpdate = new AppraisalModel();
+                toUpdate.FirstName = fNames.SelectedItem.ToString();
+                toUpdate.LastName = lNames.SelectedItem.ToString();
+                toUpdate.MiddleName = mNames.SelectedItem.ToString();
+                toUpdate.Department = dept.SelectedItem.ToString();
+                toUpdate.Position = position.SelectedItem.ToString();
+                toUpdate.appDate = appDatePick.Value.Date;
+                toUpdate = IRA.crudApp.getExisting(toUpdate);
+                if (toUpdate.FirstName.Equals(""))
+                {
+                    valid = false;
+                    errorMsg = errorMsg + "No such record exists." + Environment.NewLine;
+                }
+                if (valid)
+                {
+                    int upTotal = 0; ;
+                    int count = 0 ;
+                    if (eAtt.Checked)
+                    {
+                        count++;
+                        toUpdate.Attendance = Attendance;
+                        upTotal += toUpdate.Attendance;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Attendance;
+                        toUpdate.Attendance = -1;
+                    }
+                    if (eAcc.Checked)
+                    {
+                        count++;
+                        toUpdate.Accuracy = Accuracy;
+                        upTotal += toUpdate.Accuracy;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Accuracy;
+                        toUpdate.Accuracy = -1;
+                    }
+                    if (eHK.Checked)
+                    {
+                        count++;
+                        toUpdate.HouseKeeping = HouseKeeping;
+                        upTotal += toUpdate.HouseKeeping;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.HouseKeeping;
+                        toUpdate.HouseKeeping = -1;
+                    }
+                    if (eEff.Checked)
+                    {
+                        count++;
+                        toUpdate.Efficiency = Efficiency;
+                        upTotal += toUpdate.Efficiency;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Efficiency;
+                        toUpdate.Efficiency = -1;
+                    }
+                    if (eCAA.Checked)
+                    {
+                        count++;
+                        toUpdate.CourtesyAtt = CourtesyAtt;
+                        upTotal += toUpdate.CourtesyAtt;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.CourtesyAtt;
+                        toUpdate.CourtesyAtt = -1;
+                    }
+                    if (eAl.Checked)
+                    {
+                        count++;
+                        toUpdate.Alertness = Alertness;
+                        upTotal += toUpdate.Alertness;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Alertness;
+                        toUpdate.Alertness = -1;
+                    }
+                    if (eDRR.Checked)
+                    {
+                        count++;
+                        toUpdate.DRR = DRR;
+                        upTotal += toUpdate.DRR;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.DRR;
+                        toUpdate.DRR = -1;
+                    }
+                    if (eCRR.Checked)
+                    {
+                        count++;
+                        toUpdate.CCP = CCP;
+                        upTotal += toUpdate.CCP;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.CCP;
+                        toUpdate.CCP = -1;
+                    }
+                    if (eCoop.Checked)
+                    {
+                        count++;
+                        toUpdate.Cooperation = Cooperation;
+                        upTotal += toUpdate.Cooperation;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Cooperation;
+                        toUpdate.Cooperation = -1;
+                    }
+                    if (eJud.Checked)
+                    {
+                        count++;
+                        toUpdate.Judgement = Judgement;
+                        upTotal += toUpdate.Judgement;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Judgement;
+                        toUpdate.Judgement = -1;
+                    }
+                    if (ePA.Checked)
+                    {
+                        count++;
+                        toUpdate.Appearance = Appearance;
+                        upTotal += toUpdate.Appearance;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Appearance;
+                        toUpdate.Appearance = -1;
+                    }
+                    if (eFF.Checked)
+                    {
+                        count++;
+                        toUpdate.Friendliness = Friendliness;
+                        upTotal += toUpdate.Friendliness;
+                    }
+                    else
+                    {
+                        upTotal += toUpdate.Friendliness;
+                        toUpdate.Friendliness = -1;
+                    }
+                    toUpdate.Total = upTotal;
 
+                    IRA.APP.Update(toUpdate);
+                    MessageBox.Show("Update Successful", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(errorMsg, "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+                
         }
 
         private void lNames_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,10 +486,6 @@ namespace HRMS.View.UI.PerformanceAppraisal
                     break;
             }
         }
-        public void setAppraisalBS(BindingSource bs)
-        {
-            Console.Write("Something");
-        }
 
         private void housekeeping_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -330,28 +541,154 @@ namespace HRMS.View.UI.PerformanceAppraisal
         {
             changeTotalScore();
         }
+
         private void accuracy_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeTotalScore();
         }
 
-        private void changeTotalScore()
+        private void eAtt_CheckedChanged(object sender, EventArgs e)
         {
-            attend = attendance.SelectedIndex;
-            accurate = accuracy.SelectedIndex;
-            house = housekeeping.SelectedIndex;
-            efficient = efficiency.SelectedIndex;
-            courteous = courtesy.SelectedIndex;
-            alert = alertness.SelectedIndex;
-            DDR =  ddr.SelectedIndex;
-            compliance = comply.SelectedIndex;
-            coop = cooperation.SelectedIndex;
-            judge = judgement.SelectedIndex;
-            appear = appearance.SelectedIndex;
-            friend = friendliness.SelectedIndex;
+            if (eAtt.Checked)
+            {
+                attendance.Enabled = true;
+            }
+            else
+            {
+                attendance.Enabled = false;
+            }
+        }
 
-            score = attend + accurate + house + efficient + courteous + alert + DDR + compliance + coop + judge + appear + friend;
-            total.Text = "Total: " + score.ToString() + "%";
+        private void eAcc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eAcc.Checked)
+            {
+                accuracy.Enabled = true;
+            }
+            else
+            {
+                accuracy.Enabled = false;
+            }
+        }
+
+        private void eHK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eHK.Checked)
+            {
+                housekeeping.Enabled = true;
+            }
+            else
+            {
+                housekeeping.Enabled = false;
+            }
+        }
+
+        private void eEff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eEff.Checked)
+            {
+                efficiency.Enabled = true;
+            }
+            else
+            {
+                efficiency.Enabled = false;
+            }
+        }
+
+        private void eCAA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eCAA.Checked)
+            {
+                courtesy.Enabled = true;
+            }
+            else
+            {
+                courtesy.Enabled = false;
+            }
+        }
+
+        private void eAl_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eAl.Checked)
+            {
+                alertness.Enabled = true;
+            }
+            else
+            {
+                alertness.Enabled = false;
+            }
+        }
+
+        private void eDRR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eDRR.Checked)
+            {
+                ddr.Enabled = true;
+            }
+            else
+            {
+                ddr.Enabled = false;
+            }
+        }
+
+        private void eCRR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eCRR.Checked)
+            {
+                comply.Enabled = true;
+            }
+            else
+            {
+                comply.Enabled = false;
+            }
+        }
+
+        private void eCoop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eCoop.Checked)
+            {
+                cooperation.Enabled = true;
+            }
+            else
+            {
+                cooperation.Enabled = false;
+            }
+        }
+
+        private void eJud_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eJud.Checked)
+            {
+                judgement.Enabled = true;
+            }
+            else
+            {
+                judgement.Enabled = false;
+            }
+        }
+
+        private void ePA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ePA.Checked)
+            {
+                appearance.Enabled = true;
+            }
+            else
+            {
+                appearance.Enabled = false;
+            }
+        }
+
+        private void eFF_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eFF.Checked)
+            {
+                friendliness.Enabled = true;
+            }
+            else
+            {
+                friendliness.Enabled = false;
+            }
         }
     }
 }

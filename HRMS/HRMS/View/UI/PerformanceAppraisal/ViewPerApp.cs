@@ -5,6 +5,7 @@ using HRMS.View.Adapters;
 using HRMS.View.Interfaces;
 using HRMS.View.UI.Recruitment;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HRMS.View.UI.PerformanceAppraisal
 {
@@ -118,29 +120,13 @@ namespace HRMS.View.UI.PerformanceAppraisal
             InitializeComponent(); 
             this.LRA = new Log_RegAdapter(Directory.uList);
             this.IRA = new DashAdapter(this);
+            DateAdd.Visible = false;
             refreshList();
-            RefreshNames();
         }
 
         public void refreshList()
         {
             IRA.APP.LoadAllAppraisals();
-        }
-        public void RefreshNames()
-        {
-            fNames.Items.Clear();
-            lNames.Items.Clear();
-            mNames.Items.Clear();
-            IEnumerable<UserModel> Names = LRA.crud.GetAll();
-            for (int i = 0; i < Names.Count(); i++)
-            {
-                fNames.Items.Add(Names.ElementAt(i).FirstName);
-                lNames.Items.Add(Names.ElementAt(i).LastName);
-                mNames.Items.Add(Names.ElementAt(i).MiddleName);
-            }
-            fNames.Items.RemoveAt(0);
-            lNames.Items.RemoveAt(0);
-            mNames.Items.RemoveAt(0);
         }
 
         private void appraisals_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -155,7 +141,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
                         using (SqlCommand command = new SqlCommand())
                         {
                             command.Connection = con;
-                            command.CommandText = "DELETE FROM PerformanceAppraisals WHERE AppraisalID = @RID";
+                            command.CommandText = "DELETE FROM PerformanceAppraisal WHERE AppraisalID = @RID";
                             command.Parameters.AddWithValue("@RID", Convert.ToInt32(this.appraisals.Rows[e.RowIndex].Cells[1].Value));
                             command.ExecuteNonQuery();
                         }
@@ -171,129 +157,82 @@ namespace HRMS.View.UI.PerformanceAppraisal
         }
 
         private void searchapp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dept_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            position.Items.Clear();
-            switch (dept.SelectedIndex)
+       {
+            bool valid = true;
+            string errorMsg = "";
+            if(appsearchcriteria.SelectedIndex == -1)
             {
-                case 0:
-                    position.Items.Add("President");
-                    position.SelectedIndex = 0;
-                    break;
-                case 1:
-                    position.Items.Add("General Manager");
-                    position.SelectedIndex = 0;
-                    break;
-                case 2:
-                    for (int i = 0; i < acctPos.Length; i++)
-                    {
-                        position.Items.Add(acctPos[i]);
-                    }
-                    break;
-                case 3:
-                    for (int i = 0; i < retailPos.Length; i++)
-                    {
-                        position.Items.Add(retailPos[i]);
-                    }
-                    break;
-                case 4:
-                    for (int i = 0; i < auditPos.Length; i++)
-                    {
-                        position.Items.Add(auditPos[i]);
-                    }
-                    break;
-                case 5:
-                    for (int i = 0; i < misPos.Length; i++)
-                    {
-                        position.Items.Add(misPos[i]);
-                    }
-                    break;
-                case 6:
-                    for (int i = 0; i < securityPos.Length; i++)
-                    {
-                        position.Items.Add(securityPos[i]);
-                    }
-                    break;
-                case 7:
-                    for (int i = 0; i < purchasingPos.Length; i++)
-                    {
-                        position.Items.Add(purchasingPos[i]);
-                    }
-                    break;
-                case 8:
-                    for (int i = 0; i < merchPos.Length; i++)
-                    {
-                        position.Items.Add(merchPos[i]);
-                    }
-                    break;
-                case 9:
-                    for (int i = 0; i < hrmdPos.Length; i++)
-                    {
-                        position.Items.Add(hrmdPos[i]);
-                    }
-                    break;
-                case 10:
-                    for (int i = 0; i < marketPos.Length; i++)
-                    {
-                        position.Items.Add(marketPos[i]);
-                    }
-                    break;
-                case 11:
-                    for (int i = 0; i < creativesPos.Length; i++)
-                    {
-                        position.Items.Add(creativesPos[i]);
-                    }
-                    break;
-                case 12:
-                    for (int i = 0; i < warelogPos.Length; i++)
-                    {
-                        position.Items.Add(warelogPos[i]);
-                    }
-                    break;
-                case 13:
-                    for (int i = 0; i < mcePos.Length; i++)
-                    {
-                        position.Items.Add(mcePos[i]);
-                    }
-                    break;
-                case 14:
-                    for (int i = 0; i < mceqaPos.Length; i++)
-                    {
-                        position.Items.Add(mceqaPos[i]);
-                    }
-                    break;
+                valid = false;
+                MessageBox.Show("Please select a criteria for your query", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(appsearchcriteria.SelectedIndex == 0 && string.IsNullOrWhiteSpace(aID.Text))
+            {
+                valid = false;
+                MessageBox.Show("Please enter a value to search", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else if (appsearchcriteria.SelectedIndex > 0 && appsearchcriteria.SelectedIndex < 4 && query.SelectedIndex == -1)
+            {
+                valid = false;
+                MessageBox.Show("Please select a value to search", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else if (appsearchcriteria.SelectedIndex == 4 && DateAdd.Value > DateTime.Now)
+            {
+                valid = false;
+                MessageBox.Show("Date Input cannot be past the current date", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (appsearchcriteria.SelectedIndex == 0)
+            {
+                try
+                {
+                    Convert.ToInt32(aID.Text);
+                }
+                catch (FormatException Ex)
+                {
+                    valid = false;
+                    MessageBox.Show("Appraisal IDs are Numeric", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            if (valid)
+            {
+                string finalquery = "";
+                switch (appsearchcriteria.SelectedIndex)
+                {
+                    case 0:finalquery = aID.Text;
+                        break;
+                    case 1:finalquery = query.SelectedItem.ToString();
+                        break;
+                    case 2:
+                        finalquery = query.SelectedItem.ToString();
+                        break;
+                    case 3:
+                        finalquery = query.SelectedItem.ToString();
+                        break;
+                    case 4:
+                        finalquery = DateAdd.Value.ToString();
+                        break;
+                }
+                if(IRA.APP.Search(appsearchcriteria.SelectedIndex, finalquery) == -1)
+                {
+                    MessageBox.Show("No Results found", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
-
-        private void lNames_SelectedIndexChanged(object sender, EventArgs e)
+        private void lNamesChanged()
         {
-            if (lNames.SelectedIndex > -1)
+            query.Items.Clear();
+            var users = LRA.crud.GetAll();
+            for(int i = 1; i < users.Count(); i++)
             {
-                fNames.SelectedIndex = lNames.SelectedIndex;
-                mNames.SelectedIndex = lNames.SelectedIndex;
+                query.Items.Add(users.ElementAt(i).LastName);
             }
         }
 
-        private void fNames_SelectedIndexChanged(object sender, EventArgs e)
+        private void fNamesChanged()
         {
-            if (fNames.SelectedIndex > -1)
+            query.Items.Clear();
+            var users = LRA.crud.GetAll();
+            for (int i = 1; i < users.Count(); i++)
             {
-                lNames.SelectedIndex = fNames.SelectedIndex;
-                mNames.SelectedIndex = fNames.SelectedIndex;
-            }
-        }
-
-        private void mNames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (mNames.SelectedIndex > -1)
-            {
-                lNames.SelectedIndex = mNames.SelectedIndex;
-                fNames.SelectedIndex = mNames.SelectedIndex;
+                query.Items.Add(users.ElementAt(i).FirstName);
             }
         }
 
@@ -306,6 +245,81 @@ namespace HRMS.View.UI.PerformanceAppraisal
             deleteButton.UseColumnTextForButtonValue = true;
             deleteButton.Text = "Delete";
             appraisals.Columns.Add(deleteButton);
+        }
+
+        private void appsearchcriteria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(appsearchcriteria.SelectedIndex)
+            {
+                case 0:
+                    aID.BringToFront();
+                    DateAdd.SendToBack();
+                    query.SendToBack();
+                    query.Visible = false;
+                    DateAdd.Visible = false;
+                    aID.Visible = true;
+                    break;
+                case 1:
+                    lNamesChanged();
+                    aID.SendToBack();
+                    DateAdd.SendToBack();
+                    query.BringToFront();
+                    query.Visible = true;
+                    DateAdd.Visible = false;
+                    aID.Visible = false;
+                    break;
+                case 2:
+                    fNamesChanged();
+                    aID.SendToBack();
+                    DateAdd.SendToBack();
+                    query.BringToFront();
+                    query.Visible = true;
+                    DateAdd.Visible = false;
+                    aID.Visible = false;
+                    break;
+                case 3:
+                    switchToDepts();
+                    aID.SendToBack();
+                    DateAdd.SendToBack();
+                    query.BringToFront();
+                    query.Visible = true;
+                    DateAdd.Visible = false;
+                    aID.Visible = false;
+                    break;
+                case 4:
+                    aID.SendToBack();
+                    DateAdd.BringToFront();
+                    query.SendToBack();
+                    query.Visible = false;
+                    DateAdd.Visible = true;
+                    aID.Visible = false;
+                    break;
+            }
+        }
+
+        private void switchToDepts()
+        {
+            query.Items.Clear();
+            query.Items.Add("President");
+            query.Items.Add("General Manager");
+            query.Items.Add("Accounting");
+            query.Items.Add("Retail Sales Operation");
+            query.Items.Add("Audit");
+            query.Items.Add("MIS");
+            query.Items.Add("Administration");
+            query.Items.Add("Purchasing");
+            query.Items.Add("Merchandising");
+            query.Items.Add("HRMD");
+            query.Items.Add("Marketing");
+            query.Items.Add("Creative");
+            query.Items.Add("Warehouse and Logistics");
+            query.Items.Add("MCE Production");
+            query.Items.Add("MCE Quality Assurance");
+        }
+
+        private void query_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

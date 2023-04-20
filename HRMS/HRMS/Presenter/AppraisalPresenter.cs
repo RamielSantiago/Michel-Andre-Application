@@ -61,25 +61,25 @@ namespace HRMS.Presenter
             LoadAllAppraisals();
         }
 
-        public int Search(int[] criteria, string[] query)
+        public int Search(int criteria, string query)
         {
-            //AppList = repo.SearchIncident(criteria, query);
-            //if (!AppList.Any())
-            //{
-            //    LoadAllAppraisals();
-            //    return -1;
-            //}
-            //else
-            //{
-            //    bs.DataSource = AppList;
-            return 1;
-            //}
+            AppList = repo.Search(criteria, query);
+            if (!AppList.Any())
+            {
+                LoadAllAppraisals();
+                return -1;
+            }
+            else
+            {
+                bs.DataSource = AppList;
+                return 1;
+            }
         }
 
         public void Update(AppraisalModel pa)
         {
-            //repo.Update(ir);
-            //LoadAllReports();
+            repo.Update(pa);
+            LoadAllAppraisals();
         }
     }
 }

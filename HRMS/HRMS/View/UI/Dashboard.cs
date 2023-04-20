@@ -77,7 +77,6 @@ namespace HRMS.View.UI
             {
                 Directory.pah.BringToFront();
                 Directory.apa.RefreshNames();
-                Directory.vpa.RefreshNames();
                 Directory.epa.RefreshNames();
             }
         }
