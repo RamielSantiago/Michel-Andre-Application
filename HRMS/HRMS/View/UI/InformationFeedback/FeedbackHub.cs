@@ -16,6 +16,16 @@ namespace HRMS.View.UI.InformationFeedback
         public FeedbackHub()
         {
             InitializeComponent();
+            if (!fbViewPanel.Controls.Contains(Directory.vif))
+            {
+                fbViewPanel.Controls.Add(Directory.vif);
+                Directory.vif.Dock = DockStyle.Fill;
+                Directory.vif.BringToFront();
+            }
+            else
+            {
+                Directory.vif.BringToFront();
+            }
         }
 
         private void fbViewBtn_Click(object sender, EventArgs e)
