@@ -51,7 +51,10 @@ namespace HRMS.Resources
                     }
                 }
             }
-            userList.RemoveAt(0);
+            if(userList.Count() >= 2)
+            {
+                userList.RemoveAt(0);
+            }
             return userList;
         }
         public IEnumerable<UserModel> SearchUsersByValue(string criteria, string query)

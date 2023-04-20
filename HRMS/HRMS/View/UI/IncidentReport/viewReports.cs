@@ -296,8 +296,6 @@ namespace HRMS.View.UI.IncidentReport
                 FNames.Items.Add(Names.ElementAt(i).FirstName);
                 LastNames.Items.Add(Names.ElementAt(i).LastName);
             }
-            LastNames.Items.RemoveAt(0);
-            FNames.Items.RemoveAt(0);
         }
 
         private void reports_CellContentClick(object sender, DataGridViewCellEventArgs e)
