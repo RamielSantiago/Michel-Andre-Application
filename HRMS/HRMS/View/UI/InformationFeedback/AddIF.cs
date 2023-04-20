@@ -17,78 +17,7 @@ using HRMS.View.Interfaces;
 namespace HRMS.View.UI.InformationFeedback
 {
     public partial class addIF : UserControl, iFeedback
-
     {
-        private string[] acctPos = {"EVP Finance & Accounting",
-                                    "Accounting Officer",
-                                    "Accounts Receivable Staff",
-                                    "Account Payable Staff",
-                                    "General Accounting Staff",
-                                    "Accounting General Services Staff"};
-        private string[] retailPos = {"AVP - Sales & Marketing",
-                                      "Retail Sales Officer",
-                                      "Retail Sales Supervisor",
-                                      "Sales Associates"};
-        private string[] auditPos = {"Internal Audit Officer",
-                                     "Field Auditor",
-                                     "Audit Staff"};
-        private string[] misPos = {"System Administrator",
-                                   "IT Programmer",
-                                   "System & Hardware Technical Support Staff",
-                                   "EDP Staff"};
-        private string[] securityPos = {"Security Services - Administration Officer",
-                                        "Security Services - Senior Security Staff",
-                                        "Security Services - Junior Securty Staff",
-                                        "Maintenance & General Services - Senior Mechanic",
-                                        "Maintenance & General Services - Junior General Services Staff",
-                                        "Maintenance & General Services - Store & Building Maintenance Contractor",
-                                        "Maintenance & General Services - Administrative General Services"};
-        private string[] purchasingPos = {"Purchasing Officer",
-                                          "Purchasing Staff"};
-        private string[] merchPos = {"AVP - Retail Operation",
-                                     "Merchandising Officer",
-                                     "Merchandising & Planning Control Staff"};
-        private string[] hrmdPos = {"HRMD Officer",
-                                    "HR Consultant",
-                                    "Recuitment, HRIS & OD Staff",
-                                    "Compensation, Benefits & HR-Admin Staff",
-                                    "Training, Employee, Relation & Record Management Staff",};
-        private string[] marketPos = {"AVP Retail Operation",
-                                      "Public Relations & Advertising Consultant",
-                                      "Marketing Staff"};
-        private string[] creativesPos = {"AVP - Retail Operation",
-                                         "Graphic Artist"};
-        private string[] warelogPos = {"Warehouse & Logistic Assistant Supervisor",
-                                       "Warehouse Finished Goods - Receiving Staff",
-                                       "Warehouse Finished Goods - Delivery Staff",
-                                       "Logistic Section - Delivery Driver",
-                                       "Logistic Section - Delivery Assistant",
-                                       "Logistic Section - Logistic Assistant",
-                                       "Raw Material Section - Raw Material Controller"};
-        private string[] mcePos = {"Production Officer",
-                                   "Cutting Subcontractor",
-                                   "Prodcution Assistant",
-                                   "Cut Goods & Raw Material Issuance - Subcontractor Coordinator",
-                                   "Cut Goods & Raw Material Issuance - External Sewing Subcontractor",
-                                   "Cut Goods & Raw Material Issuance - Cutting Subcontractor",
-                                   "Cut Goods & Raw Material Issuance - Bundling Subcontractor",
-                                   "Sewing - Sewing Supervisor",
-                                   "Sewing - Fusers",
-                                   "Sewing - Button Hole or Sew",
-                                   "Sewing - Trimmers",
-                                   "Sewing - Washers",
-                                   "Sewing Assembly - Sewing Assembly Supervisor",
-                                   "Sewing Assembly - Woven Shirt or Barong Sewinbg Subcontractors",
-                                   "Sewing Assemby - Pants Sewing Subcontractors",
-                                   "Pressing & Packing - Pressing & Packing Supervisor",
-                                   "Pressing & Packing - Pressing Subcontractor"};
-        private string[] mceqaPos = {"Assistant Supervisor Quality Assurance",
-                                     "Sewing QA - In-House Pre-Final Subcon Pants",
-                                     "Sewing QA - In-House Pre-Final Subcon Barong",
-                                     "Sewing QA - QC Staff",
-                                     "Raw Material QA - Juai Fabric, Embroidery, or Final QC Subcon",
-                                     "Raw Material QA - Fabric Inspector"};
-
         Log_RegAdapter LRA;
         DashAdapter IRA;
 
@@ -120,11 +49,9 @@ namespace HRMS.View.UI.InformationFeedback
             IEnumerable<UserModel> Names = LRA.crud.GetAll();
             for (int i = 0; i < Names.Count(); i++)
             {
-                to.Items.Add(Names.ElementAt(i).FirstName);
-                from.Items.Add(Names.ElementAt(i).MiddleName);
+                to.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
+                from.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
             }
-            to.Items.RemoveAt(0);
-            from.Items.RemoveAt(0);
         }
 
         private void panel1_Load(object sender, EventArgs e)

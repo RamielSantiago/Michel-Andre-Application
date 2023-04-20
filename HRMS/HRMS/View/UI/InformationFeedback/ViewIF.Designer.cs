@@ -29,78 +29,53 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.to = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rSearchBtn = new System.Windows.Forms.Button();
-            this.position = new System.Windows.Forms.ComboBox();
-            this.LastNames = new System.Windows.Forms.ComboBox();
-            this.dept = new System.Windows.Forms.ComboBox();
-            this.FNames = new System.Windows.Forms.ComboBox();
-            this.reports = new System.Windows.Forms.DataGridView();
+            this.to = new System.Windows.Forms.ComboBox();
+            this.from = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.feedback = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reports)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feedback)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.to);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label56);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.rSearchBtn);
-            this.panel1.Controls.Add(this.position);
-            this.panel1.Controls.Add(this.LastNames);
-            this.panel1.Controls.Add(this.dept);
-            this.panel1.Controls.Add(this.FNames);
+            this.panel1.Controls.Add(this.to);
+            this.panel1.Controls.Add(this.from);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 93);
+            this.panel1.Size = new System.Drawing.Size(970, 98);
             this.panel1.TabIndex = 1;
             // 
-            // label6
+            // label56
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(577, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 24);
-            this.label6.TabIndex = 130;
-            this.label6.Text = "Position";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(356, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 24);
-            this.label5.TabIndex = 129;
-            this.label5.Text = "Department";
-            // 
-            // to
-            // 
-            this.to.AutoSize = true;
-            this.to.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.to.Location = new System.Drawing.Point(3, 4);
-            this.to.Name = "to";
-            this.to.Size = new System.Drawing.Size(27, 24);
-            this.to.TabIndex = 128;
-            this.to.Text = "To";
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Sitka Text", 12F);
+            this.label56.Location = new System.Drawing.Point(134, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(36, 29);
+            this.label56.TabIndex = 128;
+            this.label56.Text = "To";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 4);
+            this.label3.Font = new System.Drawing.Font("Sitka Text", 12F);
+            this.label3.Location = new System.Drawing.Point(410, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 24);
+            this.label3.Size = new System.Drawing.Size(63, 29);
             this.label3.TabIndex = 127;
             this.label3.Text = "From";
             // 
@@ -122,12 +97,11 @@
             // 
             // rSearchBtn
             // 
-            this.rSearchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rSearchBtn.AutoSize = true;
             this.rSearchBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.rSearchBtn.Font = new System.Drawing.Font("Sans Serif Collection", 7F);
             this.rSearchBtn.ForeColor = System.Drawing.Color.White;
-            this.rSearchBtn.Location = new System.Drawing.Point(836, 26);
+            this.rSearchBtn.Location = new System.Drawing.Point(691, 40);
             this.rSearchBtn.Name = "rSearchBtn";
             this.rSearchBtn.Size = new System.Drawing.Size(121, 39);
             this.rSearchBtn.TabIndex = 1;
@@ -135,102 +109,64 @@
             this.rSearchBtn.UseVisualStyleBackColor = false;
             this.rSearchBtn.Click += new System.EventHandler(this.rSearchBtn_Click);
             // 
-            // position
+            // to
             // 
-            this.position.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.position.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.position.Font = new System.Drawing.Font("Sans Serif Collection", 5F);
-            this.position.FormattingEnabled = true;
-            this.position.Location = new System.Drawing.Point(581, 34);
-            this.position.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(418, 28);
-            this.position.TabIndex = 3;
+            this.to.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.to.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.to.Font = new System.Drawing.Font("Sitka Text", 12F);
+            this.to.FormattingEnabled = true;
+            this.to.Location = new System.Drawing.Point(139, 41);
+            this.to.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.to.Name = "to";
+            this.to.Size = new System.Drawing.Size(270, 37);
+            this.to.TabIndex = 4;
             // 
-            // LastNames
+            // from
             // 
-            this.LastNames.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LastNames.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.LastNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LastNames.Font = new System.Drawing.Font("Sans Serif Collection", 5F);
-            this.LastNames.FormattingEnabled = true;
-            this.LastNames.Location = new System.Drawing.Point(2, 33);
-            this.LastNames.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.LastNames.Name = "LastNames";
-            this.LastNames.Size = new System.Drawing.Size(216, 28);
-            this.LastNames.TabIndex = 4;
+            this.from.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.from.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.from.Font = new System.Drawing.Font("Sitka Text", 12F);
+            this.from.FormattingEnabled = true;
+            this.from.Location = new System.Drawing.Point(415, 41);
+            this.from.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.from.Name = "from";
+            this.from.Size = new System.Drawing.Size(270, 37);
+            this.from.TabIndex = 1;
             // 
-            // dept
+            // panel2
             // 
-            this.dept.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dept.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dept.Font = new System.Drawing.Font("Sans Serif Collection", 5F);
-            this.dept.FormattingEnabled = true;
-            this.dept.Items.AddRange(new object[] {
-            "President",
-            "General Manager",
-            "Accounting",
-            "Retail Sales Operation",
-            "Audit",
-            "MIS",
-            "Administration",
-            "Purchasing",
-            "Merchandising",
-            "HRMD",
-            "Marketing",
-            "Creative",
-            "Warehouse and Logistics",
-            "MCE Production",
-            "MCE Quality Assurance",
-            "--Department--"});
-            this.dept.Location = new System.Drawing.Point(360, 33);
-            this.dept.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.dept.Name = "dept";
-            this.dept.Size = new System.Drawing.Size(269, 28);
-            this.dept.TabIndex = 2;
-            this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged);
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.feedback);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(970, 759);
+            this.panel2.TabIndex = 2;
             // 
-            // FNames
+            // feedback
             // 
-            this.FNames.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.FNames.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.FNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FNames.Font = new System.Drawing.Font("Sans Serif Collection", 5F);
-            this.FNames.FormattingEnabled = true;
-            this.FNames.Location = new System.Drawing.Point(181, 33);
-            this.FNames.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.FNames.Name = "FNames";
-            this.FNames.Size = new System.Drawing.Size(216, 28);
-            this.FNames.TabIndex = 1;
-            // 
-            // reports
-            // 
-            this.reports.AllowUserToAddRows = false;
-            this.reports.AllowUserToDeleteRows = false;
-            this.reports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reports.Location = new System.Drawing.Point(0, 0);
-            this.reports.Name = "reports";
-            this.reports.ReadOnly = true;
-            this.reports.RowHeadersWidth = 51;
-            this.reports.RowTemplate.Height = 24;
-            this.reports.Size = new System.Drawing.Size(970, 857);
-            this.reports.TabIndex = 2;
-            this.reports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reports_CellContentClick);
+            this.feedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.feedback.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feedback.Location = new System.Drawing.Point(0, 0);
+            this.feedback.Name = "feedback";
+            this.feedback.RowHeadersWidth = 51;
+            this.feedback.Size = new System.Drawing.Size(970, 759);
+            this.feedback.TabIndex = 0;
+            this.feedback.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.feedback_CellContentClick);
             // 
             // ViewIF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.reports);
             this.Name = "ViewIF";
             this.Size = new System.Drawing.Size(970, 857);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reports)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.feedback)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,17 +174,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label to;
+        private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button rSearchBtn;
-        private System.Windows.Forms.ComboBox position;
-        private System.Windows.Forms.ComboBox LastNames;
-        private System.Windows.Forms.ComboBox dept;
-        private System.Windows.Forms.ComboBox FNames;
-        private System.Windows.Forms.DataGridView reports;
+        private System.Windows.Forms.ComboBox to;
+        private System.Windows.Forms.ComboBox from;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView feedback;
     }
 }

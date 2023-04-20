@@ -66,24 +66,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="756744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HRMS.exe" size="759304">
       <assemblyIdentity name="HRMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>23mDl+jddpWWK2D9pkHeatSHsFg4lBMqC4nzbzUguHA=</dsig:DigestValue>
+        <dsig:DigestValue>QeCKeUGr+MVUm12YRtO5SIKnZPf7zSDEKdnBlNNt9RU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HRMS.exe.config" size="644">
+  <file name="HRMS.exe.config" size="643">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>UL8lLsEGz7NJ7KnxggY8VDe/AfuYX0ziza7vqwyAk5M=</dsig:DigestValue>
+      <dsig:DigestValue>YVRKoWsH4d91uAbAoTCTis60SUT3RYLG3Zm5xleoLs8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Images\appbg.png" size="30899">

@@ -37,7 +37,6 @@ namespace HRMS.Resources.Tools
         private static EditPerApp EPA;
         private static AddPerApp APA;
         private static ViewPerApp VPA;
-        private static FeedbackHub FBH;
         private static OrgChart OG;
         private static FeedbackHub FH;
         private static addIF AIF;

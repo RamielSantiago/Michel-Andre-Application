@@ -105,10 +105,14 @@ namespace HRMS.View.UI
                 ap.Controls.Add(Directory.fh);
                 Directory.fh.Dock = DockStyle.Fill;
                 Directory.fh.BringToFront();
+                Directory.vif.refreshList();
+                Directory.vif.RefreshNames();
             }
             else
             {
                 Directory.fh.BringToFront();
+                Directory.vif.refreshList();
+                Directory.vif.RefreshNames();
             }
         }
 

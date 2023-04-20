@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -19,76 +20,6 @@ namespace HRMS.View.UI.InformationFeedback
 {
     public partial class EditIF : UserControl, iFeedback
     {
-        private string[] acctPos = {"EVP Finance & Accounting",
-                                    "Accounting Officer",
-                                    "Accounts Receivable Staff",
-                                    "Account Payable Staff",
-                                    "General Accounting Staff",
-                                    "Accounting General Services Staff"};
-        private string[] retailPos = {"AVP - Sales & Marketing",
-                                      "Retail Sales Officer",
-                                      "Retail Sales Supervisor",
-                                      "Sales Associates"};
-        private string[] auditPos = {"Internal Audit Officer",
-                                     "Field Auditor",
-                                     "Audit Staff"};
-        private string[] misPos = {"System Administrator",
-                                   "IT Programmer",
-                                   "System & Hardware Technical Support Staff",
-                                   "EDP Staff"};
-        private string[] securityPos = {"Security Services - Administration Officer",
-                                        "Security Services - Senior Security Staff",
-                                        "Security Services - Junior Securty Staff",
-                                        "Maintenance & General Services - Senior Mechanic",
-                                        "Maintenance & General Services - Junior General Services Staff",
-                                        "Maintenance & General Services - Store & Building Maintenance Contractor",
-                                        "Maintenance & General Services - Administrative General Services"};
-        private string[] purchasingPos = {"Purchasing Officer",
-                                          "Purchasing Staff"};
-        private string[] merchPos = {"AVP - Retail Operation",
-                                     "Merchandising Officer",
-                                     "Merchandising & Planning Control Staff"};
-        private string[] hrmdPos = {"HRMD Officer",
-                                    "HR Consultant",
-                                    "Recuitment, HRIS & OD Staff",
-                                    "Compensation, Benefits & HR-Admin Staff",
-                                    "Training, Employee, Relation & Record Management Staff",};
-        private string[] marketPos = {"AVP Retail Operation",
-                                      "Public Relations & Advertising Consultant",
-                                      "Marketing Staff"};
-        private string[] creativesPos = {"AVP - Retail Operation",
-                                         "Graphic Artist"};
-        private string[] warelogPos = {"Warehouse & Logistic Assistant Supervisor",
-                                       "Warehouse Finished Goods - Receiving Staff",
-                                       "Warehouse Finished Goods - Delivery Staff",
-                                       "Logistic Section - Delivery Driver",
-                                       "Logistic Section - Delivery Assistant",
-                                       "Logistic Section - Logistic Assistant",
-                                       "Raw Material Section - Raw Material Controller"};
-        private string[] mcePos = {"Production Officer",
-                                   "Cutting Subcontractor",
-                                   "Prodcution Assistant",
-                                   "Cut Goods & Raw Material Issuance - Subcontractor Coordinator",
-                                   "Cut Goods & Raw Material Issuance - External Sewing Subcontractor",
-                                   "Cut Goods & Raw Material Issuance - Cutting Subcontractor",
-                                   "Cut Goods & Raw Material Issuance - Bundling Subcontractor",
-                                   "Sewing - Sewing Supervisor",
-                                   "Sewing - Fusers",
-                                   "Sewing - Button Hole or Sew",
-                                   "Sewing - Trimmers",
-                                   "Sewing - Washers",
-                                   "Sewing Assembly - Sewing Assembly Supervisor",
-                                   "Sewing Assembly - Woven Shirt or Barong Sewinbg Subcontractors",
-                                   "Sewing Assemby - Pants Sewing Subcontractors",
-                                   "Pressing & Packing - Pressing & Packing Supervisor",
-                                   "Pressing & Packing - Pressing Subcontractor"};
-        private string[] mceqaPos = {"Assistant Supervisor Quality Assurance",
-                                     "Sewing QA - In-House Pre-Final Subcon Pants",
-                                     "Sewing QA - In-House Pre-Final Subcon Barong",
-                                     "Sewing QA - QC Staff",
-                                     "Raw Material QA - Juai Fabric, Embroidery, or Final QC Subcon",
-                                     "Raw Material QA - Fabric Inspector"};
-
         Log_RegAdapter LRA;
         DashAdapter IRA;
 
@@ -96,7 +27,7 @@ namespace HRMS.View.UI.InformationFeedback
         public string To { get { return to.SelectedItem.ToString(); } set { to.SelectedIndex = -1; } }
         public string From { get { return from.SelectedItem.ToString(); } set { from.SelectedIndex = -1; } }
         public string Subject { get { return subject.Text; } set { subject.Text = value; } }
-        DateTime iFeedback.date { get { return date.Value; } set { date.Value = DateTime.Now; } }
+        DateTime iFeedback.date { get { return FBdate.Value; } set { FBdate.Value = DateTime.Now; } }
         public string Details { get { return FBdetail.Text; } set { FBdetail.Text = value; } }
         public string RecAct { get { return RA.Text; } set { RA.Text = value; } }
         public string Comments { get { return FBComments.Text; } set { FBComments.Text = value; } }
@@ -111,10 +42,11 @@ namespace HRMS.View.UI.InformationFeedback
             this.LRA = new Log_RegAdapter(Directory.uList);
             this.IRA = new DashAdapter(this);
             RefreshNames();
-            if(enableDate.Checked == false)
-            {
-                date.Enabled= false;
-            }
+            FBdate.Enabled= false;
+            complaint.Enabled = false;
+            HRO.Enabled = false;
+            Pres.Enabled = false;
+            SV.Enabled = false;
         }
         public void RefreshNames()
         {
@@ -123,11 +55,9 @@ namespace HRMS.View.UI.InformationFeedback
             IEnumerable<UserModel> Names = LRA.crud.GetAll();
             for (int i = 0; i < Names.Count(); i++)
             {
-                to.Items.Add(Names.ElementAt(i).FirstName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
-                from.Items.Add(Names.ElementAt(i).FirstName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
+                to.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
+                from.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
             }
-            to.Items.RemoveAt(0);
-            from.Items.RemoveAt(0);
         }
 
         public void setFeedbackBS(BindingSource bs)
@@ -139,6 +69,7 @@ namespace HRMS.View.UI.InformationFeedback
         {
             string errorMsg = "";
             bool valid = true;
+            var sample = new FeedbackModel();
             if (string.IsNullOrWhiteSpace(FBID.Text))
             {
                 valid = false;
@@ -149,22 +80,127 @@ namespace HRMS.View.UI.InformationFeedback
                 try
                 {
                     Convert.ToInt32 (FBID.Text);
+                    sample.FeedbackID = Convert.ToInt32(FBID.Text);
+                    if (IRA.crudFB.checkifExists(sample) == 0)
+                    {
+                        valid = false;
+                        MessageBox.Show("No such record exists", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 } catch(FormatException ex)
                 {
+                    valid = false;
                     MessageBox.Show("IDs are Numeric", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
             if (valid)
             {
-                if(date.Value > DateTime.Now && enableDate.Checked == true)
+                if(FBdate.Value > DateTime.Now && enableDate.Checked == true)
                 {
                     valid = false;
                     errorMsg = errorMsg + "Date input cannot be a future date" + Environment.NewLine;
                 }
                 if (valid)
                 {
-                    IRA.FB.Update();
+                    if (to.SelectedIndex == -1)
+                    {
+                        sample.To = "-1";
+                    }
+                    else
+                    {
+                        sample.To = To;
+                    }
+                    if (from.SelectedIndex == -1)
+                    {
+                        sample.From = "-1";
+                    }
+                    else
+                    {
+                        sample.From = From;
+                    }
+                    if (string.IsNullOrWhiteSpace(Subject))
+                    {
+                        sample.Subject = "-1";
+                    }
+                    else
+                    {
+                        sample.Subject = Subject;
+                    }
+                    if (!enableDate.Checked)
+                    {
+                        sample.date = DateTime.MaxValue;
+                    }
+                    else
+                    {
+                        sample.date = FBdate.Value;
+                    }
+                    if (string.IsNullOrWhiteSpace(Details))
+                    {
+                        sample.Details = "-1";
+                    }
+                    else
+                    {
+                        sample.Details = Details;
+                    }
+                    if (string.IsNullOrWhiteSpace(RecAct))
+                    {
+                        sample.RecAct = "-1";
+                    }
+                    else
+                    {
+                        sample.RecAct = RecAct;
+                    }
+                    if (string.IsNullOrWhiteSpace(Comments))
+                    {
+                        sample.Comments = "-1";
+                    }
+                    else
+                    {
+                        sample.Comments = Comments;
+                    }
+                    if (eab.Checked)
+                    {
+                        if (CompSig)
+                        {
+                            sample.CompSig = "Complete";
+                        }
+                        else
+                        {
+                            sample.CompSig = "Incomplete";
+                        }
+                        if (HRSig)
+                        {
+                            sample.HRSig = "Complete";
+                        }
+                        else
+                        {
+                            sample.HRSig = "Incomplete";
+                        }
+                        if (SuperSig)
+                        {
+                            sample.SuperSig = "Complete";
+                        }
+                        else
+                        {
+                            sample.SuperSig = "Incomplete";
+                        }
+                        if (PresSig)
+                        {
+                            sample.PresSig = "Complete";
+                        }
+                        else
+                        {
+                            sample.PresSig = "Incomplete";
+                        }
+                    }
+                    else
+                    {
+                        sample.CompSig = "No Change";
+                        sample.HRSig = "No Change";
+                        sample.SuperSig = "No Change";
+                        sample.PresSig = "No Change";
+                    }
+                    IRA.FB.Update(sample);
                     MessageBox.Show("Update successful", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
@@ -179,7 +215,9 @@ namespace HRMS.View.UI.InformationFeedback
             FBdetail.Clear();
             FBComments.Clear();
             RA.Clear();
-            date.Value = DateTime.Now;
+            FBdate.Value = DateTime.Now;
+            enableDate.Checked = false;
+            eab.Checked = false;
             complaint.Checked = false;
             HRO.Checked = false;
             SV.Checked = false;
@@ -200,11 +238,29 @@ namespace HRMS.View.UI.InformationFeedback
         {
             if (enableDate.Checked == false)
             {
-                date.Enabled = false;
+                FBdate.Enabled = false;
             }
             else
             {
-                date.Enabled = true;
+                FBdate.Enabled = true;
+            }
+        }
+
+        private void eab_CheckedChanged(object sender, EventArgs e)
+        {
+            if (eab.Checked)
+            {
+                complaint.Enabled = true;
+                HRO.Enabled = true;
+                SV.Enabled = true;
+                Pres.Enabled = true;
+            }
+            else
+            {
+                complaint.Enabled = false;
+                HRO.Enabled = false;
+                SV.Enabled = false;
+                Pres.Enabled = false;
             }
         }
     }

@@ -10,7 +10,8 @@ namespace HRMS.Model.DBInterfaces
     public interface iInfo
     {
         void Add(FeedbackModel user);
-        int Update(FeedbackModel user);
+        void Update(FeedbackModel fb);
+        int checkifExists(FeedbackModel fb);
         IEnumerable<FeedbackModel> Search(int[] criterias, string[] queries);
         IEnumerable<FeedbackModel> GetAll();
     }

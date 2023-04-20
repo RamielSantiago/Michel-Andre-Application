@@ -38,12 +38,53 @@ namespace HRMS.Presenter
         {
             var test = new FeedbackModel();
             test.FeedbackID = FBList.ElementAt(FBList.Count() - 1).FeedbackID + 1;
+            test.To = view.To;
+            test.From = view.From; 
+            test.Subject = view.Subject;
+            test.Comments = view.Comments;
+            test.RecAct= view.RecAct;
+            test.Details = view.Details;
+            test.date = view.date;
+            if (view.CompSig)
+            {
+                test.CompSig = "Complete";
+            }
+            else
+            {
+                test.CompSig = "Incomplete";
+            }
+            if (view.HRSig)
+            {
+                test.HRSig = "Complete";
+            }
+            else
+            {
+                test.HRSig = "Incomplete";
+            }
+            if (view.SuperSig)
+            {
+                test.SuperSig = "Complete";
+            }
+            else
+            {
+                test.SuperSig = "Incomplete";
+            }
+            if (view.PresSig)
+            {
+                test.PresSig = "Complete";
+            }
+            else
+            {
+                test.PresSig = "Incomplete";
+            }
+            repo.Add(test);
             LoadAllFeedback();
         }
 
-        public void Update()
+        public void Update(FeedbackModel fb)
         {
-            var test = new FeedbackModel();
+            repo.Update(fb);
+            LoadAllFeedback();
         }
 
         public int Search(int[] criterias, string[] queries)

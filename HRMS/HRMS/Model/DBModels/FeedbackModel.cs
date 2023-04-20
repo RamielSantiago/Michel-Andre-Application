@@ -16,9 +16,9 @@ namespace HRMS.Model.DBModels
         public string Details { get; set; }
         public string RecAct { get; set; }
         public string Comments { get; set; } 
-        public bool CompSig { get; set; }
-        public bool HRSig { get; set; }
-        public bool SuperSig { get; set; }
-        public bool PresSig { get; set; }
+        public string CompSig { get; set; }
+        public string HRSig { get; set; }
+        public string SuperSig { get; set; }
+        public string PresSig { get; set; }
     }
 }

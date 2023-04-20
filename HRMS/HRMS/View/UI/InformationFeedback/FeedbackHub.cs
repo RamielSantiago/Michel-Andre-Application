@@ -35,10 +35,14 @@ namespace HRMS.View.UI.InformationFeedback
                 fbViewPanel.Controls.Add(Directory.vif);
                 Directory.vif.Dock = DockStyle.Fill;
                 Directory.vif.BringToFront();
+                Directory.vif.refreshList();
+                Directory.vif.RefreshNames();
             }
             else
             {
                 Directory.vif.BringToFront();
+                Directory.vif.refreshList();
+                Directory.vif.RefreshNames();
             }
         }
 
@@ -49,10 +53,12 @@ namespace HRMS.View.UI.InformationFeedback
                 fbViewPanel.Controls.Add(Directory.aif);
                 Directory.aif.Dock = DockStyle.Fill;
                 Directory.aif.BringToFront();
+                Directory.aif.RefreshNames();
             }
             else
             {
                 Directory.aif.BringToFront();
+                Directory.aif.RefreshNames();
             }
         }
 
@@ -63,10 +69,13 @@ namespace HRMS.View.UI.InformationFeedback
                 fbViewPanel.Controls.Add(Directory.eif);
                 Directory.eif.Dock = DockStyle.Fill;
                 Directory.eif.BringToFront();
+                Directory.eif.RefreshNames();
             }
             else
             {
                 Directory.eif.BringToFront();
+                Directory.vif.refreshList();
+                Directory.eif.RefreshNames();
             }
         }
 
