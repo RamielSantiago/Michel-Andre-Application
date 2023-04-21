@@ -325,22 +325,6 @@ namespace HRMS.View.UI.IncidentReport
             }
         }
 
-        private void LastNames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (LastNames.SelectedIndex > -1)
-            {
-                FNames.SelectedIndex = LastNames.SelectedIndex;
-            }
-        }
-
-        private void FNames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (FNames.SelectedIndex > -1)
-            {
-                LastNames.SelectedIndex = FNames.SelectedIndex;
-            }
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
