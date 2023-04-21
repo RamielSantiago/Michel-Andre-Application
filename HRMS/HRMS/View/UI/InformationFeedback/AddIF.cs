@@ -84,7 +84,7 @@ namespace HRMS.View.UI.InformationFeedback
                 if (valid)
                 {
                     IRA.FB.Add();
-                    MessageBox.Show("New Feedback added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("New Feedback added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

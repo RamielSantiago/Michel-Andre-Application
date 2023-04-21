@@ -267,7 +267,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
                 if (valid)
                 {
                     IRA.APP.Add();
-                    MessageBox.Show("New Appraisal Added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("New Appraisal Added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else
                 {
                     MessageBox.Show(errorMsg, "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);

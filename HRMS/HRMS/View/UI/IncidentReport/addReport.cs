@@ -254,6 +254,7 @@ namespace HRMS.View.UI.IncidentReport
                 {
                     IRA.IR.AddReport();
                     Directory.vReport.refreshList();
+                    MessageBox.Show("New Record Added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else
                 {
                     MessageBox.Show(errorMsg, "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
