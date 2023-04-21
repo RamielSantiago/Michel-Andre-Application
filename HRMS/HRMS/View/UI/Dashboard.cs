@@ -21,6 +21,17 @@ namespace HRMS.View.UI
             InitializeComponent();
             this.ap = activityPanel;
             Directory.username = Username;
+
+            if (!ap.Controls.Contains(Directory.mem))
+            {
+                ap.Controls.Add(Directory.mem);
+                Directory.mem.Dock = DockStyle.Fill;
+                Directory.mem.BringToFront();
+            }
+            else
+            {
+                Directory.mem.BringToFront();
+            }
         }
 
         private void orgchart_Click(object sender, EventArgs e)
