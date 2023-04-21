@@ -220,7 +220,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
         {
             query.Items.Clear();
             var users = LRA.crud.GetAll();
-            for(int i = 1; i < users.Count(); i++)
+            for(int i = 0; i < users.Count(); i++)
             {
                 query.Items.Add(users.ElementAt(i).LastName);
             }
@@ -230,7 +230,7 @@ namespace HRMS.View.UI.PerformanceAppraisal
         {
             query.Items.Clear();
             var users = LRA.crud.GetAll();
-            for (int i = 1; i < users.Count(); i++)
+            for (int i = 0; i < users.Count(); i++)
             {
                 query.Items.Add(users.ElementAt(i).FirstName);
             }

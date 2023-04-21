@@ -224,14 +224,14 @@ namespace HRMS.Resources
                     command.Parameters.AddWithValue("@pass", Encrypt.HashString(user.Password));
                     command.ExecuteNonQuery();
                 }
-                if (!user.Password.Equals("-1"))
+               /* if (!user.Password.Equals("-1"))
                 {
                     SqlCommand command = new SqlCommand("UPDATE EmployeeList SET Password = @pass WHERE EmployeeID = @eID");
                     command.Connection = connection;
                     command.Parameters.AddWithValue("@iID", user.EmployeeID);
                     command.Parameters.AddWithValue("@pass", Encrypt.HashString(user.Password));
                     command.ExecuteNonQuery();
-                }
+                }*/
             if (!(user.DateHired == DateTime.MaxValue))
                 {
                     SqlCommand command = new SqlCommand("UPDATE EmployeeList SET DateHired = @date WHERE EmployeeID = @eID");

@@ -224,7 +224,7 @@ namespace HRMS.View.UI.Recruitment
         {
             string errorMsg = "";
             bool valid = true;
-            if (string.IsNullOrWhiteSpace(fName.Text) || string.IsNullOrWhiteSpace(lName.Text) ||
+            if (string.IsNullOrWhiteSpace(fName.Text) || string.IsNullOrWhiteSpace(lName.Text) || 
                (DepartmentSearchDD.SelectedIndex > -1 && PositionSearchDD.SelectedIndex == -1) || DepartmentSearchDD.SelectedIndex == -1)
             {
                 valid = false;
@@ -251,6 +251,7 @@ namespace HRMS.View.UI.Recruitment
                 {
 
                     da.RP.Add();
+                    MessageBox.Show("New Record Added", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

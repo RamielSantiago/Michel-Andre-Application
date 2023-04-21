@@ -128,6 +128,7 @@ namespace HRMS.View.UI.EmployeeList
                 if (hiredate.Value > DateTime.Now)
                 {
                     errorMsg = errorMsg + "Date input cannot be a future date." + Environment.NewLine;
+                    valid = false;
                 }
                 try
                 {

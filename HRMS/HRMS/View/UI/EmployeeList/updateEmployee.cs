@@ -250,7 +250,7 @@ namespace HRMS.View.UI.EmployeeList
             }
             if (!string.IsNullOrWhiteSpace(eID.Text) && string.IsNullOrWhiteSpace(FirstName) && string.IsNullOrWhiteSpace(LastName) && string.IsNullOrWhiteSpace(Email) &&
                 string.IsNullOrWhiteSpace(Password) && string.IsNullOrWhiteSpace(regconpass.Text) && string.IsNullOrWhiteSpace(UserName) &&
-                position.SelectedIndex == -1 && dept.SelectedIndex == -1)
+                position.SelectedIndex == -1 && dept.SelectedIndex == -1 && !editDate.Checked)
             {
                 errorMsg = errorMsg + "Please select and fill a field to update" + Environment.NewLine;
                 valid = false;
@@ -423,6 +423,7 @@ namespace HRMS.View.UI.EmployeeList
             position.SelectedIndex = -1;
             hiredate.Value = DateTime.Now;
             eID.Clear();
+            editDate.Checked = false;
         }
     }
 }

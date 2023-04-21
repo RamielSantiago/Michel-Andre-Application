@@ -92,6 +92,8 @@ namespace HRMS.View.UI.Recruitment
 
         private Log_RegAdapter LRA;
         private DashAdapter da;
+        
+        
 
         public string FirstName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string LastName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -121,6 +123,8 @@ namespace HRMS.View.UI.Recruitment
             InitializeComponent();
             this.LRA = new Log_RegAdapter(Directory.uList);
             this.da = new DashAdapter(this);
+            RefreshNames();
+            refreshList();
         }
 
         private void lNames_SelectedIndexChanged(object sender, EventArgs e)
@@ -236,13 +240,13 @@ namespace HRMS.View.UI.Recruitment
             fNames.Items.Clear();
             lNames.Items.Clear();
             IEnumerable<RecruitModel> Names = da.crudRec.GetAll();
-            for (int i = 0; i < Names.Count(); i++)
+            for (int i = 1; i < Names.Count(); i++)
             {
                 fNames.Items.Add(Names.ElementAt(i).FirstName);
                 lNames.Items.Add(Names.ElementAt(i).LastName);
             }
-            lNames.Items.RemoveAt(0);
-            fNames.Items.RemoveAt(0);
+            //lNames.Items.RemoveAt(0);
+            //fNames.Items.RemoveAt(0);
         }
 
         public void refreshList()

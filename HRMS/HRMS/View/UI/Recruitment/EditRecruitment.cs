@@ -250,7 +250,7 @@ namespace HRMS.View.UI.Recruitment
         {
             string errorMsg = "";
             bool valid = true;
-            if (fNames.SelectedIndex == -1 || lNames.SelectedIndex == -1 ||
+            if (fNames.SelectedIndex == -1 || lNames.SelectedIndex == -1 || mNames.SelectedIndex == -1 ||
                (DepartmentSearchDD.SelectedIndex > -1 && PositionSearchDD.SelectedIndex == -1) || DepartmentSearchDD.SelectedIndex == -1)
             {
                 valid = false;
@@ -276,6 +276,7 @@ namespace HRMS.View.UI.Recruitment
                 if (valid == true)
                 {
                     da.RP.Update();
+                    MessageBox.Show("Update Successful", "Human Resource Management System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
