@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addEmployee));
             this.panel1 = new System.Windows.Forms.Panel();
             this.addEmpBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -96,21 +95,27 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1144, 858);
+            this.panel1.Size = new System.Drawing.Size(728, 609);
             this.panel1.TabIndex = 22;
             // 
             // addEmpBtn
             // 
             this.addEmpBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addEmpBtn.BackColor = System.Drawing.Color.Transparent;
-            this.addEmpBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addEmpBtn.BackgroundImage")));
+            this.addEmpBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.addEmpBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addEmpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmpBtn.Location = new System.Drawing.Point(477, 641);
+            this.addEmpBtn.FlatAppearance.BorderSize = 0;
+            this.addEmpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmpBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.addEmpBtn.ForeColor = System.Drawing.Color.White;
+            this.addEmpBtn.Location = new System.Drawing.Point(315, 504);
+            this.addEmpBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addEmpBtn.Name = "addEmpBtn";
-            this.addEmpBtn.Size = new System.Drawing.Size(223, 69);
+            this.addEmpBtn.Size = new System.Drawing.Size(99, 46);
             this.addEmpBtn.TabIndex = 43;
+            this.addEmpBtn.Text = "Add";
             this.addEmpBtn.UseVisualStyleBackColor = false;
             this.addEmpBtn.Click += new System.EventHandler(this.addEmpBtn_Click);
             // 
@@ -119,9 +124,10 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Sitka Text", 14F);
-            this.label10.Location = new System.Drawing.Point(403, 93);
+            this.label10.Location = new System.Drawing.Point(229, 59);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(337, 35);
+            this.label10.Size = new System.Drawing.Size(263, 28);
             this.label10.TabIndex = 42;
             this.label10.Text = "Fields with (*) are required.";
             // 
@@ -130,9 +136,10 @@
             this.hiredate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hiredate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.hiredate.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
-            this.hiredate.Location = new System.Drawing.Point(443, 454);
+            this.hiredate.Location = new System.Drawing.Point(253, 347);
+            this.hiredate.Margin = new System.Windows.Forms.Padding(2);
             this.hiredate.Name = "hiredate";
-            this.hiredate.Size = new System.Drawing.Size(265, 26);
+            this.hiredate.Size = new System.Drawing.Size(213, 23);
             this.hiredate.TabIndex = 41;
             this.hiredate.ValueChanged += new System.EventHandler(this.hiredate_ValueChanged);
             // 
@@ -140,17 +147,18 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label9.Location = new System.Drawing.Point(438, 411);
+            this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label9.Location = new System.Drawing.Point(250, 327);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 30);
+            this.label9.Size = new System.Drawing.Size(79, 18);
             this.label9.TabIndex = 40;
             this.label9.Text = "Date Hired*";
             // 
             // dept
             // 
             this.dept.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dept.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dept.BackColor = System.Drawing.Color.Gainsboro;
             this.dept.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dept.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,9 +180,10 @@
             "Warehouse and Logistics",
             "MCE Production",
             "MCE Quality Assurance"});
-            this.dept.Location = new System.Drawing.Point(121, 453);
+            this.dept.Location = new System.Drawing.Point(21, 341);
+            this.dept.Margin = new System.Windows.Forms.Padding(2);
             this.dept.Name = "dept";
-            this.dept.Size = new System.Drawing.Size(256, 33);
+            this.dept.Size = new System.Drawing.Size(206, 29);
             this.dept.TabIndex = 39;
             this.dept.SelectedIndexChanged += new System.EventHandler(this.dept_SelectedIndexChanged);
             // 
@@ -182,10 +191,11 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label8.Location = new System.Drawing.Point(116, 411);
+            this.label8.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label8.Location = new System.Drawing.Point(18, 322);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 30);
+            this.label8.Size = new System.Drawing.Size(85, 18);
             this.label8.TabIndex = 38;
             this.label8.Text = "Department*";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -194,25 +204,27 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label7.Location = new System.Drawing.Point(315, 519);
+            this.label7.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label7.Location = new System.Drawing.Point(146, 409);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 30);
+            this.label7.Size = new System.Drawing.Size(63, 18);
             this.label7.TabIndex = 37;
             this.label7.Text = "Position*";
             // 
             // position
             // 
             this.position.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.position.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.position.BackColor = System.Drawing.Color.Gainsboro;
             this.position.Cursor = System.Windows.Forms.Cursors.Hand;
             this.position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.position.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.position.ForeColor = System.Drawing.Color.Black;
             this.position.FormattingEnabled = true;
-            this.position.Location = new System.Drawing.Point(320, 562);
+            this.position.Location = new System.Drawing.Point(149, 430);
+            this.position.Margin = new System.Windows.Forms.Padding(2);
             this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(527, 33);
+            this.position.Size = new System.Drawing.Size(422, 29);
             this.position.TabIndex = 36;
             // 
             // regconpass
@@ -222,20 +234,22 @@
             this.regconpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.regconpass.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regconpass.ForeColor = System.Drawing.Color.Black;
-            this.regconpass.Location = new System.Drawing.Point(768, 454);
+            this.regconpass.Location = new System.Drawing.Point(495, 347);
+            this.regconpass.Margin = new System.Windows.Forms.Padding(2);
             this.regconpass.Name = "regconpass";
             this.regconpass.PasswordChar = '*';
-            this.regconpass.Size = new System.Drawing.Size(262, 30);
+            this.regconpass.Size = new System.Drawing.Size(210, 26);
             this.regconpass.TabIndex = 35;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label6.Location = new System.Drawing.Point(763, 411);
+            this.label6.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label6.Location = new System.Drawing.Point(492, 327);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(210, 30);
+            this.label6.Size = new System.Drawing.Size(124, 18);
             this.label6.TabIndex = 34;
             this.label6.Text = "Confirm Password*";
             // 
@@ -246,9 +260,10 @@
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.ForeColor = System.Drawing.Color.Black;
-            this.email.Location = new System.Drawing.Point(443, 325);
+            this.email.Location = new System.Drawing.Point(256, 252);
+            this.email.Margin = new System.Windows.Forms.Padding(2);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(262, 30);
+            this.email.Size = new System.Drawing.Size(210, 26);
             this.email.TabIndex = 33;
             // 
             // regpass
@@ -258,10 +273,11 @@
             this.regpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.regpass.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regpass.ForeColor = System.Drawing.Color.Black;
-            this.regpass.Location = new System.Drawing.Point(768, 325);
+            this.regpass.Location = new System.Drawing.Point(495, 252);
+            this.regpass.Margin = new System.Windows.Forms.Padding(2);
             this.regpass.Name = "regpass";
             this.regpass.PasswordChar = '*';
-            this.regpass.Size = new System.Drawing.Size(262, 30);
+            this.regpass.Size = new System.Drawing.Size(210, 26);
             this.regpass.TabIndex = 32;
             // 
             // username
@@ -271,19 +287,21 @@
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.username.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Black;
-            this.username.Location = new System.Drawing.Point(121, 325);
+            this.username.Location = new System.Drawing.Point(21, 252);
+            this.username.Margin = new System.Windows.Forms.Padding(2);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(262, 30);
+            this.username.Size = new System.Drawing.Size(210, 26);
             this.username.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label4.Location = new System.Drawing.Point(438, 282);
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label4.Location = new System.Drawing.Point(253, 232);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 30);
+            this.label4.Size = new System.Drawing.Size(48, 18);
             this.label4.TabIndex = 30;
             this.label4.Text = "Email*";
             // 
@@ -291,10 +309,11 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label5.Location = new System.Drawing.Point(763, 282);
+            this.label5.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label5.Location = new System.Drawing.Point(492, 232);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 30);
+            this.label5.Size = new System.Drawing.Size(74, 18);
             this.label5.TabIndex = 29;
             this.label5.Text = "Password*";
             // 
@@ -302,10 +321,11 @@
             // 
             this.uName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uName.AutoSize = true;
-            this.uName.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.uName.Location = new System.Drawing.Point(122, 282);
+            this.uName.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.uName.Location = new System.Drawing.Point(22, 232);
+            this.uName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uName.Name = "uName";
-            this.uName.Size = new System.Drawing.Size(133, 30);
+            this.uName.Size = new System.Drawing.Size(76, 18);
             this.uName.TabIndex = 28;
             this.uName.Text = "Username*";
             // 
@@ -316,9 +336,10 @@
             this.MI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MI.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MI.ForeColor = System.Drawing.Color.Black;
-            this.MI.Location = new System.Drawing.Point(443, 197);
+            this.MI.Location = new System.Drawing.Point(260, 159);
+            this.MI.Margin = new System.Windows.Forms.Padding(2);
             this.MI.Name = "MI";
-            this.MI.Size = new System.Drawing.Size(262, 30);
+            this.MI.Size = new System.Drawing.Size(210, 26);
             this.MI.TabIndex = 27;
             // 
             // lName
@@ -328,9 +349,10 @@
             this.lName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lName.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lName.ForeColor = System.Drawing.Color.Black;
-            this.lName.Location = new System.Drawing.Point(768, 197);
+            this.lName.Location = new System.Drawing.Point(495, 159);
+            this.lName.Margin = new System.Windows.Forms.Padding(2);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(262, 30);
+            this.lName.Size = new System.Drawing.Size(210, 26);
             this.lName.TabIndex = 26;
             // 
             // fname
@@ -340,19 +362,21 @@
             this.fname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fname.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fname.ForeColor = System.Drawing.Color.Black;
-            this.fname.Location = new System.Drawing.Point(121, 197);
+            this.fname.Location = new System.Drawing.Point(21, 159);
+            this.fname.Margin = new System.Windows.Forms.Padding(2);
             this.fname.Name = "fname";
-            this.fname.Size = new System.Drawing.Size(262, 30);
+            this.fname.Size = new System.Drawing.Size(210, 26);
             this.fname.TabIndex = 25;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label3.Location = new System.Drawing.Point(438, 154);
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label3.Location = new System.Drawing.Point(257, 139);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 30);
+            this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 24;
             this.label3.Text = "Middle Name";
             // 
@@ -360,10 +384,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label2.Location = new System.Drawing.Point(763, 154);
+            this.label2.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label2.Location = new System.Drawing.Point(492, 139);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 30);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 23;
             this.label2.Text = "Last Name*";
             // 
@@ -371,10 +396,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 14F);
-            this.label1.Location = new System.Drawing.Point(116, 154);
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.label1.Location = new System.Drawing.Point(18, 139);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 30);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name*";
             // 
@@ -445,14 +471,15 @@
             // 
             // addEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "addEmployee";
-            this.Size = new System.Drawing.Size(1144, 858);
+            this.Size = new System.Drawing.Size(728, 609);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeListBindingSource)).EndInit();

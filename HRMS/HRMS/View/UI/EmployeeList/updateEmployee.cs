@@ -424,5 +424,20 @@ namespace HRMS.View.UI.EmployeeList
             hiredate.Value = DateTime.Now;
             eID.Clear();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regconpass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

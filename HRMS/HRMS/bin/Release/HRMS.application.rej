@@ -1,0 +1,10 @@
+diff a/HRMS/HRMS/bin/Release/HRMS.application b/HRMS/HRMS/bin/Release/HRMS.application	(rejected hunks)
+@@ -14,7 +14,7 @@
+           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+         </dsig:Transforms>
+         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+-        <dsig:DigestValue>yQ3vVFDVuNPgkmRIsnrG+0Tltur+smjOlqQbClRLHg4=</dsig:DigestValue>
++        <dsig:DigestValue>rDYpTkidbeGVvVt3VkFkUx+fMemqvMb7JU19lrioH0g=</dsig:DigestValue>
+       </hash>
+     </dependentAssembly>
+   </dependency>

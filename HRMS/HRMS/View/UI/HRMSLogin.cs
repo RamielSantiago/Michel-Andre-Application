@@ -282,5 +282,10 @@ namespace HRMS.View.UI
             logname.Clear();
             logpass.Clear();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

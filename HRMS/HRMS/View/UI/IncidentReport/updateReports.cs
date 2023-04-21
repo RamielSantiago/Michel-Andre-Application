@@ -398,5 +398,10 @@ namespace HRMS.View.UI.IncidentReport
             remarks.Clear();
             approved.Clear();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

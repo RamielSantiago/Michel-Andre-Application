@@ -51,8 +51,9 @@
             this.activityPanel.BackColor = System.Drawing.Color.White;
             this.activityPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activityPanel.Location = new System.Drawing.Point(0, 0);
+            this.activityPanel.Margin = new System.Windows.Forms.Padding(2);
             this.activityPanel.Name = "activityPanel";
-            this.activityPanel.Size = new System.Drawing.Size(1445, 906);
+            this.activityPanel.Size = new System.Drawing.Size(1028, 609);
             this.activityPanel.TabIndex = 28;
             // 
             // panel1
@@ -73,8 +74,9 @@
             this.panel1.Controls.Add(this.appraisal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 906);
+            this.panel1.Size = new System.Drawing.Size(248, 609);
             this.panel1.TabIndex = 29;
             // 
             // panel3
@@ -82,32 +84,43 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.logoutBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 783);
+            this.panel3.Location = new System.Drawing.Point(0, 539);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(331, 123);
+            this.panel3.Size = new System.Drawing.Size(248, 70);
             this.panel3.TabIndex = 0;
             // 
             // logoutBtn
             // 
+            this.logoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
             this.logoutBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoutBtn.BackgroundImage")));
             this.logoutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutBtn.Location = new System.Drawing.Point(113, 7);
+            this.logoutBtn.FlatAppearance.BorderSize = 0;
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutBtn.Location = new System.Drawing.Point(111, 21);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(91, 90);
+            this.logoutBtn.Size = new System.Drawing.Size(32, 30);
             this.logoutBtn.TabIndex = 0;
-            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // employeelist
             // 
-            this.employeelist.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.employeelist.BackColor = System.Drawing.Color.SteelBlue;
             this.employeelist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.employeelist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.employeelist.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.employeelist.Location = new System.Drawing.Point(12, 501);
+            this.employeelist.FlatAppearance.BorderSize = 0;
+            this.employeelist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeelist.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.employeelist.ForeColor = System.Drawing.Color.White;
+            this.employeelist.Location = new System.Drawing.Point(17, 400);
+            this.employeelist.Margin = new System.Windows.Forms.Padding(2);
             this.employeelist.Name = "employeelist";
-            this.employeelist.Size = new System.Drawing.Size(299, 44);
+            this.employeelist.Size = new System.Drawing.Size(212, 36);
             this.employeelist.TabIndex = 34;
             this.employeelist.Text = "Employee List";
             this.employeelist.UseVisualStyleBackColor = false;
@@ -115,13 +128,16 @@
             // 
             // orgchart
             // 
-            this.orgchart.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.orgchart.BackColor = System.Drawing.Color.SteelBlue;
             this.orgchart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.orgchart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.orgchart.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.orgchart.Location = new System.Drawing.Point(12, 560);
+            this.orgchart.FlatAppearance.BorderSize = 0;
+            this.orgchart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orgchart.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.orgchart.ForeColor = System.Drawing.Color.White;
+            this.orgchart.Location = new System.Drawing.Point(17, 448);
+            this.orgchart.Margin = new System.Windows.Forms.Padding(2);
             this.orgchart.Name = "orgchart";
-            this.orgchart.Size = new System.Drawing.Size(299, 44);
+            this.orgchart.Size = new System.Drawing.Size(212, 36);
             this.orgchart.TabIndex = 37;
             this.orgchart.Text = "Organizational Chart";
             this.orgchart.UseVisualStyleBackColor = false;
@@ -129,13 +145,16 @@
             // 
             // randr
             // 
-            this.randr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.randr.BackColor = System.Drawing.Color.SteelBlue;
             this.randr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.randr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.randr.Font = new System.Drawing.Font("Sitka Text", 8F);
-            this.randr.Location = new System.Drawing.Point(12, 618);
+            this.randr.FlatAppearance.BorderSize = 0;
+            this.randr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.randr.Font = new System.Drawing.Font("Franklin Gothic Book", 10F);
+            this.randr.ForeColor = System.Drawing.Color.White;
+            this.randr.Location = new System.Drawing.Point(17, 495);
+            this.randr.Margin = new System.Windows.Forms.Padding(2);
             this.randr.Name = "randr";
-            this.randr.Size = new System.Drawing.Size(299, 44);
+            this.randr.Size = new System.Drawing.Size(212, 36);
             this.randr.TabIndex = 36;
             this.randr.Text = "Company Rules and Regulations";
             this.randr.UseVisualStyleBackColor = false;
@@ -146,20 +165,25 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(17, 21);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(299, 172);
+            this.panel2.Size = new System.Drawing.Size(212, 126);
             this.panel2.TabIndex = 28;
             // 
             // MemCirc
             // 
-            this.MemCirc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MemCirc.BackColor = System.Drawing.Color.SteelBlue;
             this.MemCirc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MemCirc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MemCirc.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.MemCirc.Location = new System.Drawing.Point(12, 201);
+            this.MemCirc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MemCirc.FlatAppearance.BorderSize = 0;
+            this.MemCirc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MemCirc.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.MemCirc.ForeColor = System.Drawing.Color.White;
+            this.MemCirc.Location = new System.Drawing.Point(17, 156);
+            this.MemCirc.Margin = new System.Windows.Forms.Padding(2);
             this.MemCirc.Name = "MemCirc";
-            this.MemCirc.Size = new System.Drawing.Size(299, 44);
+            this.MemCirc.Size = new System.Drawing.Size(212, 36);
             this.MemCirc.TabIndex = 33;
             this.MemCirc.Text = "Memorandum Circular";
             this.MemCirc.UseVisualStyleBackColor = false;
@@ -167,13 +191,16 @@
             // 
             // recruitment
             // 
-            this.recruitment.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.recruitment.BackColor = System.Drawing.Color.SteelBlue;
             this.recruitment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.recruitment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.recruitment.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.recruitment.Location = new System.Drawing.Point(12, 261);
+            this.recruitment.FlatAppearance.BorderSize = 0;
+            this.recruitment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recruitment.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.recruitment.ForeColor = System.Drawing.Color.White;
+            this.recruitment.Location = new System.Drawing.Point(17, 205);
+            this.recruitment.Margin = new System.Windows.Forms.Padding(2);
             this.recruitment.Name = "recruitment";
-            this.recruitment.Size = new System.Drawing.Size(299, 44);
+            this.recruitment.Size = new System.Drawing.Size(212, 36);
             this.recruitment.TabIndex = 39;
             this.recruitment.Text = "Recruitment";
             this.recruitment.UseVisualStyleBackColor = false;
@@ -181,13 +208,16 @@
             // 
             // IncidentBtn
             // 
-            this.IncidentBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.IncidentBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.IncidentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.IncidentBtn.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.IncidentBtn.Location = new System.Drawing.Point(12, 381);
+            this.IncidentBtn.FlatAppearance.BorderSize = 0;
+            this.IncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IncidentBtn.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.IncidentBtn.ForeColor = System.Drawing.Color.White;
+            this.IncidentBtn.Location = new System.Drawing.Point(17, 303);
+            this.IncidentBtn.Margin = new System.Windows.Forms.Padding(2);
             this.IncidentBtn.Name = "IncidentBtn";
-            this.IncidentBtn.Size = new System.Drawing.Size(299, 44);
+            this.IncidentBtn.Size = new System.Drawing.Size(212, 36);
             this.IncidentBtn.TabIndex = 38;
             this.IncidentBtn.Text = "Incident Report";
             this.IncidentBtn.UseVisualStyleBackColor = false;
@@ -195,13 +225,16 @@
             // 
             // feedback
             // 
-            this.feedback.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.feedback.BackColor = System.Drawing.Color.SteelBlue;
             this.feedback.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.feedback.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.feedback.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.feedback.Location = new System.Drawing.Point(12, 441);
+            this.feedback.FlatAppearance.BorderSize = 0;
+            this.feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feedback.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.feedback.ForeColor = System.Drawing.Color.White;
+            this.feedback.Location = new System.Drawing.Point(17, 351);
+            this.feedback.Margin = new System.Windows.Forms.Padding(2);
             this.feedback.Name = "feedback";
-            this.feedback.Size = new System.Drawing.Size(299, 44);
+            this.feedback.Size = new System.Drawing.Size(212, 36);
             this.feedback.TabIndex = 35;
             this.feedback.Text = "Information Feedback";
             this.feedback.UseVisualStyleBackColor = false;
@@ -209,13 +242,16 @@
             // 
             // appraisal
             // 
-            this.appraisal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.appraisal.BackColor = System.Drawing.Color.SteelBlue;
             this.appraisal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appraisal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.appraisal.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.appraisal.Location = new System.Drawing.Point(12, 321);
+            this.appraisal.FlatAppearance.BorderSize = 0;
+            this.appraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.appraisal.Font = new System.Drawing.Font("Franklin Gothic Book", 12F);
+            this.appraisal.ForeColor = System.Drawing.Color.White;
+            this.appraisal.Location = new System.Drawing.Point(17, 254);
+            this.appraisal.Margin = new System.Windows.Forms.Padding(2);
             this.appraisal.Name = "appraisal";
-            this.appraisal.Size = new System.Drawing.Size(299, 44);
+            this.appraisal.Size = new System.Drawing.Size(212, 36);
             this.appraisal.TabIndex = 40;
             this.appraisal.Text = "Performance Appraisal";
             this.appraisal.UseVisualStyleBackColor = false;
@@ -223,11 +259,12 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 906);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.activityPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
