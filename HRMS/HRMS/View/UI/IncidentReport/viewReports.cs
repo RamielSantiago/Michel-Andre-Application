@@ -340,5 +340,10 @@ namespace HRMS.View.UI.IncidentReport
                 LastNames.SelectedIndex = FNames.SelectedIndex;
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

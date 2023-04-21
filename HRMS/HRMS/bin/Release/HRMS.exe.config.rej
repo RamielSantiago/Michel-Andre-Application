@@ -1,0 +1,13 @@
+diff a/HRMS/HRMS/bin/Release/HRMS.exe.config b/HRMS/HRMS/bin/Release/HRMS.exe.config	(rejected hunks)
+@@ -3,9 +3,9 @@
+   <configSections>
+   </configSections>
+   <connectionStrings>
+-    <add name="SQLConnectionString" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRMSDB;Integrated Security=True;"
++    <add name="SQLConnectionString" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=HRMSDB;Integrated Security=True;Connect Timeout=60;"
+       providerName="System.Data.SqlClient" />
+-      <add name="DBCreation" connectionString="Data Source(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;"
++      <add name="DBCreation" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;"
+       providerName="System.Data.SqlClient" />
+   </connectionStrings>
+     <startup> 
