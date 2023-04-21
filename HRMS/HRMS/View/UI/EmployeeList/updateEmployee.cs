@@ -425,5 +425,20 @@ namespace HRMS.View.UI.EmployeeList
             eID.Clear();
             editDate.Checked = false;
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regconpass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

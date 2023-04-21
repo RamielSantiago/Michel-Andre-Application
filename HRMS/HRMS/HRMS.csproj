@@ -64,6 +64,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Apitron.PDF.Controls, Version=1.0.170.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
       <HintPath>..\packages\Apitron.PDF.Controls.1.0.170\lib\net472\Apitron.PDF.Controls.dll</HintPath>

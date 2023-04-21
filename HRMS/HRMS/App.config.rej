@@ -1,0 +1,10 @@
+diff a/HRMS/HRMS/App.config b/HRMS/HRMS/App.config	(rejected hunks)
+@@ -3,7 +3,7 @@
+   <configSections>
+   </configSections>
+   <connectionStrings>
+-    <add name="SQLConnectionString" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=HRMSDB;Integrated Security=True;"
++    <add name="SQLConnectionString" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=HRMSDB;Integrated Security=True;Connect Timeout=60;"
+       providerName="System.Data.SqlClient" />
+       <add name="DBCreation" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;"
+       providerName="System.Data.SqlClient" />

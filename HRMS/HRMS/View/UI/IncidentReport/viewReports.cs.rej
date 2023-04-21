@@ -1,0 +1,20 @@
+diff a/HRMS/HRMS/View/UI/IncidentReport/viewReports.cs b/HRMS/HRMS/View/UI/IncidentReport/viewReports.cs	(rejected hunks)
+@@ -296,8 +296,16 @@ namespace HRMS.View.UI.IncidentReport
+                 FNames.Items.Add(Names.ElementAt(i).FirstName);
+                 LastNames.Items.Add(Names.ElementAt(i).LastName);
+             }
+-            LastNames.Items.RemoveAt(0);
+-            FNames.Items.RemoveAt(0);
++            if (LastNames.Items.Count > 0)
++            {
++                LastNames.Items.RemoveAt(0);
++            }
++
++            if (FNames.Items.Count > 0)
++            {
++                FNames.Items.RemoveAt(0);
++            }
++
+         }
+ 
+         private void reports_CellContentClick(object sender, DataGridViewCellEventArgs e)
