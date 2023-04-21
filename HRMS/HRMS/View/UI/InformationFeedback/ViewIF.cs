@@ -78,8 +78,8 @@ namespace HRMS.View.UI.InformationFeedback
             IEnumerable<UserModel> Names = LRA.crud.GetAll();
             for (int i = 0; i < Names.Count(); i++)
             {
-                from.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + Names.ElementAt(i).MiddleName);
-                to.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + Names.ElementAt(i).MiddleName);
+                from.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
+                to.Items.Add(Names.ElementAt(i).LastName + ", " + Names.ElementAt(i).FirstName + " " + Names.ElementAt(i).MiddleName);
             }
         }
 

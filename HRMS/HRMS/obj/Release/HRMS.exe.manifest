@@ -73,17 +73,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XTD/ZMj4fK29efkcEwWMgmRNkHR4mmosRsvThQ3W0yA=</dsig:DigestValue>
+        <dsig:DigestValue>qUZ9xRPhr6ee07K29hcOFHx/caFEAeBiaa28hRVcPMs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="HRMS.exe.config" size="645">
+  <file name="HRMS.exe.config" size="655">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>UofTi4Jxe/VN5GtL7v72LkGZR9Ex90mHHkt9DaN3pW4=</dsig:DigestValue>
+      <dsig:DigestValue>3nCPfKwCMcKLwAmQaL4HZS6tBktdC4J8+WTHLLp8ygg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Images\appbg.png" size="30899">
